@@ -15,11 +15,12 @@ namespace AttendanceManagementSystem
 
 
 
-        public Course(string code, string name , DateTime date)
+        public Course(string code, string name , DateTime date , string status)
         {
             CourseCode = code;
             CourseName = name;
             Date = date;
+            AttendanceStatus = status;
         }
     }
 }
