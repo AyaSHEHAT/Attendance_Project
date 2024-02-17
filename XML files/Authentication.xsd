@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="integerId">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="800150000"/>
+			<xs:maxInclusive value="800159999"/>
+		</xs:restriction>
+	</xs:simpleType>
+		<xs:simpleType name="teachId">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="8000"/>
+			<xs:maxInclusive value="8999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+		<xs:simpleType name="adminId">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="800"/>
+			<xs:maxInclusive value="899"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="stringPass">
+		<xs:restriction base="xs:string">
+			<!--<xs:pattern value="(*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$*])[A-Za-z\d@$*]{8}"/>
+		<xs:pattern value="/^(?=.\d)(?=.[!@#$%^])(?=.[a-z])(?=.*[A-Z]).{8}/" />-->
+			<xs:pattern value="[A-Za-z0-9]{8,}"/>
+			<!--<xs:pattern value="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])(?!.*\s)[A-Za-z\d@$!%*?&]{8,}$"/>-->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Authentication">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="user" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+						<xs:choice>
+						<xs:element name="userId" type="integerId"/>
+						<xs:element name="teachId" type="teachId"/>
+						<xs:element name="adminId" type="adminId"/>
+						</xs:choice>
+							
+							<xs:element name="userPass" type="stringPass"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<!--user-->
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!--Auth-->
+</xs:schema>
