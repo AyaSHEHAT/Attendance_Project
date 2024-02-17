@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Authentication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:\ITI-PD&amp;BI\XML\XML-Project\Project\XML files\Authentication.xsd">
+<user>
+		<userId>800151234</userId>
+		<userPass>dfxyd78798</userPass>
+	</user>	
+	<user >
+		<teachId>8123</teachId>
+		<userPass>asdf1234</userPass>
+	</user>
+		<user>
+		<adminId>801</adminId>
+		<userPass>Ahsh1234</userPass>
+	</user>
+	<user>
+		<userId>800152365</userId>
+		<userPass>asdf1234</userPass>
+	</user>
+	<user>
+		<userId>800155283</userId>
+		<userPass>asdf1234</userPass>
+	</user>
+</Authentication>
