@@ -95,6 +95,7 @@
             this.pictureBoxError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxError.TabIndex = 2;
             this.pictureBoxError.TabStop = false;
+            this.pictureBoxError.Visible = false;
             this.pictureBoxError.Click += new System.EventHandler(this.pictureBoxError_Click);
             // 
             // labelError

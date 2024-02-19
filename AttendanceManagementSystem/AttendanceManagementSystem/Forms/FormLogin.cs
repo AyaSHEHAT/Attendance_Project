@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace AttendanceManagementSystem.Forms
 {
@@ -22,13 +24,17 @@ namespace AttendanceManagementSystem.Forms
             pictureBoxError.Hide();
             pictureBoxHide.Hide();
             labelError.Hide();
+            textBoxPassword.UseSystemPasswordChar = false;
+            pictureBoxShow.Hide();
+            pictureBoxHide.Show();
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Close();
         }
-
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -36,6 +42,35 @@ namespace AttendanceManagementSystem.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var pass = textBoxPassword.Text;
+            var id = textBoxUserId.Text;
+            if (validateUserInput(out string _role,in pass,in id))
+            {
+                if (_role == "admin")
+                {
+                    FormStudent studentForm = new FormStudent();
+                    studentForm.Text = "Hello, World for Admin";
+                    studentForm.ShowDialog();
+                }else if(_role == "teacher")
+                {
+                    FormStudent studentForm = new FormStudent();
+                    studentForm.Text = "Hello, World for Teacher";
+                    studentForm.ShowDialog();
+                }
+                else
+                {
+                    FormStudent studentForm = new FormStudent();
+                    studentForm.Text = "Hello, World for Student";
+                    studentForm.ShowDialog();
+                }
+            }
+            else
+            {
+                labelError.Show();
+                pictureBoxError.Show();
+                textBoxPassword.Text = string.Empty;
+                textBoxUserId.Text = string.Empty;
+            }
             //login logic here 
         }
 
@@ -125,6 +160,29 @@ namespace AttendanceManagementSystem.Forms
             {
                 e.SuppressKeyPress = true;
             }
+        }
+
+
+        private static bool validateUserInput(out string _role,in string _pass,in string _id)
+        {
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load("C:\\Users\\Saber\\Desktop\\Attendance_Project\\XML files\\Data.xml");
+
+            XmlNodeList userList = xmlDoc.SelectNodes("//Users/user");
+           
+            foreach (XmlNode userNode in userList)
+            {
+                string Id = userNode.SelectSingleNode("id").InnerText.ToString();
+                string password = userNode.SelectSingleNode("userPass").InnerText;
+                if (( _pass == password) && (_id == Id))
+                    {
+                        _role = userNode.SelectSingleNode("role").InnerText;
+                        return true;
+                    }
+            }
+            _role = null;
+            return false;
+
         }
     }
 }

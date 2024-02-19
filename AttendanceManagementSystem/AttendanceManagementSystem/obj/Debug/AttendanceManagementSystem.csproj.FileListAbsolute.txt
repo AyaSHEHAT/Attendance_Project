@@ -23,3 +23,4 @@ C:\Users\Saber\Desktop\Attendance_Project\AttendanceManagementSystem\AttendanceM
 C:\Users\Saber\Desktop\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.csproj.CoreCompileInputs.cache
 C:\Users\Saber\Desktop\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.exe
 C:\Users\Saber\Desktop\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.pdb
+C:\Users\Saber\Desktop\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.Forms.FormStudent.resources
