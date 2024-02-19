@@ -35,8 +35,23 @@
 		</user>
 		<user>
 			<id>8123</id>
-			<name>helmy</name>
+			<name>Helmy</name>
 			<email>helmy@yahoo.com</email>
+			<address>mansoura</address>
+			<userPass>asdf1234</userPass>
+			<role>teacher</role>
+		</user>
+		<user>
+			<id>8456</id>
+			<name>Ayman</name>
+			<email>ayman@yahoo.com</email>
+			<address>mansoura</address>
+			<role>teacher</role>
+		</user>
+		<user>
+			<id>8789</id>
+			<name>Nasr</name>
+			<email>nasr@yahoo.com</email>
 			<address>mansoura</address>
 			<userPass>asdf1234</userPass>
 			<role>teacher</role>
