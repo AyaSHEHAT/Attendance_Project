@@ -175,5 +175,8 @@
   <ItemGroup>
     <None Include="Resources\magnify.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="forms\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
