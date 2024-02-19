@@ -46,14 +46,12 @@ namespace AttendanceManagementSystem
                 buttonDashboard.Hide();
                 buttonAddCourse.Hide();
                 buttonAddStd.Hide();
-                buttonAddTeacher.Hide();
                 buttonAttendance.Hide();
             }else if(Role =="teacher")
             {
                 buttonDashboard.Hide();
                 buttonAddCourse.Hide();
                 buttonAddStd.Hide();
-                buttonAddTeacher.Hide();
                 buttonAttendance.Show();
             }
         }
@@ -97,12 +95,7 @@ namespace AttendanceManagementSystem
             userControlAddCourse1.Visible= true;
         }
 
-        private void buttonAddTeacher_Click(object sender, EventArgs e)
-        {
-            MoveSidePanel(buttonAddTeacher);
-            userControlDashboard1.Visible= false;
-            userControlAddCourse1.Visible= false;
-        }
+        
 
         private void buttonAddStd_Click(object sender, EventArgs e)
         {
