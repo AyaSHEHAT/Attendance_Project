@@ -1,0 +1,12 @@
+E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\AttendanceManagementSystem.exe.config
+E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\AttendanceManagementSystem.exe
+E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\AttendanceManagementSystem.pdb
+E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.csproj.AssemblyReference.cache
+E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.Properties.Resources.resources
+E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.csproj.GenerateResource.cache
+E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.csproj.CoreCompileInputs.cache
+E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.exe
+E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.pdb
+E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.FormAdmin.resources
+E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.User_Controls.UserControlDashboard.resources
+E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.User_Controls.UserControlAddCourse.resources
