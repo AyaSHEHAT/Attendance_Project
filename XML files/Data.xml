@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:\ITI-PD&amp;BI\XML\XML-Project\Project\XML files\Data.xsd">
+<Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:\ITI-PD&amp;BI\XML\XML-Project\Attendance_Project\XML files\Data.xsd">
 	<Users>
 		<user>
 			<id>800159561</id>
@@ -31,8 +31,22 @@
 		</user>
 		<user>
 			<id>8123</id>
-			<name>helmy</name>
+			<name>Helmy</name>
 			<email>helmy@yahoo.com</email>
+			<address>mansoura</address>
+			<role>teacher</role>
+		</user>
+		<user>
+			<id>8456</id>
+			<name>Ayman</name>
+			<email>ayman@yahoo.com</email>
+			<address>mansoura</address>
+			<role>teacher</role>
+		</user>
+		<user>
+			<id>8789</id>
+			<name>Nasr</name>
+			<email>nasr@yahoo.com</email>
 			<address>mansoura</address>
 			<role>teacher</role>
 		</user>
