@@ -41,7 +41,6 @@
             this.buttonAddStd = new System.Windows.Forms.Button();
             this.buttonDashboard = new System.Windows.Forms.Button();
             this.buttonAttendance = new System.Windows.Forms.Button();
-            this.buttonAddTeacher = new System.Windows.Forms.Button();
             this.buttonAddCourse = new System.Windows.Forms.Button();
             this.panelBack = new System.Windows.Forms.Panel();
             this.buttonMinimize = new System.Windows.Forms.Button();
@@ -68,7 +67,6 @@
             this.panel1.Controls.Add(this.buttonAddStd);
             this.panel1.Controls.Add(this.buttonDashboard);
             this.panel1.Controls.Add(this.buttonAttendance);
-            this.panel1.Controls.Add(this.buttonAddTeacher);
             this.panel1.Controls.Add(this.buttonAddCourse);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -83,7 +81,7 @@
             this.buttonReport.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReport.ForeColor = System.Drawing.Color.White;
             this.buttonReport.Image = global::AttendanceManagementSystem.Properties.Resources.report;
-            this.buttonReport.Location = new System.Drawing.Point(11, 525);
+            this.buttonReport.Location = new System.Drawing.Point(14, 456);
             this.buttonReport.Name = "buttonReport";
             this.buttonReport.Size = new System.Drawing.Size(271, 63);
             this.buttonReport.TabIndex = 0;
@@ -160,11 +158,11 @@
             this.buttonAddStd.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddStd.ForeColor = System.Drawing.Color.White;
             this.buttonAddStd.Image = global::AttendanceManagementSystem.Properties.Resources.groupStd;
-            this.buttonAddStd.Location = new System.Drawing.Point(11, 456);
+            this.buttonAddStd.Location = new System.Drawing.Point(12, 387);
             this.buttonAddStd.Name = "buttonAddStd";
             this.buttonAddStd.Size = new System.Drawing.Size(271, 63);
             this.buttonAddStd.TabIndex = 0;
-            this.buttonAddStd.Text = "        Add Student";
+            this.buttonAddStd.Text = "        Add User";
             this.buttonAddStd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAddStd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAddStd.UseVisualStyleBackColor = true;
@@ -203,23 +201,6 @@
             this.buttonAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAttendance.UseVisualStyleBackColor = true;
             this.buttonAttendance.Click += new System.EventHandler(this.buttonAttendance_Click);
-            // 
-            // buttonAddTeacher
-            // 
-            this.buttonAddTeacher.FlatAppearance.BorderSize = 0;
-            this.buttonAddTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddTeacher.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddTeacher.ForeColor = System.Drawing.Color.White;
-            this.buttonAddTeacher.Image = global::AttendanceManagementSystem.Properties.Resources.teacher;
-            this.buttonAddTeacher.Location = new System.Drawing.Point(11, 387);
-            this.buttonAddTeacher.Name = "buttonAddTeacher";
-            this.buttonAddTeacher.Size = new System.Drawing.Size(271, 63);
-            this.buttonAddTeacher.TabIndex = 0;
-            this.buttonAddTeacher.Text = "        Add Teacher";
-            this.buttonAddTeacher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAddTeacher.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonAddTeacher.UseVisualStyleBackColor = true;
-            this.buttonAddTeacher.Click += new System.EventHandler(this.buttonAddTeacher_Click);
             // 
             // buttonAddCourse
             // 
@@ -392,7 +373,6 @@
         private System.Windows.Forms.Button buttonDashboard;
         private System.Windows.Forms.Panel panelSlide;
         private System.Windows.Forms.Button buttonAttendance;
-        private System.Windows.Forms.Button buttonAddTeacher;
         private System.Windows.Forms.Button buttonAddCourse;
         private System.Windows.Forms.Button buttonAddStd;
         private System.Windows.Forms.Button buttonReport;
