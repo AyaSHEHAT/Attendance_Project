@@ -48,21 +48,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPageSearch = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblTotalCourse = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridViewCourse = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnUbdate = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -78,7 +78,7 @@
             this.txtCourseId = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tabControlAddClass.SuspendLayout();
             this.tabPageAddClass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSessionNumber)).BeginInit();
@@ -274,7 +274,7 @@
             // 
             // tabPageSearch
             // 
-            this.tabPageSearch.Controls.Add(this.label10);
+            this.tabPageSearch.Controls.Add(this.lblTotalCourse);
             this.tabPageSearch.Controls.Add(this.label9);
             this.tabPageSearch.Controls.Add(this.dataGridViewCourse);
             this.tabPageSearch.Controls.Add(this.pictureBox1);
@@ -287,18 +287,20 @@
             this.tabPageSearch.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageSearch.Size = new System.Drawing.Size(934, 469);
             this.tabPageSearch.TabIndex = 1;
-            this.tabPageSearch.Text = "Search";
+            this.tabPageSearch.Text = "Search course";
             this.tabPageSearch.UseVisualStyleBackColor = true;
+            this.tabPageSearch.Enter += new System.EventHandler(this.tabPageSearch_Enter);
+            this.tabPageSearch.Leave += new System.EventHandler(this.tabPageSearch_Leave);
             // 
-            // label10
+            // lblTotalCourse
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.label10.Location = new System.Drawing.Point(844, 447);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(27, 19);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "(?)";
+            this.lblTotalCourse.AutoSize = true;
+            this.lblTotalCourse.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCourse.Location = new System.Drawing.Point(844, 447);
+            this.lblTotalCourse.Name = "lblTotalCourse";
+            this.lblTotalCourse.Size = new System.Drawing.Size(28, 18);
+            this.lblTotalCourse.TabIndex = 9;
+            this.lblTotalCourse.Text = "(?)";
             // 
             // label9
             // 
@@ -323,49 +325,56 @@
             this.dataGridViewCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewCourse.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2,
+            this.CourseName,
             this.Column3,
-            this.Column4,
-            this.Column5});
+            this.Column5,
+            this.Column4});
             this.dataGridViewCourse.Location = new System.Drawing.Point(31, 131);
             this.dataGridViewCourse.Name = "dataGridViewCourse";
             this.dataGridViewCourse.ReadOnly = true;
             this.dataGridViewCourse.ShowRowErrors = false;
             this.dataGridViewCourse.Size = new System.Drawing.Size(872, 318);
             this.dataGridViewCourse.TabIndex = 7;
+            this.dataGridViewCourse.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCourse_CellClick);
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "CourseId";
             this.Column1.HeaderText = "Course Id";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
-            // Column2
+            // CourseName
             // 
-            this.Column2.HeaderText = "Course Name";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.CourseName.DataPropertyName = "CourseName";
+            this.CourseName.HeaderText = "Course Name";
+            this.CourseName.Name = "CourseName";
+            this.CourseName.ReadOnly = true;
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "sessions";
+            this.Column3.DataPropertyName = "Sessions";
+            this.Column3.HeaderText = "No. of Sessions";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Teacher";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "Date";
             this.Column5.HeaderText = "Start Date";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Teacher";
+            this.Column4.HeaderText = "Teacher Id";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.pictureBox1.Image = global::AttendanceManagementSystem.Properties.Resources.magnify;
             this.pictureBox1.Location = new System.Drawing.Point(398, 73);
             this.pictureBox1.Name = "pictureBox1";
@@ -390,6 +399,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(270, 17);
             this.txtSearch.TabIndex = 5;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label7
             // 
@@ -397,9 +407,9 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(150, 48);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 17);
+            this.label7.Size = new System.Drawing.Size(105, 17);
             this.label7.TabIndex = 3;
-            this.label7.Text = "Course ID:";
+            this.label7.Text = "Course Name:";
             // 
             // label8
             // 
@@ -437,16 +447,26 @@
             this.tabPage1.Text = "Update and Delete";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // contextMenuStrip1
+            // btnDelete
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelete.BackColor = System.Drawing.Color.Firebrick;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(709, 317);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(114, 37);
+            this.btnDelete.TabIndex = 22;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
             // btnUbdate
             // 
+            this.btnUbdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnUbdate.BackColor = System.Drawing.Color.Indigo;
+            this.btnUbdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUbdate.FlatAppearance.BorderSize = 0;
             this.btnUbdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUbdate.ForeColor = System.Drawing.Color.White;
@@ -459,6 +479,7 @@
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(553, 214);
@@ -469,6 +490,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(112, 302);
@@ -479,6 +501,7 @@
             // 
             // dateStartDate
             // 
+            this.dateStartDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateStartDate.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateStartDate.Location = new System.Drawing.Point(115, 333);
@@ -490,6 +513,7 @@
             // 
             // upDownSession
             // 
+            this.upDownSession.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.upDownSession.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.upDownSession.Location = new System.Drawing.Point(557, 239);
             this.upDownSession.Name = "upDownSession";
@@ -498,6 +522,7 @@
             // 
             // panel5
             // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel5.BackColor = System.Drawing.Color.LightGray;
             this.panel5.Location = new System.Drawing.Point(116, 265);
             this.panel5.Name = "panel5";
@@ -506,6 +531,7 @@
             // 
             // boxTeacher
             // 
+            this.boxTeacher.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.boxTeacher.BackColor = System.Drawing.Color.White;
             this.boxTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.boxTeacher.FormattingEnabled = true;
@@ -517,6 +543,7 @@
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(111, 214);
@@ -527,6 +554,7 @@
             // 
             // panel6
             // 
+            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel6.BackColor = System.Drawing.Color.LightGray;
             this.panel6.Location = new System.Drawing.Point(557, 178);
             this.panel6.Name = "panel6";
@@ -535,6 +563,7 @@
             // 
             // txtCourseName
             // 
+            this.txtCourseName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCourseName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCourseName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCourseName.Location = new System.Drawing.Point(557, 151);
@@ -544,6 +573,7 @@
             // 
             // label14
             // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(553, 122);
@@ -554,6 +584,7 @@
             // 
             // panel7
             // 
+            this.panel7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel7.BackColor = System.Drawing.Color.LightGray;
             this.panel7.Location = new System.Drawing.Point(115, 178);
             this.panel7.Name = "panel7";
@@ -562,6 +593,7 @@
             // 
             // txtCourseId
             // 
+            this.txtCourseId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCourseId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCourseId.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCourseId.Location = new System.Drawing.Point(115, 151);
@@ -571,6 +603,7 @@
             // 
             // label15
             // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(112, 122);
@@ -589,18 +622,12 @@
             this.label16.TabIndex = 15;
             this.label16.Text = "Ubdate and Delete Course";
             // 
-            // btnDelete
+            // contextMenuStrip1
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Firebrick;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(709, 317);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(114, 37);
-            this.btnDelete.TabIndex = 22;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // UserControlAddCourse
             // 
@@ -656,13 +683,8 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridViewCourse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblTotalCourse;
         private System.Windows.Forms.Button btnUbdate;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -679,5 +701,10 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
