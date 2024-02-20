@@ -461,6 +461,7 @@
             this.btnDelete.TabIndex = 22;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUbdate
             // 
@@ -476,6 +477,7 @@
             this.btnUbdate.TabIndex = 21;
             this.btnUbdate.Text = "Ubdate";
             this.btnUbdate.UseVisualStyleBackColor = false;
+            this.btnUbdate.Click += new System.EventHandler(this.btnUbdate_Click);
             // 
             // label11
             // 

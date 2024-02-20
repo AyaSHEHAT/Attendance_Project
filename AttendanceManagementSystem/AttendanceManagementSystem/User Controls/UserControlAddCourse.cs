@@ -15,15 +15,20 @@ namespace AttendanceManagementSystem.User_Controls
     public partial class UserControlAddCourse : UserControl
     {
          XDocument xml;
+        private string URL_XML_FILE = @"../../../../XML files\Data.xml";
         List<Course> courses = new List<Course>();
         DataTable dt;
 
         public UserControlAddCourse()
         {
             InitializeComponent();
-           
 
-            XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
+            //call xmlOperation to load data from xml file and save it in courses object
+            loadCourses();
+
+
+
+            XDocument doc = XDocument.Load(URL_XML_FILE);
 
             // Search for all users with role "teacher"
             var teachers = doc.Root
@@ -55,6 +60,7 @@ namespace AttendanceManagementSystem.User_Controls
 
         public void xmlOperation(string file)
         {
+            courses.Clear();
             try
             {
                 xml = XDocument.Load(file);
@@ -97,6 +103,15 @@ namespace AttendanceManagementSystem.User_Controls
 
         }
 
+        public void loadCourses ()
+        {
+            
+            xmlOperation(URL_XML_FILE);
+            dataGridViewCourse.DataSource = courses;
+            dataGridViewCourse.Columns[5].Visible = false;
+
+        }
+
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
 
@@ -104,11 +119,8 @@ namespace AttendanceManagementSystem.User_Controls
 
         private void tabPageSearch_Enter(object sender, EventArgs e)
         {
-            xmlOperation(@"../../../../XML files\Data.xml");
-            
-            dataGridViewCourse.DataSource = courses;
-            dataGridViewCourse.Columns[5].Visible = false;
            
+
             lblTotalCourse.Text =dataGridViewCourse.Rows.Count.ToString();
         }
 
@@ -143,10 +155,41 @@ namespace AttendanceManagementSystem.User_Controls
                 txtCourseName.Text = row.Cells[1].Value.ToString();
                 upDownSession.Value= (int)row.Cells[2].Value;
                 boxTeacher.Text = row.Cells[4].Value.ToString();
-                dateStartDate.Text = row.Cells[3].Value.ToString();
+              //  dateStartDate.Value = Convert.ToDateTime(row.Cells[3].Value);
 
 
             }
+        }
+
+        private void btnUbdate_Click(object sender, EventArgs e)
+        {
+            XElement courseElement = xml.Descendants("course").FirstOrDefault(p => p.Element("cID").Value == txtCourseId.Text);
+            if (courseElement != null)
+            {
+                courseElement.Element("cName").Value = txtCourseName.Text;
+                courseElement.Element("totalsessionNum").Value = upDownSession.Text;
+                courseElement.Element("teacher").Element("teachId").Value = boxTeacher.Text;
+                courseElement.Element("sessions").Elements("session").FirstOrDefault().Element("date").Value = dateStartDate.Text;
+                xml.Save(URL_XML_FILE);
+
+                loadCourses();
+
+            }
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            XElement courseElement = xml.Descendants("course").FirstOrDefault(p => p.Element("cID").Value == txtCourseId.Text);
+            if (courseElement != null)
+            {
+                courseElement.Remove();
+                xml.Save(URL_XML_FILE);
+
+                loadCourses();
+
+            }
+           
         }
     }
 }
