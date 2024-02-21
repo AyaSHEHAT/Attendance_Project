@@ -17,7 +17,7 @@ namespace AttendanceManagementSystem.User_Controls
         public UserControlAddCourse()
         {
             InitializeComponent();
-            XDocument doc = XDocument.Load(@"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml");
+            XDocument doc = XDocument.Load(@"C:\Users\Saber\Desktop\Attendance_Project\XML files\Data.xml");
 
             // Search for all users with role "teacher"
             var teachers = doc.Root

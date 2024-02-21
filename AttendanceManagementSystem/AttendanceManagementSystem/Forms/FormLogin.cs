@@ -49,9 +49,9 @@ namespace AttendanceManagementSystem.Forms
                 if (_role == "admin")
                 {
                     this.Hide();
-                    FormStudent studentForm = new FormStudent();
-                    studentForm.Text = "Hello, World for Admin";
-                    studentForm.ShowDialog();
+                    FormAdmin adminForm = new FormAdmin();
+                    adminForm.Text = "Hello, World for Admin";
+                    adminForm.ShowDialog();
                 }else if(_role == "teacher")
                 {
                     this.Hide();
