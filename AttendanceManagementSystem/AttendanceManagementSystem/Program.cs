@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-namespace AttendanceManagementSystem
+namespace AttendanceManagementSystem.Forms
 {
     internal static class Program
     {
@@ -14,9 +13,10 @@ namespace AttendanceManagementSystem
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAdmin());
+            //XmlOperation.printData();
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new FormLogin());
         }
     }
 }
