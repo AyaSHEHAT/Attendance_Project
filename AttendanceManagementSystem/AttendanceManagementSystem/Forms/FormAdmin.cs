@@ -93,6 +93,7 @@ namespace AttendanceManagementSystem
             MoveSidePanel(buttonAddCourse);
             userControlDashboard1.Visible= false;
             userControlAddCourse1.Visible= true;
+            
         }
 
         

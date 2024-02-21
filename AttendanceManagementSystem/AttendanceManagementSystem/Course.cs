@@ -8,19 +8,23 @@ namespace AttendanceManagementSystem
 {
     internal class Course
     {
-        public string CourseCode { get; set; }
+        public string CourseId { get; set; }
         public string CourseName { get; set; }
+        public int Sessions { get; set; }
         public DateTime Date {  get; set; }
+        public string Teacher { get; set; }
         public string AttendanceStatus { get; set; }
 
 
 
-        public Course(string code, string name , DateTime date , string status)
+       /* public Course(string Id, string name , DateTime startDate , int sessions ,string teacher ,string status)
         {
-            CourseCode = code;
+            CourseId = Id;
             CourseName = name;
-            Date = date;
+            Date = startDate;
+            Sessions = sessions;
+            Teacher = teacher;
             AttendanceStatus = status;
-        }
+        }*/
     }
 }
