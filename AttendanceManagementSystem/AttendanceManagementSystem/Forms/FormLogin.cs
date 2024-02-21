@@ -24,9 +24,9 @@ namespace AttendanceManagementSystem.Forms
             pictureBoxError.Hide();
             pictureBoxHide.Hide();
             labelError.Hide();
-            textBoxPassword.UseSystemPasswordChar = false;
-            pictureBoxShow.Hide();
-            pictureBoxHide.Show();
+            textBoxPassword.UseSystemPasswordChar = true;
+            pictureBoxShow.Show();
+            pictureBoxHide.Hide();
 
         }
 
@@ -48,17 +48,20 @@ namespace AttendanceManagementSystem.Forms
             {
                 if (_role == "admin")
                 {
+                    this.Hide();
                     FormStudent studentForm = new FormStudent();
                     studentForm.Text = "Hello, World for Admin";
                     studentForm.ShowDialog();
                 }else if(_role == "teacher")
                 {
+                    this.Hide();
                     FormStudent studentForm = new FormStudent();
                     studentForm.Text = "Hello, World for Teacher";
                     studentForm.ShowDialog();
                 }
                 else
                 {
+                    this.Hide();
                     FormStudent studentForm = new FormStudent();
                     studentForm.Text = "Hello, World for Student";
                     studentForm.ShowDialog();
