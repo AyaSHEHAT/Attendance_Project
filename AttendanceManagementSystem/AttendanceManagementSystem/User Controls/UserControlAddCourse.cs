@@ -107,6 +107,9 @@ namespace AttendanceManagementSystem.User_Controls
         {
             
             xmlOperation(URL_XML_FILE);
+            dataGridViewCourse.DataError += dataGridViewCourse_DataError;
+            dataGridViewCourse.DataSource = null;
+            dataGridViewCourse.Rows.Clear();
             dataGridViewCourse.DataSource = courses;
             dataGridViewCourse.Columns[5].Visible = false;
 
@@ -134,7 +137,8 @@ namespace AttendanceManagementSystem.User_Controls
             //courses= filteredCourses;
 
             dataGridViewCourse.DataSource = filteredCourses;
-            
+            lblTotalCourse.Text = dataGridViewCourse.Rows.Count.ToString();
+
 
         }
 
@@ -173,6 +177,7 @@ namespace AttendanceManagementSystem.User_Controls
                 xml.Save(URL_XML_FILE);
 
                 loadCourses();
+                tabControlAddClass.SelectedTab = tabPageSearch;
 
             }
 
@@ -185,11 +190,39 @@ namespace AttendanceManagementSystem.User_Controls
             {
                 courseElement.Remove();
                 xml.Save(URL_XML_FILE);
+                try
+                {
+                    loadCourses();
+                    tabControlAddClass.SelectedTab = tabPageSearch;
 
-                loadCourses();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading information: " + ex.Message);
+                   
+                }
 
             }
            
+        }
+
+
+
+       
+
+
+
+        private void dataGridViewCourse_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            tabControlAddClass.SelectedTab = tabPage1;
+        }
+
+        private void dataGridViewCourse_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            e.Cancel = false;
+            
         }
     }
 }

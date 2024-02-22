@@ -336,6 +336,8 @@
             this.dataGridViewCourse.Size = new System.Drawing.Size(872, 318);
             this.dataGridViewCourse.TabIndex = 7;
             this.dataGridViewCourse.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCourse_CellClick);
+            this.dataGridViewCourse.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewCourse_CellMouseDoubleClick);
+            this.dataGridViewCourse.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewCourse_DataError);
             // 
             // Column1
             // 

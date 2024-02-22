@@ -22,3 +22,15 @@ D:\ITI\xml\project\New folder\Attendance_Project\AttendanceManagementSystem\Atte
 D:\ITI\xml\project\New folder\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.csproj.CoreCompileInputs.cache
 D:\ITI\xml\project\New folder\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.exe
 D:\ITI\xml\project\New folder\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.pdb
+D:\ITI\xml\project\project for me\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\AttendanceManagementSystem.exe.config
+D:\ITI\xml\project\project for me\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\AttendanceManagementSystem.exe
+D:\ITI\xml\project\project for me\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\AttendanceManagementSystem.pdb
+D:\ITI\xml\project\project for me\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.csproj.AssemblyReference.cache
+D:\ITI\xml\project\project for me\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.FormAdmin.resources
+D:\ITI\xml\project\project for me\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.Properties.Resources.resources
+D:\ITI\xml\project\project for me\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.User_Controls.UserControlAddCourse.resources
+D:\ITI\xml\project\project for me\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.User_Controls.UserControlDashboard.resources
+D:\ITI\xml\project\project for me\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.csproj.GenerateResource.cache
+D:\ITI\xml\project\project for me\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.csproj.CoreCompileInputs.cache
+D:\ITI\xml\project\project for me\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.exe
+D:\ITI\xml\project\project for me\Attendance_Project\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.pdb
