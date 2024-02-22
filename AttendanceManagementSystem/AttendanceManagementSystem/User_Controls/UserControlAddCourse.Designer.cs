@@ -352,9 +352,9 @@
             this.dataGridViewCourse.Size = new System.Drawing.Size(872, 318);
             this.dataGridViewCourse.TabIndex = 7;
             this.dataGridViewCourse.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCourse_CellClick);
-            this.dataGridViewCourse.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCourse_CellDoubleClick);
+           /* this.dataGridViewCourse.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCourse_CellDoubleClick);
             this.dataGridViewCourse.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewCourse_DataError);
-            // 
+            */// 
             // Column1
             // 
             this.Column1.DataPropertyName = "CourseId";

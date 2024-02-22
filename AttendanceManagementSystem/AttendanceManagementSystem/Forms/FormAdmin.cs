@@ -74,6 +74,10 @@ namespace AttendanceManagementSystem
             userControlDashboard1.Visible= false;
             userControlAddCourse.Visible= false;
             userControlAddUser1.Visible= false;
+
+            userControlAddCourse1.Visible= false;
+            userControlAddUser2.Visible= false;
+            userControlDashboard11.Visible= false;
         }
         public FormAdmin()
         {
@@ -87,7 +91,11 @@ namespace AttendanceManagementSystem
             //userControlDashboard1.Count();
             userControlDashboard1.Visible= true;
             userControlAddCourse.Visible= false;
-            userControlAddUser1.Visible= false;  
+            userControlAddUser1.Visible= false;
+
+            userControlAddCourse1.Visible= false;
+            userControlAddUser2.Visible= false;
+            userControlDashboard11.Visible= true;
         }
 
         private void buttonAddCourse_Click(object sender, EventArgs e)
@@ -96,6 +104,10 @@ namespace AttendanceManagementSystem
             userControlDashboard1.Visible= false;
             userControlAddCourse.Visible= true;
             userControlAddUser1.Visible= false;
+
+            userControlAddCourse1.Visible= true;
+            userControlAddUser2.Visible= false;
+            userControlDashboard11.Visible= false;
         }
 
         
@@ -105,7 +117,10 @@ namespace AttendanceManagementSystem
             MoveSidePanel(buttonAddStd);
             userControlDashboard1.Visible= false;
             userControlAddCourse.Visible= false;
-            userControlAddUser1.Visible= true; 
+            userControlAddUser1.Visible= true;
+            userControlAddCourse1.Visible= false;
+            userControlAddUser2.Visible= true;
+            userControlDashboard11.Visible= false;
         }
 
         private void buttonReport_Click(object sender, EventArgs e)
@@ -114,6 +129,9 @@ namespace AttendanceManagementSystem
             userControlDashboard1.Visible= false;
             userControlAddCourse.Visible= false;
             userControlAddUser1.Visible= false;
+            userControlAddCourse1.Visible= false;
+            userControlAddUser2.Visible= false;
+            userControlDashboard11.Visible= false;
         }
 
         private void MoveSidePanel(Control button)

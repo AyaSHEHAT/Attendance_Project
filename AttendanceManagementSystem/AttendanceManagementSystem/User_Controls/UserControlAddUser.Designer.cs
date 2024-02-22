@@ -31,8 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.tabControlAddUser = new System.Windows.Forms.TabControl();
             this.tabPageAdduser = new System.Windows.Forms.TabPage();
-            this.tabPageSearch = new System.Windows.Forms.TabPage();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.panelRole = new System.Windows.Forms.Panel();
+            this.radioBtnStudent = new System.Windows.Forms.RadioButton();
+            this.radioBtnTeacher = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxUserAddress = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.textBoxUserID = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,18 +52,9 @@
             this.textBoxUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.textBoxUserID = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxUserAddress = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.radioBtnTeacher = new System.Windows.Forms.RadioButton();
-            this.radioBtnStudent = new System.Windows.Forms.RadioButton();
-            this.panelRole = new System.Windows.Forms.Panel();
+            this.tabPageSearch = new System.Windows.Forms.TabPage();
             this.tabPageUpdateandDelete = new System.Windows.Forms.TabPage();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControlAddUser.SuspendLayout();
             this.tabPageAdduser.SuspendLayout();
             this.panelRole.SuspendLayout();
@@ -106,15 +106,110 @@
             this.tabPageAdduser.TabIndex = 0;
             this.tabPageAdduser.Text = "Add User";
             // 
-            // tabPageSearch
+            // panelRole
             // 
-            this.tabPageSearch.Location = new System.Drawing.Point(4, 4);
-            this.tabPageSearch.Name = "tabPageSearch";
-            this.tabPageSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSearch.Size = new System.Drawing.Size(934, 467);
-            this.tabPageSearch.TabIndex = 1;
-            this.tabPageSearch.Text = "Search";
-            this.tabPageSearch.UseVisualStyleBackColor = true;
+            this.panelRole.BackColor = System.Drawing.Color.White;
+            this.panelRole.Controls.Add(this.radioBtnStudent);
+            this.panelRole.Controls.Add(this.radioBtnTeacher);
+            this.panelRole.Location = new System.Drawing.Point(591, 278);
+            this.panelRole.Name = "panelRole";
+            this.panelRole.Size = new System.Drawing.Size(200, 100);
+            this.panelRole.TabIndex = 6;
+            // 
+            // radioBtnStudent
+            // 
+            this.radioBtnStudent.AutoSize = true;
+            this.radioBtnStudent.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnStudent.Location = new System.Drawing.Point(22, 56);
+            this.radioBtnStudent.Name = "radioBtnStudent";
+            this.radioBtnStudent.Size = new System.Drawing.Size(89, 23);
+            this.radioBtnStudent.TabIndex = 1;
+            this.radioBtnStudent.TabStop = true;
+            this.radioBtnStudent.Text = "Student";
+            this.radioBtnStudent.UseVisualStyleBackColor = true;
+            // 
+            // radioBtnTeacher
+            // 
+            this.radioBtnTeacher.AutoSize = true;
+            this.radioBtnTeacher.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnTeacher.Location = new System.Drawing.Point(22, 22);
+            this.radioBtnTeacher.Name = "radioBtnTeacher";
+            this.radioBtnTeacher.Size = new System.Drawing.Size(96, 23);
+            this.radioBtnTeacher.TabIndex = 0;
+            this.radioBtnTeacher.TabStop = true;
+            this.radioBtnTeacher.Text = "Teacher";
+            this.radioBtnTeacher.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(535, 306);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 19);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Role:";
+            // 
+            // textBoxUserAddress
+            // 
+            this.textBoxUserAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUserAddress.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUserAddress.Location = new System.Drawing.Point(112, 330);
+            this.textBoxUserAddress.Name = "textBoxUserAddress";
+            this.textBoxUserAddress.Size = new System.Drawing.Size(270, 21);
+            this.textBoxUserAddress.TabIndex = 5;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.LightGray;
+            this.panel6.Location = new System.Drawing.Point(112, 357);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(270, 2);
+            this.panel6.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.LightGray;
+            this.panel5.Location = new System.Drawing.Point(539, 178);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(270, 2);
+            this.panel5.TabIndex = 0;
+            // 
+            // textBoxUserID
+            // 
+            this.textBoxUserID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUserID.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUserID.Location = new System.Drawing.Point(539, 151);
+            this.textBoxUserID.Name = "textBoxUserID";
+            this.textBoxUserID.Size = new System.Drawing.Size(270, 21);
+            this.textBoxUserID.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(535, 122);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 19);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "ID:";
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxEmail.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail.Location = new System.Drawing.Point(112, 243);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(270, 21);
+            this.textBoxEmail.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.LightGray;
+            this.panel4.Location = new System.Drawing.Point(112, 270);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(270, 2);
+            this.panel4.TabIndex = 0;
             // 
             // buttonAdd
             // 
@@ -128,6 +223,7 @@
             this.buttonAdd.TabIndex = 7;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click_1);
             // 
             // label6
             // 
@@ -214,110 +310,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Add User";
             // 
-            // panel4
+            // tabPageSearch
             // 
-            this.panel4.BackColor = System.Drawing.Color.LightGray;
-            this.panel4.Location = new System.Drawing.Point(112, 270);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(270, 2);
-            this.panel4.TabIndex = 0;
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxEmail.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(112, 243);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(270, 21);
-            this.textBoxEmail.TabIndex = 3;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.LightGray;
-            this.panel5.Location = new System.Drawing.Point(539, 178);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(270, 2);
-            this.panel5.TabIndex = 0;
-            // 
-            // textBoxUserID
-            // 
-            this.textBoxUserID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUserID.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUserID.Location = new System.Drawing.Point(539, 151);
-            this.textBoxUserID.Name = "textBoxUserID";
-            this.textBoxUserID.Size = new System.Drawing.Size(270, 21);
-            this.textBoxUserID.TabIndex = 2;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(535, 122);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 19);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "ID:";
-            // 
-            // textBoxUserAddress
-            // 
-            this.textBoxUserAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUserAddress.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUserAddress.Location = new System.Drawing.Point(112, 330);
-            this.textBoxUserAddress.Name = "textBoxUserAddress";
-            this.textBoxUserAddress.Size = new System.Drawing.Size(270, 21);
-            this.textBoxUserAddress.TabIndex = 5;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.LightGray;
-            this.panel6.Location = new System.Drawing.Point(112, 357);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(270, 2);
-            this.panel6.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(535, 306);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 19);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Role:";
-            // 
-            // radioBtnTeacher
-            // 
-            this.radioBtnTeacher.AutoSize = true;
-            this.radioBtnTeacher.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnTeacher.Location = new System.Drawing.Point(22, 22);
-            this.radioBtnTeacher.Name = "radioBtnTeacher";
-            this.radioBtnTeacher.Size = new System.Drawing.Size(96, 23);
-            this.radioBtnTeacher.TabIndex = 0;
-            this.radioBtnTeacher.TabStop = true;
-            this.radioBtnTeacher.Text = "Teacher";
-            this.radioBtnTeacher.UseVisualStyleBackColor = true;
-            // 
-            // radioBtnStudent
-            // 
-            this.radioBtnStudent.AutoSize = true;
-            this.radioBtnStudent.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnStudent.Location = new System.Drawing.Point(22, 56);
-            this.radioBtnStudent.Name = "radioBtnStudent";
-            this.radioBtnStudent.Size = new System.Drawing.Size(89, 23);
-            this.radioBtnStudent.TabIndex = 1;
-            this.radioBtnStudent.TabStop = true;
-            this.radioBtnStudent.Text = "Student";
-            this.radioBtnStudent.UseVisualStyleBackColor = true;
-            // 
-            // panelRole
-            // 
-            this.panelRole.BackColor = System.Drawing.Color.White;
-            this.panelRole.Controls.Add(this.radioBtnStudent);
-            this.panelRole.Controls.Add(this.radioBtnTeacher);
-            this.panelRole.Location = new System.Drawing.Point(591, 278);
-            this.panelRole.Name = "panelRole";
-            this.panelRole.Size = new System.Drawing.Size(200, 100);
-            this.panelRole.TabIndex = 6;
+            this.tabPageSearch.Location = new System.Drawing.Point(4, 4);
+            this.tabPageSearch.Name = "tabPageSearch";
+            this.tabPageSearch.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageSearch.Size = new System.Drawing.Size(934, 467);
+            this.tabPageSearch.TabIndex = 1;
+            this.tabPageSearch.Text = "Search";
+            this.tabPageSearch.UseVisualStyleBackColor = true;
             // 
             // tabPageUpdateandDelete
             // 
@@ -337,7 +338,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tabControlAddUser);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControlAddUser";
             this.Size = new System.Drawing.Size(942, 501);
             this.tabControlAddUser.ResumeLayout(false);
