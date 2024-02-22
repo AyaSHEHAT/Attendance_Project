@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -32,6 +33,9 @@ namespace AttendanceManagementSystem.User_Controls
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             int numericValue;
+            string role;
+            string EmailRegx = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            string PassRegex = @"^[A-Za-z0-9]{8,}$";
             if (textBoxUserName.Text.Trim()==string.Empty || int.TryParse(textBoxUserName.Text, out numericValue))
             {
                 MessageBox.Show("Enter a valid Course name and must not be a number", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -42,25 +46,43 @@ namespace AttendanceManagementSystem.User_Controls
                 MessageBox.Show("Enter a valid Course ID", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            else if (comboBoxTeacher.SelectedIndex == -1)
+            else if (textBoxEmail.Text.Trim()==string.Empty || Regex.IsMatch(textBoxEmail.Text.Trim(),EmailRegx))
             {
-                MessageBox.Show("Assign the course to specific Teacher", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Enter a vailid email. ex: example@example.com", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else if (textBoxUserPass.Text.Trim()==string.Empty || Regex.IsMatch(textBoxUserPass.Text.Trim(), PassRegex))
+            {
+                MessageBox.Show("Enter a vailid password that must be 8 characters or more and has small and capital letters and digits", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else if (textBoxUserAddress.Text.Trim()==string.Empty)
+            {
+                MessageBox.Show("you must add Address", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else if (radioBtnStudent.Checked==false && radioBtnTeacher.Checked==false)
+            {
+                MessageBox.Show("You must choose the Role Of the user", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             else
             {
-                XElement coursesElement = doc.Root.Element("Courses");
-                XElement newCourseElement = new XElement("course",
-                    new XElement("cID", textBoxCrsId.Text),
-                    new XElement("cName", textBoxCrsName.Text),
-                    new XElement("totalsessionNum", numericUpDownSessionNumber.Value),
-                    new XElement("startDate", dateStartDate.Value.ToString("yyyy-MM-dd")),
-                    // new XElement("sessions",null),
-                    new XElement("teacher",
-                        new XElement("teachId", comboBoxTeacher.SelectedItem.ToString().Split('-')[0].Trim())
-                    )
+                if (radioBtnStudent.Checked)
+                {
+                    role="student";
+                }
+                else { role="teacher"; }
+                XElement usersElement = doc.Root.Element("Users");
+                XElement newUserElement = new XElement("user",
+                    new XElement("id", textBoxUserID.Text),
+                    new XElement("name", textBoxUserName.Text),
+                    new XElement("email", textBoxEmail.Text),
+                    new XElement("address", textBoxUserAddress.Text),
+                     new XElement("userPass", textBoxUserPass.Text),
+                    new XElement("role", role)
                 );
-                coursesElement.Add(newCourseElement);
+                usersElement.Add(newUserElement);
                 doc.Save(@"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml");
                 MessageBox.Show("Course Added Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTextBox();
