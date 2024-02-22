@@ -15,14 +15,15 @@ namespace AttendanceManagementSystem.User_Controls
     public partial class UserControlAddCourse : UserControl
     {
          XDocument xml;
-        private string URL_XML_FILE = @"../../../../XML files\Data.xml";
+        XDocument doc = XDocument.Load(@"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml");
+        private string URL_XML_FILE = @"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml";
         List<Course> courses = new List<Course>();
-        DataTable dt;
+       // DataTable dt;
 
         public UserControlAddCourse()
         {
             InitializeComponent();
-            XDocument doc = XDocument.Load(@"C:\Users\Saber\Desktop\Attendance_Project\XML files\Data.xml");
+           
 
             // Search for all users with role "teacher"
             var teachers = doc.Root
@@ -43,13 +44,22 @@ namespace AttendanceManagementSystem.User_Controls
                 }
 
                 // Set initial selected item if needed
-                comboBoxTeacher.SelectedIndex = 0;
+                comboBoxTeacher.SelectedIndex = -1;
                 //comboBoxTeacher.Enabled = false; // Disable the ComboBox to prevent user selection
             }
             else
             {
                 MessageBox.Show("No teachers found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        public void ClearTextBox()
+        {
+            textBoxCrsName.Clear();
+            textBoxCrsId.Clear();
+            comboBoxTeacher.SelectedIndex = 0;
+            numericUpDownSessionNumber.Value = 1;
+            dateStartDate.Value = DateTime.Now;
+
         }
 
         public void xmlOperation(string file)
@@ -184,6 +194,62 @@ namespace AttendanceManagementSystem.User_Controls
 
             }
            
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+                int numericValue;
+                /*if (textBoxCrsName.Text.Trim()==string.Empty && comboBoxTeacher.SelectedIndex == -1 && textBoxCrsId.Text.Trim()==string.Empty)
+                {
+                    MessageBox.Show("first fill all required", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ///<summary>
+                    ///here i check if course name entered string or no
+                    ///</summary>
+
+                }*/
+                if (textBoxCrsName.Text.Trim()==string.Empty || int.TryParse(textBoxCrsName.Text, out numericValue))
+                {
+                    MessageBox.Show("Enter a valid Course name and must not be a number", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            else if (textBoxCrsId.Text.Trim()==string.Empty)
+                {
+                    MessageBox.Show("Enter a valid Course ID", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else if (comboBoxTeacher.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Assign the course to specific Teacher", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else 
+            {
+     
+
+                XElement coursesElement = doc.Root.Element("Courses");
+
+                XElement newCourseElement = new XElement("course",
+                    new XElement("cID", textBoxCrsId.Text),
+                    new XElement("cName", textBoxCrsName.Text),
+                    new XElement("totalsessionNum", numericUpDownSessionNumber.Value),
+                    new XElement("startDate",  dateStartDate.Value.ToString("yyyy-MM-dd")),
+                    // new XElement("sessions",null),
+                    new XElement("teacher",
+                        new XElement("teachId", comboBoxTeacher.SelectedItem.ToString().Split('-')[0].Trim())
+                    )
+                );
+                coursesElement.Add(newCourseElement);
+                doc.Save(@"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml");
+                MessageBox.Show("Course Added Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearTextBox();
+            }
+
+            
+        }
+
+        private void tabPageAddClass_Leave(object sender, EventArgs e)
+        {
+            ClearTextBox();
         }
     }
 }

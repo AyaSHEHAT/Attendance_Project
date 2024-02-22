@@ -12,10 +12,10 @@ using System.Xml.Linq;
 
 namespace AttendanceManagementSystem.User_Controls
 {
-    public partial class UserControlDashboard : UserControl
+    public partial class UserControlDashboard1 : UserControl
     {
-        private XDocument xml = XDocument.Load(@"C:\Users\Saber\Desktop\Attendance_Project\XML files\Data.xml");
-        public UserControlDashboard()
+        private XDocument xml = XDocument.Load(@"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml");
+        public UserControlDashboard1()
         {
             InitializeComponent();
         }
