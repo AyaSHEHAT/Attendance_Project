@@ -22,7 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\Saber\AppData\Local\Temp\vs6089.tmp\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\USER\AppData\Local\Temp\vsE06B.tmp\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,7 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\Saber\AppData\Local\Temp\vs6089.tmp\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\USER\AppData\Local\Temp\vsE06B.tmp\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>group.ico</ApplicationIcon>
@@ -211,9 +211,7 @@
     <None Include="Resources\images.png" />
     <None Include="Resources\images.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="forms\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>

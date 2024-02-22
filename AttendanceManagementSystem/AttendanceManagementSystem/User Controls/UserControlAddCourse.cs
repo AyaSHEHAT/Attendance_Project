@@ -17,12 +17,15 @@ namespace AttendanceManagementSystem.User_Controls
          XDocument xml;
         private string URL_XML_FILE = @"../../../../XML files\Data.xml";
         List<Course> courses = new List<Course>();
-        DataTable dt;
+       
 
         public UserControlAddCourse()
         {
             InitializeComponent();
-            XDocument doc = XDocument.Load(@"C:\Users\Saber\Desktop\Attendance_Project\XML files\Data.xml");
+            //call loadcourses to load data from xml file and save it in courses object
+            loadCourses();
+
+            XDocument doc = XDocument.Load(@"../../../../\XML files\Data.xml");
 
             // Search for all users with role "teacher"
             var teachers = doc.Root
@@ -99,8 +102,11 @@ namespace AttendanceManagementSystem.User_Controls
 
         public void loadCourses ()
         {
-            
+
             xmlOperation(URL_XML_FILE);
+            
+            dataGridViewCourse.DataSource = null;
+            dataGridViewCourse.Rows.Clear();
             dataGridViewCourse.DataSource = courses;
             dataGridViewCourse.Columns[5].Visible = false;
 
@@ -121,14 +127,15 @@ namespace AttendanceManagementSystem.User_Controls
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string searchText = txtSearch.Text.Trim().ToLower();
-          
+
 
             var filteredCourses = courses.Where(course => course.CourseName.ToLower().Contains(searchText)).ToList();
             // Bind the filtered data to the DataGridView
             //courses= filteredCourses;
 
             dataGridViewCourse.DataSource = filteredCourses;
-            
+            lblTotalCourse.Text = dataGridViewCourse.Rows.Count.ToString();
+
 
         }
 
@@ -167,7 +174,7 @@ namespace AttendanceManagementSystem.User_Controls
                 xml.Save(URL_XML_FILE);
 
                 loadCourses();
-
+                tabControlAddClass.SelectedTab = tabPageSearch;
             }
 
         }
@@ -181,9 +188,21 @@ namespace AttendanceManagementSystem.User_Controls
                 xml.Save(URL_XML_FILE);
 
                 loadCourses();
+                tabControlAddClass.SelectedTab = tabPageSearch;
 
             }
            
+        }
+
+        private void dataGridViewCourse_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tabControlAddClass.SelectedTab = tabPage1;
+        }
+
+        private void dataGridViewCourse_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            e.Cancel = false;
         }
     }
 }
