@@ -15,15 +15,17 @@ namespace AttendanceManagementSystem.User_Controls
     public partial class UserControlAddCourse : UserControl
     {
          XDocument xml;
-        XDocument doc = XDocument.Load(@"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml");
-        private string URL_XML_FILE = @"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml";
+        XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
+        private string URL_XML_FILE = @"../../../../XML files\Data.xml";
         List<Course> courses = new List<Course>();
        // DataTable dt;
 
         public UserControlAddCourse()
         {
             InitializeComponent();
-           
+
+            //call loadcourse to load data from xml file and save it in courses object
+            loadCourses();
 
             // Search for all users with role "teacher"
             var teachers = doc.Root
@@ -73,7 +75,7 @@ namespace AttendanceManagementSystem.User_Controls
             {
                 MessageBox.Show("Error loading information: " + ex.Message);
             }
-           
+
 
             foreach (XElement courseElement in xml.Descendants("course"))
             {
@@ -81,39 +83,44 @@ namespace AttendanceManagementSystem.User_Controls
                 string courseName = courseElement.Element("cName").Value;
                 int sessions = int.Parse(courseElement.Element("totalsessionNum").Value);
                 string teacherId = courseElement.Element("teacher").Element("teachId").Value;
+                DateTime date = DateTime.Parse(courseElement.Element("startDate").Value);
 
                 // Get the first session element
-                XElement firstSession = courseElement.Element("sessions").Elements("session").FirstOrDefault();
+                /*XElement firstSession = courseElement.Element("sessions").Elements("session").FirstOrDefault();
                 if (firstSession != null)
                 {
-                    DateTime date = DateTime.Parse(firstSession.Element("date").Value);
+                    DateTime date1 = DateTime.Parse(firstSession.Element("date").Value);*/
 
-                    
-                        courses.Add(new Course
-                        {
-                            CourseId = courseId,
-                            CourseName = courseName,
-                            Sessions = sessions,
-                            Date = date,
-                            Teacher = teacherId,
-                            
-                        });
 
-                       
-                    
-                }
+                    courses.Add(new Course
+                    {
+                        CourseId = courseId,
+                        CourseName = courseName,
+                        Sessions = sessions,
+                        Date = date,
+                        Teacher = teacherId,
+
+                    });
+
+
+
+                
             }
+
+
 
 
         }
 
         public void loadCourses ()
         {
-            
+
             xmlOperation(URL_XML_FILE);
+            dataGridViewCourse.DataError += dataGridViewCourse_DataError;
+            dataGridViewCourse.DataSource = null;
+            dataGridViewCourse.Rows.Clear();
             dataGridViewCourse.DataSource = courses;
             dataGridViewCourse.Columns[5].Visible = false;
-
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -138,7 +145,8 @@ namespace AttendanceManagementSystem.User_Controls
             //courses= filteredCourses;
 
             dataGridViewCourse.DataSource = filteredCourses;
-            
+            lblTotalCourse.Text = dataGridViewCourse.Rows.Count.ToString();
+
 
         }
 
@@ -173,10 +181,11 @@ namespace AttendanceManagementSystem.User_Controls
                 courseElement.Element("cName").Value = txtCourseName.Text;
                 courseElement.Element("totalsessionNum").Value = upDownSession.Text;
                 courseElement.Element("teacher").Element("teachId").Value = boxTeacher.Text;
-                courseElement.Element("sessions").Elements("session").FirstOrDefault().Element("date").Value = dateStartDate.Text;
+                courseElement.Element("startDate").Value = dateStartDate.Text;
                 xml.Save(URL_XML_FILE);
 
                 loadCourses();
+                tabControlAddClass.SelectedTab = tabPageSearch;
 
             }
 
@@ -189,11 +198,20 @@ namespace AttendanceManagementSystem.User_Controls
             {
                 courseElement.Remove();
                 xml.Save(URL_XML_FILE);
+                try
+                {
+                    loadCourses();
+                    tabControlAddClass.SelectedTab = tabPageSearch;
 
-                loadCourses();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading information: " + ex.Message);
+
+                }
 
             }
-           
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -239,7 +257,7 @@ namespace AttendanceManagementSystem.User_Controls
                     )
                 );
                 coursesElement.Add(newCourseElement);
-                doc.Save(@"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml");
+                doc.Save(@"../../../../XML files\Data.xml");
                 MessageBox.Show("Course Added Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTextBox();
             }
@@ -250,6 +268,31 @@ namespace AttendanceManagementSystem.User_Controls
         private void tabPageAddClass_Leave(object sender, EventArgs e)
         {
             ClearTextBox();
+        }
+
+        private void dataGridViewCourse_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tabControlAddClass.SelectedTab = tabPage1;
+        }
+
+        private void dataGridViewCourse_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            e.Cancel = false;
+        }
+
+        private void tabPage1_Leave(object sender, EventArgs e)
+        {
+            ClearTextBox1();
+        }
+
+        private void ClearTextBox1()
+        {
+            txtCourseName.Clear();
+            txtCourseId.Clear();
+            //boxTeacher.SelectedIndex = 0;
+            upDownSession.Value = 1;
+            dateStartDate.Value = DateTime.Now;
         }
     }
 }

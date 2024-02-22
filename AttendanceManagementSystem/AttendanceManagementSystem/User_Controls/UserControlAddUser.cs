@@ -14,7 +14,7 @@ namespace AttendanceManagementSystem.User_Controls
 {
     public partial class UserControlAddUser : UserControl
     {
-        XDocument doc = XDocument.Load(@"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml");
+        XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
 
         public UserControlAddUser()
         {

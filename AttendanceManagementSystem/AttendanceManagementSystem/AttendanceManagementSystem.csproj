@@ -37,7 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\ayah\AppData\Local\Temp\vs7A0A.tmp\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\USER\AppData\Local\Temp\vs57C1.tmp\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,7 +47,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\ayah\AppData\Local\Temp\vs7A0A.tmp\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\USER\AppData\Local\Temp\vs57C1.tmp\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>group.ico</ApplicationIcon>
