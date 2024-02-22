@@ -1,6 +1,6 @@
 ﻿namespace AttendanceManagementSystem.User_Controls
 {
-    partial class UserControlDashboard
+    partial class UserControlDashboard1
     {
         /// <summary> 
         /// Required designer variable.

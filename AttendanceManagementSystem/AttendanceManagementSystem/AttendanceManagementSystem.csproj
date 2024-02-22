@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -75,17 +90,23 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Teacher.cs" />
-    <Compile Include="User Controls\UserControlAddCourse.cs">
+    <Compile Include="User_Controls\UserControlAddCourse.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\UserControlAddCourse.Designer.cs">
+    <Compile Include="User_Controls\UserControlAddCourse.Designer.cs">
       <DependentUpon>UserControlAddCourse.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\UserControlDashboard.cs">
+    <Compile Include="User_Controls\UserControlAddUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\UserControlDashboard.Designer.cs">
-      <DependentUpon>UserControlDashboard.cs</DependentUpon>
+    <Compile Include="User_Controls\UserControlAddUser.Designer.cs">
+      <DependentUpon>UserControlAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\UserControlDashboard1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UserControlDashboard1.Designer.cs">
+      <DependentUpon>UserControlDashboard1.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="XmlOperation.cs" />
@@ -108,11 +129,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="User Controls\UserControlAddCourse.resx">
+    <EmbeddedResource Include="User_Controls\UserControlAddCourse.resx">
       <DependentUpon>UserControlAddCourse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\UserControlDashboard.resx">
-      <DependentUpon>UserControlDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="User_Controls\UserControlAddUser.resx">
+      <DependentUpon>UserControlAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UserControlDashboard1.resx">
+      <DependentUpon>UserControlDashboard1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
