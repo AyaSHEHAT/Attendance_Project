@@ -261,8 +261,9 @@ namespace AttendanceManagementSystem.User_Controls
                 MessageBox.Show("Course Added Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTextBox();
             }
+            loadCourses();
 
-            
+
         }
 
         private void tabPageAddClass_Leave(object sender, EventArgs e)

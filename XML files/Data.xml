@@ -274,5 +274,23 @@
         <teachId>8456</teachId>
       </teacher>
     </course>
+    <course>
+      <cID>300</cID>
+      <cName>node</cName>
+      <totalsessionNum>10</totalsessionNum>
+      <startDate>2024-02-23</startDate>
+      <teacher>
+        <teachId>8123</teachId>
+      </teacher>
+    </course>
+    <course>
+      <cID>400</cID>
+      <cName>js</cName>
+      <totalsessionNum>10</totalsessionNum>
+      <startDate>2024-02-23</startDate>
+      <teacher>
+        <teachId>8123</teachId>
+      </teacher>
+    </course>
   </Courses>
 </Data>
