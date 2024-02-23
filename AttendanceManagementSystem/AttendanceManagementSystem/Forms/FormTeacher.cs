@@ -12,11 +12,11 @@ using System.Xml;
 
 namespace AttendanceManagementSystem
 {
-    public partial class FormAdmin : Form
+    public partial class FormTeacher: Form
     {
         //public string Username="Aya", Role="student";
-        //public string Username = "Asmaa", Role = "teacher";
-        public string Username = "Nada", Role = "admin";
+        public string Username = "Asmaa", Role = "teacher";
+        //public string Username = "Nada", Role = "admin";
        
         //formMain.Username=textBoxName.Text;
         //formMain.Role=Check;
@@ -41,19 +41,7 @@ namespace AttendanceManagementSystem
             //panelExpand.Visible = false;
             labelUsername.Text = Username;
             //labelRole.Text = Role;
-            if (Role =="student")
-            {
-                buttonDashboard.Hide();
-                buttonAddCourse.Hide();
-                buttonAddStd.Hide();
-                buttonAttendance.Hide();
-            }else if(Role =="teacher")
-            {
-                buttonDashboard.Hide();
-                buttonAddCourse.Hide();
-                buttonAddStd.Hide();
-                buttonAttendance.Show();
-            }
+           
         }
 
         private void buttonMinimize_Click(object sender, EventArgs e)
@@ -74,12 +62,13 @@ namespace AttendanceManagementSystem
             userControlDashboard1.Visible= false;
             userControlAddCourse.Visible= false;
             userControlAddUser1.Visible= false;
+            userControlTeacherReport1.Visible= false;
 
-            userControlAddCourse1.Visible= false;
+          /*  userControlAddCourse1.Visible= false;
             userControlAddUser2.Visible= false;
-            userControlDashboard11.Visible= false;
+            userControlDashboard11.Visible= false;*/
         }
-        public FormAdmin()
+        public FormTeacher()
         {
             InitializeComponent();
             timerDtaeAndTime.Start();
@@ -92,27 +81,28 @@ namespace AttendanceManagementSystem
             userControlDashboard1.Visible= true;
             userControlAddCourse.Visible= false;
             userControlAddUser1.Visible= false;
+            userControlTeacherReport1.Visible= false;
 
-            userControlAddCourse1.Visible= false;
+           /* userControlAddCourse1.Visible= false;
             userControlAddUser2.Visible= false;
-            userControlDashboard11.Visible= true;
+            userControlDashboard11.Visible= true;*/
         }
 
-        private void buttonAddCourse_Click(object sender, EventArgs e)
+        /*  private void buttonAddCourse_Click(object sender, EventArgs e)
         {
             MoveSidePanel(buttonAddCourse);
             userControlDashboard1.Visible= false;
             userControlAddCourse.Visible= true;
             userControlAddUser1.Visible= false;
 
-            userControlAddCourse1.Visible= true;
+          userControlAddCourse1.Visible= true;
             userControlAddUser2.Visible= false;
             userControlDashboard11.Visible= false;
-        }
+        }*/
 
         
 
-        private void buttonAddStd_Click(object sender, EventArgs e)
+       /* private void buttonAddStd_Click(object sender, EventArgs e)
         {
             MoveSidePanel(buttonAddStd);
             userControlDashboard1.Visible= false;
@@ -121,7 +111,7 @@ namespace AttendanceManagementSystem
             userControlAddCourse1.Visible= false;
             userControlAddUser2.Visible= true;
             userControlDashboard11.Visible= false;
-        }
+        }*/
 
         private void buttonReport_Click(object sender, EventArgs e)
         {
@@ -129,9 +119,10 @@ namespace AttendanceManagementSystem
             userControlDashboard1.Visible= false;
             userControlAddCourse.Visible= false;
             userControlAddUser1.Visible= false;
-            userControlAddCourse1.Visible= false;
+            userControlTeacherReport1.Visible= true;
+            /*userControlAddCourse1.Visible= false;
             userControlAddUser2.Visible= false;
-            userControlDashboard11.Visible= false;
+            userControlDashboard11.Visible= false;*/
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)

@@ -68,6 +68,12 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Course.cs" />
+    <Compile Include="Forms\FormTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTeacher.Designer.cs">
+      <DependentUpon>FormTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,7 +115,16 @@
       <DependentUpon>UserControlDashboard1.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="User_Controls\UserControlTeacherReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UserControlTeacherReport.Designer.cs">
+      <DependentUpon>UserControlTeacherReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="XmlOperation.cs" />
+    <EmbeddedResource Include="Forms\FormTeacher.resx">
+      <DependentUpon>FormTeacher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UserControlDashboard1.resx">
       <DependentUpon>UserControlDashboard1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UserControlTeacherReport.resx">
+      <DependentUpon>UserControlTeacherReport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

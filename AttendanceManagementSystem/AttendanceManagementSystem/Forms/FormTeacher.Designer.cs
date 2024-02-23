@@ -1,6 +1,6 @@
 ﻿namespace AttendanceManagementSystem
 {
-    partial class FormAdmin
+    partial class FormTeacher
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTeacher));
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonReport = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -38,10 +38,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonAddStd = new System.Windows.Forms.Button();
             this.buttonDashboard = new System.Windows.Forms.Button();
             this.buttonAttendance = new System.Windows.Forms.Button();
-            this.buttonAddCourse = new System.Windows.Forms.Button();
             this.panelBack = new System.Windows.Forms.Panel();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
@@ -49,12 +47,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.timerDtaeAndTime = new System.Windows.Forms.Timer(this.components);
-            this.userControlAddCourse1 = new AttendanceManagementSystem.User_Controls.UserControlAddCourse();
-            this.userControlDashboard11 = new AttendanceManagementSystem.User_Controls.UserControlDashboard1();
+            this.userControlTeacherReport1 = new AttendanceManagementSystem.User_Controls.UserControlTeacherReport();
             this.userControlAddCourse = new AttendanceManagementSystem.User_Controls.UserControlAddCourse();
             this.userControlDashboard1 = new AttendanceManagementSystem.User_Controls.UserControlDashboard1();
             this.userControlAddUser1 = new AttendanceManagementSystem.User_Controls.UserControlAddUser();
-            this.userControlAddUser2 = new AttendanceManagementSystem.User_Controls.UserControlAddUser();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,16 +64,13 @@
             this.panel1.Controls.Add(this.buttonReport);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.buttonAddStd);
             this.panel1.Controls.Add(this.buttonDashboard);
             this.panel1.Controls.Add(this.buttonAttendance);
-            this.panel1.Controls.Add(this.buttonAddCourse);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(280, 720);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // buttonReport
             // 
@@ -86,7 +79,7 @@
             this.buttonReport.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReport.ForeColor = System.Drawing.Color.White;
             this.buttonReport.Image = global::AttendanceManagementSystem.Properties.Resources.report;
-            this.buttonReport.Location = new System.Drawing.Point(14, 456);
+            this.buttonReport.Location = new System.Drawing.Point(9, 318);
             this.buttonReport.Name = "buttonReport";
             this.buttonReport.Size = new System.Drawing.Size(271, 63);
             this.buttonReport.TabIndex = 0;
@@ -104,7 +97,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(8, 540);
             this.panel4.TabIndex = 0;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panelSlide
             // 
@@ -125,7 +117,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(280, 180);
             this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label2
             // 
@@ -137,7 +128,6 @@
             this.label2.Size = new System.Drawing.Size(79, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "System";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -149,7 +139,6 @@
             this.label1.Size = new System.Drawing.Size(270, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Attendance Management ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -161,23 +150,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // buttonAddStd
-            // 
-            this.buttonAddStd.FlatAppearance.BorderSize = 0;
-            this.buttonAddStd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddStd.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddStd.ForeColor = System.Drawing.Color.White;
-            this.buttonAddStd.Image = global::AttendanceManagementSystem.Properties.Resources.groupStd;
-            this.buttonAddStd.Location = new System.Drawing.Point(12, 387);
-            this.buttonAddStd.Name = "buttonAddStd";
-            this.buttonAddStd.Size = new System.Drawing.Size(271, 63);
-            this.buttonAddStd.TabIndex = 0;
-            this.buttonAddStd.Text = "        Add User";
-            this.buttonAddStd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAddStd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonAddStd.UseVisualStyleBackColor = true;
-            this.buttonAddStd.Click += new System.EventHandler(this.buttonAddStd_Click);
             // 
             // buttonDashboard
             // 
@@ -212,23 +184,6 @@
             this.buttonAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAttendance.UseVisualStyleBackColor = true;
             this.buttonAttendance.Click += new System.EventHandler(this.buttonAttendance_Click);
-            // 
-            // buttonAddCourse
-            // 
-            this.buttonAddCourse.FlatAppearance.BorderSize = 0;
-            this.buttonAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddCourse.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddCourse.ForeColor = System.Drawing.Color.White;
-            this.buttonAddCourse.Image = global::AttendanceManagementSystem.Properties.Resources.books__2_;
-            this.buttonAddCourse.Location = new System.Drawing.Point(9, 318);
-            this.buttonAddCourse.Name = "buttonAddCourse";
-            this.buttonAddCourse.Size = new System.Drawing.Size(271, 63);
-            this.buttonAddCourse.TabIndex = 0;
-            this.buttonAddCourse.Text = "        Add Course";
-            this.buttonAddCourse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAddCourse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonAddCourse.UseVisualStyleBackColor = true;
-            this.buttonAddCourse.Click += new System.EventHandler(this.buttonAddCourse_Click);
             // 
             // panelBack
             // 
@@ -300,7 +255,6 @@
             this.label4.Size = new System.Drawing.Size(110, 23);
             this.label4.TabIndex = 0;
             this.label4.Text = "Welcome:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // labelTime
             // 
@@ -318,30 +272,16 @@
             // 
             this.timerDtaeAndTime.Tick += new System.EventHandler(this.timerDtaeAndTime_Tick);
             // 
-            // userControlAddCourse1
+            // userControlTeacherReport1
             // 
-            this.userControlAddCourse1.BackColor = System.Drawing.Color.White;
-            this.userControlAddCourse1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlAddCourse1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlAddCourse1.Location = new System.Drawing.Point(280, 180);
-            this.userControlAddCourse1.Margin = new System.Windows.Forms.Padding(4);
-            this.userControlAddCourse1.Name = "userControlAddCourse1";
-            this.userControlAddCourse1.Size = new System.Drawing.Size(981, 540);
-            this.userControlAddCourse1.TabIndex = 2;
-            this.userControlAddCourse1.Visible = false;
-            this.userControlAddCourse1.Load += new System.EventHandler(this.userControlAddCourse1_Load);
-            // 
-            // userControlDashboard11
-            // 
-            this.userControlDashboard11.BackColor = System.Drawing.Color.White;
-            this.userControlDashboard11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlDashboard11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlDashboard11.Location = new System.Drawing.Point(280, 180);
-            this.userControlDashboard11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.userControlDashboard11.Name = "userControlDashboard11";
-            this.userControlDashboard11.Size = new System.Drawing.Size(981, 540);
-            this.userControlDashboard11.TabIndex = 1;
-            this.userControlDashboard11.Load += new System.EventHandler(this.userControlDashboard11_Load);
+            this.userControlTeacherReport1.BackColor = System.Drawing.Color.White;
+            this.userControlTeacherReport1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlTeacherReport1.Location = new System.Drawing.Point(280, 180);
+            this.userControlTeacherReport1.Margin = new System.Windows.Forms.Padding(4);
+            this.userControlTeacherReport1.Name = "userControlTeacherReport1";
+            this.userControlTeacherReport1.Size = new System.Drawing.Size(981, 540);
+            this.userControlTeacherReport1.TabIndex = 1;
+            this.userControlTeacherReport1.Visible = false;
             // 
             // userControlAddCourse
             // 
@@ -381,34 +321,20 @@
             this.userControlAddUser1.Visible = false;
             this.userControlAddUser1.Load += new System.EventHandler(this.userControlAddUser1_Load);
             // 
-            // userControlAddUser2
-            // 
-            this.userControlAddUser2.BackColor = System.Drawing.Color.White;
-            this.userControlAddUser2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlAddUser2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlAddUser2.Location = new System.Drawing.Point(280, 180);
-            this.userControlAddUser2.Margin = new System.Windows.Forms.Padding(4);
-            this.userControlAddUser2.Name = "userControlAddUser2";
-            this.userControlAddUser2.Size = new System.Drawing.Size(981, 540);
-            this.userControlAddUser2.TabIndex = 3;
-            this.userControlAddUser2.Visible = false;
-            // 
-            // FormAdmin
+            // FormTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1261, 720);
-            this.Controls.Add(this.userControlAddUser2);
-            this.Controls.Add(this.userControlAddCourse1);
-            this.Controls.Add(this.userControlDashboard11);
+            this.Controls.Add(this.userControlTeacherReport1);
             this.Controls.Add(this.panelBack);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormAdmin";
+            this.Name = "FormTeacher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Attendance Management System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -441,16 +367,12 @@
         private System.Windows.Forms.Button buttonDashboard;
         private System.Windows.Forms.Panel panelSlide;
         private System.Windows.Forms.Button buttonAttendance;
-        private System.Windows.Forms.Button buttonAddCourse;
-        private System.Windows.Forms.Button buttonAddStd;
         private System.Windows.Forms.Button buttonReport;
         private System.Windows.Forms.Timer timerDtaeAndTime;
         private User_Controls.UserControlDashboard1 userControlDashboard1;
         private User_Controls.UserControlAddCourse userControlAddCourse;
         private User_Controls.UserControlAddUser userControlAddUser1;
-        private User_Controls.UserControlDashboard1 userControlDashboard11;
-        private User_Controls.UserControlAddCourse userControlAddCourse1;
-        private User_Controls.UserControlAddUser userControlAddUser2;
+        private User_Controls.UserControlTeacherReport userControlTeacherReport1;
     }
 }
 
