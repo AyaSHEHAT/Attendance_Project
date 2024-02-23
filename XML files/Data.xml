@@ -71,7 +71,7 @@
       <cID>100</cID>
       <cName>XML</cName>
       <totalsessionNum>6</totalsessionNum>
-      <startDate>2020-12-20</startDate>
+      <startDate>23/02/2024</startDate>
       <sessions>
         <session>
           <date>2021-01-01</date>
@@ -163,14 +163,14 @@
         </session>
       </sessions>
       <teacher>
-        <teachId>8123</teachId>
+        <teachId>8789</teachId>
       </teacher>
     </course>
     <course>
       <cID>200</cID>
       <cName>C#</cName>
       <totalsessionNum>6</totalsessionNum>
-      <startDate>2020-01-20</startDate>
+      <startDate>23/02/2024</startDate>
       <sessions>
         <session>
           <date>2021-02-01</date>
@@ -262,14 +262,14 @@
         </session>
       </sessions>
       <teacher>
-        <teachId>8456</teachId>
+        <teachId>8789</teachId>
       </teacher>
     </course>
     <course>
       <cID>201</cID>
-      <cName>Angular</cName>
-      <totalsessionNum>6</totalsessionNum>
-      <startDate>2024-02-22</startDate>
+      <cName>js</cName>
+      <totalsessionNum>12</totalsessionNum>
+      <startDate>23/02/2024</startDate>
       <teacher>
         <teachId>8456</teachId>
       </teacher>
@@ -277,17 +277,8 @@
     <course>
       <cID>300</cID>
       <cName>node</cName>
-      <totalsessionNum>10</totalsessionNum>
-      <startDate>2024-02-23</startDate>
-      <teacher>
-        <teachId>8123</teachId>
-      </teacher>
-    </course>
-    <course>
-      <cID>400</cID>
-      <cName>js</cName>
-      <totalsessionNum>10</totalsessionNum>
-      <startDate>2024-02-23</startDate>
+      <totalsessionNum>9</totalsessionNum>
+      <startDate>23/02/2024</startDate>
       <teacher>
         <teachId>8123</teachId>
       </teacher>

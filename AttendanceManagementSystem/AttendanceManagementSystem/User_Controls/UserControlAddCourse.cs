@@ -18,7 +18,9 @@ namespace AttendanceManagementSystem.User_Controls
         XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
         private string URL_XML_FILE = @"../../../../XML files\Data.xml";
         List<Course> courses = new List<Course>();
-       // DataTable dt;
+        List<XElement> teachers;
+        // DataTable dt;
+        string teacherName;
 
         public UserControlAddCourse()
         {
@@ -28,7 +30,7 @@ namespace AttendanceManagementSystem.User_Controls
             loadCourses();
 
             // Search for all users with role "teacher"
-            var teachers = doc.Root
+             teachers = doc.Root
                              .Element("Users")
                              .Elements("user")
                              .Where(u => u.Element("role")?.Value == "teacher")
@@ -43,6 +45,7 @@ namespace AttendanceManagementSystem.User_Controls
 
                     // Display teacher ID and name
                     comboBoxTeacher.Items.Add($"{teacherId} - {teacherName}");
+                    boxTeacher.Items.Add($"{teacherName}");
                 }
 
                 // Set initial selected item if needed
@@ -90,6 +93,25 @@ namespace AttendanceManagementSystem.User_Controls
                 if (firstSession != null)
                 {
                     DateTime date1 = DateTime.Parse(firstSession.Element("date").Value);*/
+                // string teacherName;
+                teachers = doc.Root
+                            .Element("Users")
+                            .Elements("user")
+                            .Where(u => u.Element("role")?.Value == "teacher")
+                            .ToList();
+
+                if (teachers != null)
+                {
+                    foreach (var teacher in teachers)
+                    {
+                        string teacherId1 = teacher.Element("id")?.Value;
+                        if (teacherId == teacherId1)
+                        {
+                            teacherName = teacher.Element("name")?.Value;
+                            break;
+                         }
+
+                    }
 
 
                     courses.Add(new Course
@@ -98,11 +120,11 @@ namespace AttendanceManagementSystem.User_Controls
                         CourseName = courseName,
                         Sessions = sessions,
                         Date = date,
-                        Teacher = teacherId,
+                        Teacher = teacherName,
 
                     });
 
-
+                }
 
                 
             }
@@ -166,12 +188,20 @@ namespace AttendanceManagementSystem.User_Controls
                 txtCourseId.Text = row.Cells[0].Value.ToString();
                 txtCourseName.Text = row.Cells[1].Value.ToString();
                 upDownSession.Value= (int)row.Cells[2].Value;
-                boxTeacher.Text = row.Cells[4].Value.ToString();
-              //  dateStartDate.Value = Convert.ToDateTime(row.Cells[3].Value);
+                if(row.Cells[4].Value != null)
+                {
+                    boxTeacher.Text = row.Cells[4].Value.ToString();
+                }
+                
+               
+                //dateStartDate.Value = Convert.ToDateTime(row.Cells[3].Value);
 
 
             }
         }
+        string tname;
+        string tname1;
+        string tid;
 
         private void btnUbdate_Click(object sender, EventArgs e)
         {
@@ -180,7 +210,37 @@ namespace AttendanceManagementSystem.User_Controls
             {
                 courseElement.Element("cName").Value = txtCourseName.Text;
                 courseElement.Element("totalsessionNum").Value = upDownSession.Text;
-                courseElement.Element("teacher").Element("teachId").Value = boxTeacher.Text;
+                tname1 = boxTeacher.Text;
+
+                teachers = doc.Root
+                            .Element("Users")
+                            .Elements("user")
+                            .Where(u => u.Element("role")?.Value == "teacher")
+                            .ToList();
+
+                if (teachers != null)
+                {
+                   
+                    foreach (var teacher in teachers)
+                    {
+                        tname = teacher.Element("name")?.Value;
+                        if (tname1 == tname)
+                        {
+                            if (teacher.Element("id")?.Value != null)
+                            {
+                                courseElement.Element("teacher").Element("teachId").Value = teacher.Element("id")?.Value;
+                                break;
+                            }
+                            else
+                            {
+                                courseElement.Element("teacher").Element("teachId").Value = "8456";
+                            }
+                            
+                        }
+                    }
+                }
+
+                        //courseElement.Element("teacher").Element("teachId").Value = boxTeacher.Text;
                 courseElement.Element("startDate").Value = dateStartDate.Text;
                 xml.Save(URL_XML_FILE);
 
@@ -291,7 +351,7 @@ namespace AttendanceManagementSystem.User_Controls
         {
             txtCourseName.Clear();
             txtCourseId.Clear();
-            //boxTeacher.SelectedIndex = 0;
+            boxTeacher.SelectedIndex = 0;
             upDownSession.Value = 1;
             dateStartDate.Value = DateTime.Now;
         }
