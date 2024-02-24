@@ -15,8 +15,7 @@ namespace AttendanceManagementSystem
         public string Phone { get; set; }
         public string Address { get; set; }
         public string Role { get; set; }
-
-        public User(int id, string name , string email , string password , string phone , string address , string role)
+        public User(int id , string name , string email , string password , string phone , string address , string role)
         {
             Id = id;
             Name = name;
