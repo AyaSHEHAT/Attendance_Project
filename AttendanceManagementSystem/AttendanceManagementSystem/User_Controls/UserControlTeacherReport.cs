@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace AttendanceManagementSystem.User_Controls
 
         XDocument xml;
         XDocument doc = XDocument.Load(@"E:\ITI-PD&BI\XML\XML-Project\Old2-Attendance_Project\XML files\Data.xml");
-        private string URL_XML_FILE = @"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml";
+        //private string URL_XML_FILE = @"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml";
         List<User> Users = new List<User>();
         public UserControlTeacherReport()
         {
@@ -44,31 +45,33 @@ namespace AttendanceManagementSystem.User_Controls
             {
                 MessageBox.Show("No Courses found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //comboBoxCourses.SelectedIndexChanged += comboBoxCourses_SelectedIndexChanged;
 
         }
-        public void loadCourses()
-        {
-            // Check if a course is selected in the comboBox
 
-            if (comboBoxCourses.SelectedIndex >= 0)
-            {
+        /* public void loadCourses()
+         {
+             // Check if a course is selected in the comboBox
 
-                // Get the selected course from comboBoxCourses
-                string selectedCourse = comboBoxCourses.SelectedItem.ToString();
-                // Extract the course ID from the selectedCourse string
-                string courseId = selectedCourse.Split('-')[0].Trim();
+             if (comboBoxCourses.SelectedIndex >= 0)
+             {
 
-                // Apply XSLT transformation with the selected course ID
-                applyXsltTransformation(courseId);
-            }
-            else
-            {
-                MessageBox.Show("Please select a course.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+                 // Get the selected course from comboBoxCourses
+                 string selectedCourse = comboBoxCourses.SelectedItem.ToString();
+                 MessageBox.Show($"{selectedCourse}", "", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                 // Extract the course ID from the selectedCourse string
+                 string courseName = selectedCourse.Split('-')[1].Trim();
+                 MessageBox.Show($"{courseName}", "", MessageBoxButtons.OK, MessageBoxIcon.Question);
 
-        private void applyXsltTransformation(string courseName)
+                 // Apply XSLT transformation with the selected course ID
+                 applyXsltTransformation(courseName);
+             }
+             else
+             {
+                 MessageBox.Show("Please select a course.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }
+         }*/
+
+        /*private void applyXsltTransformation(string courseName)
         {
             // Load the XSLT file
             XslCompiledTransform xslt = new XslCompiledTransform();
@@ -97,10 +100,43 @@ namespace AttendanceManagementSystem.User_Controls
             // Display the transformed XML in dataGridViewCourse
             dataGridViewCourse.DataSource = transformedXml.ToString();
         MessageBox.Show($"{dataGridViewCourse.DataSource}", "", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }*/
+
+        private void dumyFun()
+        {
+            string selectedCourse = comboBoxCourses.SelectedItem.ToString();
+            string courseName = selectedCourse.Split('-')[1].Trim();
+            XslCompiledTransform transform = new XslCompiledTransform();
+            transform.Load(@"E:\ITI-PD&BI\XML\XML-Project\Old2-Attendance_Project\XML files\courseAndStudent.xslt");
+
+            XsltArgumentList xsltArgs = new XsltArgumentList();
+            xsltArgs.AddParam("selectedCourseName", "", courseName);
+
+            using (StringWriter writer = new StringWriter())
+            {
+                transform.Transform(doc.CreateReader(), xsltArgs, writer);
+                string transformedXml = writer.ToString();
+
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("id", typeof(int));
+                dataTable.Columns.Add("name", typeof(string));
+
+                using (XmlReader reader = XmlReader.Create(new StringReader(transformedXml)))
+                {
+                    MessageBox.Show($"{reader.NameTable}:, {reader.Name}:, {reader.Value}:, {reader.ValueType}");
+                    while (reader.ReadToFollowing("id"))
+                    {
+                        DataRow row = dataTable.NewRow();
+                        row["id"] = int.Parse(reader.GetAttribute("id"));
+                        row["name"] = reader.GetAttribute("name");
+                        dataTable.Rows.Add(row);
+                    }
+                }
+
+                dataGridViewCourse.DataSource = dataTable;
+            }
+          
         }
-
-
-
 
         public void xmlOperation(string file)
         {
@@ -132,7 +168,8 @@ namespace AttendanceManagementSystem.User_Controls
 
         private void comboBoxCourses_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadCourses();  
+            //loadCourses();  
+            dumyFun();
         }
 
         private void dataGridViewCourse_CellContentClick(object sender, DataGridViewCellEventArgs e)
