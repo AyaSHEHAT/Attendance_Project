@@ -30,8 +30,16 @@ namespace AttendanceManagementSystem.User_Controls
             radioBtnStudent.Checked = false;
             radioBtnTeacher.Checked = false;    
         }
-        private void buttonAdd_Click(object sender, EventArgs e)
+        private void tabControlAddUser_Leave(object sender, EventArgs e)
         {
+            ClearTextBox();
+        }
+
+        private void buttonAdd_Click_1(object sender, EventArgs e)
+        {
+            //MessageBox.Show("check check", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
             int numericValue;
             string role;
             string EmailRegx = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
@@ -46,12 +54,12 @@ namespace AttendanceManagementSystem.User_Controls
                 MessageBox.Show("Enter a valid Course ID", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            else if (textBoxEmail.Text.Trim()==string.Empty || Regex.IsMatch(textBoxEmail.Text.Trim(),EmailRegx))
+            else if (textBoxEmail.Text.Trim()==string.Empty || Regex.IsMatch(textBoxEmail.Text.Trim(), EmailRegx)==false)
             {
                 MessageBox.Show("Enter a vailid email. ex: example@example.com", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            else if (textBoxUserPass.Text.Trim()==string.Empty || Regex.IsMatch(textBoxUserPass.Text.Trim(), PassRegex))
+            else if (textBoxUserPass.Text.Trim()==string.Empty || Regex.IsMatch(textBoxUserPass.Text.Trim(), PassRegex)==false)
             {
                 MessageBox.Show("Enter a vailid password that must be 8 characters or more and has small and capital letters and digits", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -83,16 +91,11 @@ namespace AttendanceManagementSystem.User_Controls
                     new XElement("role", role)
                 );
                 usersElement.Add(newUserElement);
-                doc.Save(@"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml");
+                doc.Save(@"E:\ITI-PD&BI\XML\XML-Project\Old2-Attendance_Project\XML files\Data.xml");
                 MessageBox.Show("Course Added Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTextBox();
             }
 
-        }
-
-        private void tabControlAddUser_Leave(object sender, EventArgs e)
-        {
-            ClearTextBox();
         }
     }
 }

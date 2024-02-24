@@ -61,7 +61,7 @@ namespace AttendanceManagementSystem.User_Controls
         {
             textBoxCrsName.Clear();
             textBoxCrsId.Clear();
-            comboBoxTeacher.SelectedIndex = 0;
+            comboBoxTeacher.SelectedIndex = -1;
             numericUpDownSessionNumber.Value = 1;
             dateStartDate.Value = DateTime.Now;
 
