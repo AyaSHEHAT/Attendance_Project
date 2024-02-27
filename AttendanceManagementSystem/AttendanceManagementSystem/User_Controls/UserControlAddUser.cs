@@ -14,7 +14,7 @@ namespace AttendanceManagementSystem.User_Controls
 {
     public partial class UserControlAddUser : UserControl
     {
-        XDocument doc = XDocument.Load(@"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml");
+        XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
 
         public UserControlAddUser()
         {
@@ -91,7 +91,7 @@ namespace AttendanceManagementSystem.User_Controls
                     new XElement("role", role)
                 );
                 usersElement.Add(newUserElement);
-                doc.Save(@"E:\ITI-PD&BI\XML\XML-Project\Old2-Attendance_Project\XML files\Data.xml");
+                doc.Save(@"../../../../XML files\Data.xml");
                 MessageBox.Show("Course Added Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTextBox();
             }

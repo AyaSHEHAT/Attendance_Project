@@ -49,12 +49,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.timerDtaeAndTime = new System.Windows.Forms.Timer(this.components);
-            this.userControlAddCourse1 = new AttendanceManagementSystem.User_Controls.UserControlAddCourse();
-            this.userControlDashboard11 = new AttendanceManagementSystem.User_Controls.UserControlDashboard1();
-            this.userControlAddCourse = new AttendanceManagementSystem.User_Controls.UserControlAddCourse();
-            this.userControlDashboard1 = new AttendanceManagementSystem.User_Controls.UserControlDashboard1();
-            this.userControlAddUser1 = new AttendanceManagementSystem.User_Controls.UserControlAddUser();
-            this.userControlAddUser2 = new AttendanceManagementSystem.User_Controls.UserControlAddUser();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -98,6 +92,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.Indigo;
             this.panel4.Controls.Add(this.panelSlide);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 180);
@@ -117,6 +112,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Indigo;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -232,6 +228,7 @@
             // 
             // panelBack
             // 
+            this.panelBack.BackColor = System.Drawing.Color.White;
             this.panelBack.Controls.Add(this.buttonMinimize);
             this.panelBack.Controls.Add(this.buttonLogout);
             this.panelBack.Controls.Add(this.labelUsername);
@@ -318,90 +315,12 @@
             // 
             this.timerDtaeAndTime.Tick += new System.EventHandler(this.timerDtaeAndTime_Tick);
             // 
-            // userControlAddCourse1
-            // 
-            this.userControlAddCourse1.BackColor = System.Drawing.Color.White;
-            this.userControlAddCourse1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlAddCourse1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlAddCourse1.Location = new System.Drawing.Point(280, 180);
-            this.userControlAddCourse1.Margin = new System.Windows.Forms.Padding(4);
-            this.userControlAddCourse1.Name = "userControlAddCourse1";
-            this.userControlAddCourse1.Size = new System.Drawing.Size(981, 540);
-            this.userControlAddCourse1.TabIndex = 2;
-            this.userControlAddCourse1.Visible = false;
-            this.userControlAddCourse1.Load += new System.EventHandler(this.userControlAddCourse1_Load);
-            // 
-            // userControlDashboard11
-            // 
-            this.userControlDashboard11.BackColor = System.Drawing.Color.White;
-            this.userControlDashboard11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlDashboard11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlDashboard11.Location = new System.Drawing.Point(280, 180);
-            this.userControlDashboard11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.userControlDashboard11.Name = "userControlDashboard11";
-            this.userControlDashboard11.Size = new System.Drawing.Size(981, 540);
-            this.userControlDashboard11.TabIndex = 1;
-            this.userControlDashboard11.Load += new System.EventHandler(this.userControlDashboard11_Load);
-            // 
-            // userControlAddCourse
-            // 
-            this.userControlAddCourse.BackColor = System.Drawing.Color.White;
-            this.userControlAddCourse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlAddCourse.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlAddCourse.Location = new System.Drawing.Point(280, 180);
-            this.userControlAddCourse.Margin = new System.Windows.Forms.Padding(4);
-            this.userControlAddCourse.Name = "userControlAddCourse";
-            this.userControlAddCourse.Size = new System.Drawing.Size(981, 540);
-            this.userControlAddCourse.TabIndex = 1;
-            this.userControlAddCourse.Visible = false;
-            this.userControlAddCourse.Load += new System.EventHandler(this.userControlAddCourse_Load);
-            // 
-            // userControlDashboard1
-            // 
-            this.userControlDashboard1.BackColor = System.Drawing.Color.White;
-            this.userControlDashboard1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlDashboard1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlDashboard1.Location = new System.Drawing.Point(280, 180);
-            this.userControlDashboard1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.userControlDashboard1.Name = "userControlDashboard1";
-            this.userControlDashboard1.Size = new System.Drawing.Size(981, 540);
-            this.userControlDashboard1.TabIndex = 0;
-            this.userControlDashboard1.Load += new System.EventHandler(this.userControlDashboard1_Load);
-            // 
-            // userControlAddUser1
-            // 
-            this.userControlAddUser1.BackColor = System.Drawing.Color.White;
-            this.userControlAddUser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlAddUser1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlAddUser1.Location = new System.Drawing.Point(280, 180);
-            this.userControlAddUser1.Margin = new System.Windows.Forms.Padding(4);
-            this.userControlAddUser1.Name = "userControlAddUser1";
-            this.userControlAddUser1.Size = new System.Drawing.Size(981, 540);
-            this.userControlAddUser1.TabIndex = 2;
-            this.userControlAddUser1.Visible = false;
-            this.userControlAddUser1.Load += new System.EventHandler(this.userControlAddUser1_Load);
-            // 
-            // userControlAddUser2
-            // 
-            this.userControlAddUser2.BackColor = System.Drawing.Color.White;
-            this.userControlAddUser2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlAddUser2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlAddUser2.Location = new System.Drawing.Point(280, 180);
-            this.userControlAddUser2.Margin = new System.Windows.Forms.Padding(4);
-            this.userControlAddUser2.Name = "userControlAddUser2";
-            this.userControlAddUser2.Size = new System.Drawing.Size(981, 540);
-            this.userControlAddUser2.TabIndex = 3;
-            this.userControlAddUser2.Visible = false;
-            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1261, 720);
-            this.Controls.Add(this.userControlAddUser2);
-            this.Controls.Add(this.userControlAddCourse1);
-            this.Controls.Add(this.userControlDashboard11);
             this.Controls.Add(this.panelBack);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

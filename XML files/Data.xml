@@ -15,9 +15,9 @@
 		</user>
 		<user>
 			<id>800151254</id>
-			<name>aya</name>
+			<name>hend</name>
 			<age>23</age>
-			<email>aya@yahoo.com</email>
+			<email>hend@yahoo.com</email>
 			<address>mansoura</address>
 			<userPass>asdf1234</userPass>
 			<role>student</role>
@@ -36,7 +36,6 @@
 			<role>student</role>
 				<listOfCourses>
 			<courseName>C#</courseName>
-			
 			</listOfCourses>
 		</user>
 		<user>
@@ -102,7 +101,7 @@
 							<status>absent</status>
 						</student>
 						<student>
-							<stdId>800151234</stdId>
+							<stdId>800151254</stdId>
 							<status>absent</status>
 						</student>
 						<student>
@@ -124,7 +123,7 @@
 							<status>present</status>
 						</student>
 						<student>
-							<stdId>800151234</stdId>
+							<stdId>800151254</stdId>
 							<status>present</status>
 						</student>
 						<student>
@@ -146,7 +145,7 @@
 							<status>present</status>
 						</student>
 						<student>
-							<stdId>800151234</stdId>
+							<stdId>800151254</stdId>
 							<status>present</status>
 						</student>
 						<student>
@@ -168,7 +167,7 @@
 							<status>present</status>
 						</student>
 						<student>
-							<stdId>800151234</stdId>
+							<stdId>800151254</stdId>
 							<status>absent</status>
 						</student>
 						<student>
@@ -197,11 +196,11 @@
 					<sessionNum>1</sessionNum>
 					<students>
 						<student>
-							<stdId>800159561</stdId>
+							<stdId>800151254</stdId>
 							<status>absent</status>
 						</student>
 						<student>
-							<stdId>800151234</stdId>
+							<stdId>800151654</stdId>
 							<status>absent</status>
 						</student>
 						<student>
@@ -209,7 +208,7 @@
 							<status>absent</status>
 						</student>
 						<student>
-							<stdId>800151254</stdId>
+							<stdId>800151854</stdId>
 							<status>present</status>
 						</student>
 					</students>
@@ -219,11 +218,11 @@
 					<sessionNum>2</sessionNum>
 					<students>
 						<student>
-							<stdId>800159561</stdId>
+							<stdId>800151254</stdId>
 							<status>present</status>
 						</student>
 						<student>
-							<stdId>800151234</stdId>
+							<stdId>800151654</stdId>
 							<status>present</status>
 						</student>
 						<student>
@@ -241,11 +240,11 @@
 					<sessionNum>3</sessionNum>
 					<students>
 						<student>
-							<stdId>800159561</stdId>
+							<stdId>800151254</stdId>
 							<status>present</status>
 						</student>
 						<student>
-							<stdId>800151234</stdId>
+							<stdId>800151654</stdId>
 							<status>present</status>
 						</student>
 						<student>
@@ -263,11 +262,11 @@
 					<sessionNum>5</sessionNum>
 					<students>
 						<student>
-							<stdId>800159561</stdId>
+							<stdId>800151254</stdId>
 							<status>present</status>
 						</student>
 						<student>
-							<stdId>800151234</stdId>
+							<stdId>800151654</stdId>
 							<status>absent</status>
 						</student>
 						<student>

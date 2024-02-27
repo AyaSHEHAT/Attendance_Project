@@ -94,6 +94,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report_teacher.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="User_Controls\UserControlAddCourse.cs">
@@ -243,6 +244,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="group.ico" />
+    <None Include="Resources\printer.png" />
     <None Include="Resources\group-colored1.png" />
     <None Include="Resources\important.png" />
     <None Include="Resources\eye%281%29.png" />

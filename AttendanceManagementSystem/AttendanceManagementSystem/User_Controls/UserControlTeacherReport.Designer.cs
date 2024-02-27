@@ -30,7 +30,6 @@
         {
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePickerStartDate = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
             this.comboBoxCourses = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,6 +39,9 @@
             this.crsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxDate = new System.Windows.Forms.ComboBox();
+            this.buttonPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourse)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,22 +66,10 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Date:";
             // 
-            // dateTimePickerStartDate
-            // 
-            this.dateTimePickerStartDate.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerStartDate.Location = new System.Drawing.Point(642, 106);
-            this.dateTimePickerStartDate.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
-            this.dateTimePickerStartDate.MinDate = new System.DateTime(2024, 2, 22, 12, 18, 21, 0);
-            this.dateTimePickerStartDate.Name = "dateTimePickerStartDate";
-            this.dateTimePickerStartDate.Size = new System.Drawing.Size(270, 28);
-            this.dateTimePickerStartDate.TabIndex = 14;
-            this.dateTimePickerStartDate.Value = new System.DateTime(2024, 2, 22, 12, 18, 21, 0);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightGray;
-            this.panel3.Location = new System.Drawing.Point(87, 132);
+            this.panel3.Location = new System.Drawing.Point(88, 142);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(270, 2);
             this.panel3.TabIndex = 11;
@@ -89,7 +79,7 @@
             this.comboBoxCourses.BackColor = System.Drawing.Color.White;
             this.comboBoxCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxCourses.FormattingEnabled = true;
-            this.comboBoxCourses.Location = new System.Drawing.Point(86, 103);
+            this.comboBoxCourses.Location = new System.Drawing.Point(87, 113);
             this.comboBoxCourses.Name = "comboBoxCourses";
             this.comboBoxCourses.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBoxCourses.Size = new System.Drawing.Size(270, 24);
@@ -108,6 +98,7 @@
             // 
             // dataGridViewCourse
             // 
+            this.dataGridViewCourse.AllowUserToAddRows = false;
             this.dataGridViewCourse.AllowUserToDeleteRows = false;
             this.dataGridViewCourse.AllowUserToResizeColumns = false;
             this.dataGridViewCourse.AllowUserToResizeRows = false;
@@ -124,6 +115,7 @@
             this.status});
             this.dataGridViewCourse.Location = new System.Drawing.Point(86, 175);
             this.dataGridViewCourse.Name = "dataGridViewCourse";
+            this.dataGridViewCourse.ReadOnly = true;
             this.dataGridViewCourse.RowHeadersWidth = 51;
             this.dataGridViewCourse.ShowRowErrors = false;
             this.dataGridViewCourse.Size = new System.Drawing.Size(826, 360);
@@ -135,6 +127,7 @@
             this.stdId.HeaderText = "Student Id";
             this.stdId.MinimumWidth = 6;
             this.stdId.Name = "stdId";
+            this.stdId.ReadOnly = true;
             // 
             // StdName
             // 
@@ -142,13 +135,15 @@
             this.StdName.HeaderText = "Student Name";
             this.StdName.MinimumWidth = 6;
             this.StdName.Name = "StdName";
+            this.StdName.ReadOnly = true;
             // 
             // crsName
             // 
-            this.crsName.DataPropertyName = "CourseName";
+            this.crsName.DataPropertyName = "CName";
             this.crsName.HeaderText = "Course Name";
             this.crsName.MinimumWidth = 6;
             this.crsName.Name = "crsName";
+            this.crsName.ReadOnly = true;
             // 
             // date
             // 
@@ -156,22 +151,60 @@
             this.date.HeaderText = "Date";
             this.date.MinimumWidth = 6;
             this.date.Name = "date";
+            this.date.ReadOnly = true;
             // 
             // status
             // 
-            this.status.DataPropertyName = "status";
+            this.status.DataPropertyName = "Status";
             this.status.HeaderText = "Status";
             this.status.MinimumWidth = 6;
             this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Location = new System.Drawing.Point(643, 142);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(270, 2);
+            this.panel1.TabIndex = 16;
+            // 
+            // comboBoxDate
+            // 
+            this.comboBoxDate.BackColor = System.Drawing.Color.White;
+            this.comboBoxDate.Cursor = System.Windows.Forms.Cursors.Default;
+            this.comboBoxDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxDate.FormattingEnabled = true;
+            this.comboBoxDate.Location = new System.Drawing.Point(642, 113);
+            this.comboBoxDate.Name = "comboBoxDate";
+            this.comboBoxDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.comboBoxDate.Size = new System.Drawing.Size(270, 24);
+            this.comboBoxDate.TabIndex = 17;
+            this.comboBoxDate.SelectedIndexChanged += new System.EventHandler(this.comboBoxDate_SelectedIndexChanged_1);
+            // 
+            // buttonPrint
+            // 
+            this.buttonPrint.BackColor = System.Drawing.Color.Indigo;
+            this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPrint.ForeColor = System.Drawing.Color.Indigo;
+            this.buttonPrint.Image = global::AttendanceManagementSystem.Properties.Resources.printer;
+            this.buttonPrint.Location = new System.Drawing.Point(934, 6);
+            this.buttonPrint.Name = "buttonPrint";
+            this.buttonPrint.Size = new System.Drawing.Size(49, 36);
+            this.buttonPrint.TabIndex = 18;
+            this.buttonPrint.UseVisualStyleBackColor = false;
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // UserControlTeacherReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.buttonPrint);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.comboBoxDate);
             this.Controls.Add(this.dataGridViewCourse);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePickerStartDate);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.comboBoxCourses);
             this.Controls.Add(this.label4);
@@ -187,15 +220,17 @@
         #endregion
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePickerStartDate;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox comboBoxCourses;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridViewCourse;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox comboBoxDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn stdId;
         private System.Windows.Forms.DataGridViewTextBoxColumn StdName;
         private System.Windows.Forms.DataGridViewTextBoxColumn crsName;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.Button buttonPrint;
     }
 }

@@ -15,8 +15,8 @@ namespace AttendanceManagementSystem.User_Controls
     public partial class UserControlAddCourse : UserControl
     {
          XDocument xml;
-        XDocument doc = XDocument.Load(@"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml");
-        private string URL_XML_FILE = @"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml";
+        XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
+        private string URL_XML_FILE = @"../../../../XML files\Data.xml";
         List<Course> courses = new List<Course>();
        // DataTable dt;
 
@@ -239,7 +239,7 @@ namespace AttendanceManagementSystem.User_Controls
                     )
                 );
                 coursesElement.Add(newCourseElement);
-                doc.Save(@"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml");
+                doc.Save(@"../../../../XML files\Data.xml");
                 MessageBox.Show("Course Added Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTextBox();
             }

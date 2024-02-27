@@ -11,20 +11,18 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Xsl;
+using System.Drawing.Printing;
+
 
 namespace AttendanceManagementSystem.User_Controls
 {
     public partial class UserControlTeacherReport : UserControl
     {
-
-        XDocument xml;
-        XDocument doc = XDocument.Load(@"E:\ITI-PD&BI\XML\XML-Project\Old2-Attendance_Project\XML files\Data.xml");
-        //private string URL_XML_FILE = @"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\XML files\Data.xml";
-        List<User> Users = new List<User>();
+        XDocument doc = XDocument.Load(@"../../../../XML files/Data.xml");
+        List<Report_teacher> Students = new List<Report_teacher>();
         public UserControlTeacherReport()
         {
             InitializeComponent();
-            // Search for all courses
             var courses = doc.Root
                              .Element("Courses")
                              .Elements("course")
@@ -40,127 +38,11 @@ namespace AttendanceManagementSystem.User_Controls
                 }
 
                 comboBoxCourses.SelectedIndex = -1;
+                comboBoxDate.SelectedIndex = -1;
             }
             else
             {
                 MessageBox.Show("No Courses found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        /* public void loadCourses()
-         {
-             // Check if a course is selected in the comboBox
-
-             if (comboBoxCourses.SelectedIndex >= 0)
-             {
-
-                 // Get the selected course from comboBoxCourses
-                 string selectedCourse = comboBoxCourses.SelectedItem.ToString();
-                 MessageBox.Show($"{selectedCourse}", "", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                 // Extract the course ID from the selectedCourse string
-                 string courseName = selectedCourse.Split('-')[1].Trim();
-                 MessageBox.Show($"{courseName}", "", MessageBoxButtons.OK, MessageBoxIcon.Question);
-
-                 // Apply XSLT transformation with the selected course ID
-                 applyXsltTransformation(courseName);
-             }
-             else
-             {
-                 MessageBox.Show("Please select a course.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             }
-         }*/
-
-        /*private void applyXsltTransformation(string courseName)
-        {
-            // Load the XSLT file
-            XslCompiledTransform xslt = new XslCompiledTransform();
-            xslt.Load("E:\\ITI-PD&BI\\XML\\XML-Project\\Old2-Attendance_Project\\XML files\\courseAndStudent.xslt");
-
-            // Load the XML input document
-            XDocument xml = XDocument.Load(URL_XML_FILE);
-
-            // Create a writer for the output
-            XmlWriterSettings settings = new XmlWriterSettings();
-            settings.Indent = true; // Optional: Indent the output for readability
-
-            // Create a StringBuilder to store the transformed XML
-            StringBuilder transformedXml = new StringBuilder();
-
-            // Define parameters for the XSLT transformation
-            XsltArgumentList arguments = new XsltArgumentList();
-            arguments.AddParam("selectedCourseName", "", courseName);
-
-            // Perform the transformation with parameters
-            using (XmlWriter writer = XmlWriter.Create(transformedXml, settings))
-            {
-                xslt.Transform(xml.CreateReader(), arguments, writer);
-            }
-
-            // Display the transformed XML in dataGridViewCourse
-            dataGridViewCourse.DataSource = transformedXml.ToString();
-        MessageBox.Show($"{dataGridViewCourse.DataSource}", "", MessageBoxButtons.OK, MessageBoxIcon.Question);
-        }*/
-
-        private void dumyFun()
-        {
-            string selectedCourse = comboBoxCourses.SelectedItem.ToString();
-            string courseName = selectedCourse.Split('-')[1].Trim();
-            XslCompiledTransform transform = new XslCompiledTransform();
-            transform.Load(@"E:\ITI-PD&BI\XML\XML-Project\Old2-Attendance_Project\XML files\courseAndStudent.xslt");
-
-            XsltArgumentList xsltArgs = new XsltArgumentList();
-            xsltArgs.AddParam("selectedCourseName", "", courseName);
-
-            using (StringWriter writer = new StringWriter())
-            {
-                transform.Transform(doc.CreateReader(), xsltArgs, writer);
-                string transformedXml = writer.ToString();
-
-                DataTable dataTable = new DataTable();
-                dataTable.Columns.Add("id", typeof(int));
-                dataTable.Columns.Add("name", typeof(string));
-
-                using (XmlReader reader = XmlReader.Create(new StringReader(transformedXml)))
-                {
-                    MessageBox.Show($"{reader.NameTable}:, {reader.Name}:, {reader.Value}:, {reader.ValueType}");
-                    while (reader.ReadToFollowing("id"))
-                    {
-                        DataRow row = dataTable.NewRow();
-                        row["id"] = int.Parse(reader.GetAttribute("id"));
-                        row["name"] = reader.GetAttribute("name");
-                        dataTable.Rows.Add(row);
-                    }
-                }
-
-                dataGridViewCourse.DataSource = dataTable;
-            }
-          
-        }
-
-        public void xmlOperation(string file)
-        {
-            Users.Clear();
-            try
-            {
-                xml = XDocument.Load(file);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading information: " + ex.Message);
-            }
-
-            foreach (XElement courseElement in xml.Descendants("user"))
-            {
-                int userid =int.Parse( courseElement.Element("id").Value);
-                string username = courseElement.Element("name").Value;
-                string email = courseElement.Element("email").Value;
-                string pass = courseElement.Element("userPass").Value;
-                string address = courseElement.Element("address").Value;
-
-                string role = courseElement.Element("role").Value;
-                Users.Add(new User(userid, username, email, pass, "+20123456789", address, role));
-
             }
 
 
@@ -168,13 +50,147 @@ namespace AttendanceManagementSystem.User_Controls
 
         private void comboBoxCourses_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //loadCourses();  
-            dumyFun();
+            loadCourses();
+           
         }
 
-        private void dataGridViewCourse_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void loadCourses()
+        {
+           
+            // Check if a course is selected in the comboBox
+            if (comboBoxCourses.SelectedIndex >= 0)
+            {
+                // Clear comboBoxDate before populating it
+                comboBoxDate.Items.Clear();
+
+                string selectedCourse = comboBoxCourses.SelectedItem.ToString();
+                string courseName = selectedCourse.Split('-')[1].Trim();
+
+                var courseElement = doc.Root
+                                        .Element("Courses")
+                                        .Elements("course")
+                                        .FirstOrDefault(c => c.Element("cName").Value == courseName);
+
+                if (courseElement != null)
+                {
+                    // Get all dates for the sessions of the selected course
+                    var dates = courseElement.Descendants("date").Select(d => d.Value).ToList();
+
+                    if (dates.Any())
+                    {
+                        // Populate comboBoxDate with the dates
+                        foreach (var date in dates)
+                        {
+                            comboBoxDate.Items.Add(date);
+                        }
+
+                        comboBoxDate.SelectedIndex = -1; // Select the first date by default
+                    }
+                    else
+                    {
+                        MessageBox.Show("No sessions found for the selected course.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selected course not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a course.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void comboBoxDate_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+            if (comboBoxDate.SelectedIndex >= 0)
+            {
+                // Get the selected course name from comboBoxCourses
+                string selectedCourse = comboBoxCourses.SelectedItem.ToString();
+                string courseName = selectedCourse.Split('-')[1].Trim();
+
+                // Get the selected date from comboBoxDate
+                string selectedDate = comboBoxDate.SelectedItem.ToString();
+
+                // Perform XSLT transformation and load data into dataGridViewCourse
+                applyXsltTransformation(courseName, selectedDate);
+            }
+        }
+
+        private void applyXsltTransformation(string courseName, string selectedDate)
+        {
+            // Load the XSLT file
+            XslCompiledTransform xslt = new XslCompiledTransform();
+            xslt.Load(@"../../../../XML files/courseAndStudent.xslt");
+
+            // Create a writer for the output file
+            using (XmlWriter writer = XmlWriter.Create(@"C:\Reports\TransformedAttendance.html"))
+            {
+                // Define parameters for the XSLT transformation
+                XsltArgumentList arguments = new XsltArgumentList();
+                arguments.AddParam("selectedCourseName", "", courseName);
+                arguments.AddParam("selectedDate", "", selectedDate);
+
+                // Perform the transformation with parameters, writing directly to the file
+                xslt.Transform(doc.CreateReader(), arguments, writer);
+            }
+
+            // Load the transformed HTML file into a string for display in a MessageBox
+            string transformedXml = File.ReadAllText(@"C:\Reports\TransformedAttendance.html");
+
+            // Parse the transformed HTML content into an XDocument to extract student data
+            XDocument transformedDoc = XDocument.Load(@"C:\Reports\TransformedAttendance.html");
+
+            // Extract student data from the transformed HTML
+            var students = transformedDoc.Root.Descendants("tr")
+                                             .Skip(1) // Skip the header row
+                                             .Select(tr => new Report_teacher
+                                             {
+                                                 StdId = int.Parse(tr.Elements("td").First().Value),
+                                                 StdName = tr.Elements("td").Skip(1).First().Value,
+                                                 Date = tr.Elements("td").Skip(2).First().Value,
+                                                 CName = tr.Elements("td").Skip(3).First().Value,
+                                                 Status = tr.Elements("td").Skip(4).First().Value
+                                             }).ToList();
+
+            // Populate the DataGridView with the student data
+            dataGridViewCourse.DataSource = students;
+
+            // Show a MessageBox with the transformed HTML content
+            MessageBox.Show(transformedXml, "Transformed HTML Content", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            // Define the bounds for printing
+            Rectangle bounds = e.MarginBounds;
+
+            // Create a bitmap to hold the content of the DataGridView
+            Bitmap bitmap = new Bitmap(dataGridViewCourse.Width, dataGridViewCourse.Height);
+
+            // Draw the DataGridView to the bitmap
+            dataGridViewCourse.DrawToBitmap(bitmap, new Rectangle(0, 0, dataGridViewCourse.Width, dataGridViewCourse.Height));
+
+            // Draw the bitmap to the printer device
+            e.Graphics.DrawImage(bitmap, bounds);
+        }
+
+        private void buttonPrint_Click(object sender, EventArgs e)
+        {
+            PrintDocument printDocument = new PrintDocument();
+
+            // Set up event handlers for printing
+            printDocument.PrintPage += PrintDocument_PrintPage;
+
+            // Show print dialog to configure printing options
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = printDocument;
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Print the document
+                printDocument.Print();
+            }
         }
     }
 }
