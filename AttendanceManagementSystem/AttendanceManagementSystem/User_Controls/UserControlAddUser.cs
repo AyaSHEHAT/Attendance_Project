@@ -16,6 +16,8 @@ namespace AttendanceManagementSystem.User_Controls
     {
        
         XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
+      //  XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
+        
 
         public UserControlAddUser()
         {
