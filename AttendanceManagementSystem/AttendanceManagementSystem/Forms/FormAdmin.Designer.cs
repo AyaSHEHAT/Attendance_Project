@@ -42,8 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.timerDtaeAndTime = new System.Windows.Forms.Timer(this.components);
-<<<<<<< HEAD
-=======
+
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonReport = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -56,7 +55,7 @@
             this.userControlAddUser1 = new AttendanceManagementSystem.User_Controls.UserControlAddUser();
             this.userControlSetting = new AttendanceManagementSystem.User_Controls.UserControlSettings();
 
->>>>>>> master
+
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -231,7 +230,7 @@
             this.buttonReport.UseVisualStyleBackColor = true;
             this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
             // 
-<<<<<<< HEAD
+
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Indigo;
@@ -241,7 +240,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(8, 540);
             this.panel4.TabIndex = 0;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+           // this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panelSlide
             // 
@@ -250,7 +249,7 @@
             this.panelSlide.Name = "panelSlide";
             this.panelSlide.Size = new System.Drawing.Size(10, 63);
             this.panelSlide.TabIndex = 0;
-            this.panelSlide.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSlide_Paint);
+           // this.panelSlide.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSlide_Paint);
             // 
             // panel2
             // 
@@ -263,7 +262,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(280, 180);
             this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+          //  this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label2
             // 
@@ -275,7 +274,7 @@
             this.label2.Size = new System.Drawing.Size(79, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "System";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+           // this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -287,10 +286,9 @@
             this.label1.Size = new System.Drawing.Size(270, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Attendance Management ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+          //  this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-=======
->>>>>>> master
+
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AttendanceManagementSystem.Properties.Resources.group2;
@@ -369,7 +367,7 @@
             this.buttonAddCourse.UseVisualStyleBackColor = true;
             this.buttonAddCourse.Click += new System.EventHandler(this.buttonAddCourse_Click);
             // 
-<<<<<<< HEAD
+
             // panelBack
             // 
             this.panelBack.BackColor = System.Drawing.Color.White;
@@ -383,7 +381,7 @@
             this.panelBack.Name = "panelBack";
             this.panelBack.Size = new System.Drawing.Size(981, 180);
             this.panelBack.TabIndex = 0;
-            this.panelBack.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBack_Paint);
+           // this.panelBack.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBack_Paint);
             // 
             // buttonMinimize
             // 
@@ -429,7 +427,7 @@
             this.labelUsername.Size = new System.Drawing.Size(35, 23);
             this.labelUsername.TabIndex = 0;
             this.labelUsername.Text = "{?}";
-            this.labelUsername.Click += new System.EventHandler(this.labelUsername_Click);
+            //this.labelUsername.Click += new System.EventHandler(this.labelUsername_Click);
             // 
             // label4
             // 
@@ -441,7 +439,7 @@
             this.label4.Size = new System.Drawing.Size(110, 23);
             this.label4.TabIndex = 0;
             this.label4.Text = "Welcome:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+           // this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // labelTime
             // 
@@ -453,13 +451,12 @@
             this.labelTime.Size = new System.Drawing.Size(35, 23);
             this.labelTime.TabIndex = 0;
             this.labelTime.Text = "{?}";
-            this.labelTime.Click += new System.EventHandler(this.labelTime_Click);
+           // this.labelTime.Click += new System.EventHandler(this.labelTime_Click);
             // 
             // timerDtaeAndTime
             // 
             this.timerDtaeAndTime.Tick += new System.EventHandler(this.timerDtaeAndTime_Tick);
-=======
-            // userControlAddCourse
+
             // 
             this.userControlAddCourse.BackColor = System.Drawing.Color.White;
             this.userControlAddCourse.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -505,7 +502,7 @@
             this.userControlSetting.Size = new System.Drawing.Size(981, 540);
             this.userControlSetting.TabIndex = 3;
             this.userControlSetting.Visible = false;
->>>>>>> master
+
             // 
             // FormAdmin
             // 
@@ -513,16 +510,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1261, 720);
-<<<<<<< HEAD
-=======
+
             this.Controls.Add(this.userControlAddUser1);
             this.Controls.Add(this.userControlAddCourse);
             this.Controls.Add(this.userControlDashboard1);
-            this.Controls.Add(this.userControlSetting);
+           this.Controls.Add(this.userControlSetting);
 
             
 
->>>>>>> master
+
             this.Controls.Add(this.panelBack);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -573,4 +569,3 @@
 
     }
 }
-
