@@ -37,7 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\ayah\AppData\Local\Temp\vs7A0A.tmp\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\USER\AppData\Local\Temp\vs57C1.tmp\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,7 +47,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\ayah\AppData\Local\Temp\vs7A0A.tmp\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\USER\AppData\Local\Temp\vs57C1.tmp\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>group.ico</ApplicationIcon>
@@ -68,12 +68,6 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Course.cs" />
-    <Compile Include="Forms\FormTeacher.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormTeacher.Designer.cs">
-      <DependentUpon>FormTeacher.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +88,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsManager.cs" />
     <Compile Include="Report_teacher.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Teacher.cs" />
@@ -116,16 +111,13 @@
       <DependentUpon>UserControlDashboard1.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
-    <Compile Include="User_Controls\UserControlTeacherReport.cs">
+    <Compile Include="User_Controls\UserControlSettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User_Controls\UserControlTeacherReport.Designer.cs">
-      <DependentUpon>UserControlTeacherReport.cs</DependentUpon>
+    <Compile Include="User_Controls\UserControlSettings.Designer.cs">
+      <DependentUpon>UserControlSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="XmlOperation.cs" />
-    <EmbeddedResource Include="Forms\FormTeacher.resx">
-      <DependentUpon>FormTeacher.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,8 +146,8 @@
     <EmbeddedResource Include="User_Controls\UserControlDashboard1.resx">
       <DependentUpon>UserControlDashboard1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User_Controls\UserControlTeacherReport.resx">
-      <DependentUpon>UserControlTeacherReport.cs</DependentUpon>
+    <EmbeddedResource Include="User_Controls\UserControlSettings.resx">
+      <DependentUpon>UserControlSettings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -74,10 +74,9 @@ namespace AttendanceManagementSystem
             userControlDashboard1.Visible= false;
             userControlAddCourse.Visible= false;
             userControlAddUser1.Visible= false;
+            userControlSetting.Visible = true;
 
-            userControlAddCourse1.Visible= false;
-            userControlAddUser2.Visible= false;
-            userControlDashboard11.Visible= false;
+           
         }
         public FormAdmin()
         {
@@ -91,11 +90,9 @@ namespace AttendanceManagementSystem
             //userControlDashboard1.Count();
             userControlDashboard1.Visible= true;
             userControlAddCourse.Visible= false;
-            userControlAddUser1.Visible= false;
+            userControlAddUser1.Visible= false; 
+            userControlSetting.Visible = false;
 
-            userControlAddCourse1.Visible= false;
-            userControlAddUser2.Visible= false;
-            userControlDashboard11.Visible= true;
         }
 
         private void buttonAddCourse_Click(object sender, EventArgs e)
@@ -104,23 +101,19 @@ namespace AttendanceManagementSystem
             userControlDashboard1.Visible= false;
             userControlAddCourse.Visible= true;
             userControlAddUser1.Visible= false;
+            userControlSetting.Visible = false;
 
-            userControlAddCourse1.Visible= true;
-            userControlAddUser2.Visible= false;
-            userControlDashboard11.Visible= false;
         }
 
-        
+
 
         private void buttonAddStd_Click(object sender, EventArgs e)
         {
             MoveSidePanel(buttonAddStd);
             userControlDashboard1.Visible= false;
             userControlAddCourse.Visible= false;
-            userControlAddUser1.Visible= true;
-            userControlAddCourse1.Visible= false;
-            userControlAddUser2.Visible= true;
-            userControlDashboard11.Visible= false;
+            userControlAddUser1.Visible= true; 
+            userControlSetting.Visible= false;
         }
 
         private void buttonReport_Click(object sender, EventArgs e)
@@ -129,89 +122,7 @@ namespace AttendanceManagementSystem
             userControlDashboard1.Visible= false;
             userControlAddCourse.Visible= false;
             userControlAddUser1.Visible= false;
-            userControlAddCourse1.Visible= false;
-            userControlAddUser2.Visible= false;
-            userControlDashboard11.Visible= false;
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelSlide_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void labelUsername_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelTime_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userControlAddCourse1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userControlDashboard11_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userControlAddCourse_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userControlDashboard1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userControlAddUser1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelBack_Paint(object sender, PaintEventArgs e)
-        {
-
+            userControlSetting.Visible= false;
         }
 
         private void MoveSidePanel(Control button)

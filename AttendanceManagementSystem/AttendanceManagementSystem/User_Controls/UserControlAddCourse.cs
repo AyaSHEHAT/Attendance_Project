@@ -18,15 +18,19 @@ namespace AttendanceManagementSystem.User_Controls
         XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
         private string URL_XML_FILE = @"../../../../XML files\Data.xml";
         List<Course> courses = new List<Course>();
-       // DataTable dt;
+        List<XElement> teachers;
+        // DataTable dt;
+        string teacherName;
 
         public UserControlAddCourse()
         {
             InitializeComponent();
-           
+
+            //call loadcourse to load data from xml file and save it in courses object
+            loadCourses();
 
             // Search for all users with role "teacher"
-            var teachers = doc.Root
+             teachers = doc.Root
                              .Element("Users")
                              .Elements("user")
                              .Where(u => u.Element("role")?.Value == "teacher")
@@ -41,6 +45,7 @@ namespace AttendanceManagementSystem.User_Controls
 
                     // Display teacher ID and name
                     comboBoxTeacher.Items.Add($"{teacherId} - {teacherName}");
+                    boxTeacher.Items.Add($"{teacherName}");
                 }
 
                 // Set initial selected item if needed
@@ -56,7 +61,7 @@ namespace AttendanceManagementSystem.User_Controls
         {
             textBoxCrsName.Clear();
             textBoxCrsId.Clear();
-            comboBoxTeacher.SelectedIndex = -1;
+            comboBoxTeacher.SelectedIndex = 0;
             numericUpDownSessionNumber.Value = 1;
             dateStartDate.Value = DateTime.Now;
 
@@ -73,7 +78,7 @@ namespace AttendanceManagementSystem.User_Controls
             {
                 MessageBox.Show("Error loading information: " + ex.Message);
             }
-           
+
 
             foreach (XElement courseElement in xml.Descendants("course"))
             {
@@ -81,39 +86,63 @@ namespace AttendanceManagementSystem.User_Controls
                 string courseName = courseElement.Element("cName").Value;
                 int sessions = int.Parse(courseElement.Element("totalsessionNum").Value);
                 string teacherId = courseElement.Element("teacher").Element("teachId").Value;
+                DateTime date = DateTime.Parse(courseElement.Element("startDate").Value);
 
                 // Get the first session element
-                XElement firstSession = courseElement.Element("sessions").Elements("session").FirstOrDefault();
+                /*XElement firstSession = courseElement.Element("sessions").Elements("session").FirstOrDefault();
                 if (firstSession != null)
                 {
-                    DateTime date = DateTime.Parse(firstSession.Element("date").Value);
+                    DateTime date1 = DateTime.Parse(firstSession.Element("date").Value);*/
+                // string teacherName;
+                teachers = doc.Root
+                            .Element("Users")
+                            .Elements("user")
+                            .Where(u => u.Element("role")?.Value == "teacher")
+                            .ToList();
 
-                    
-                        courses.Add(new Course
+                if (teachers != null)
+                {
+                    foreach (var teacher in teachers)
+                    {
+                        string teacherId1 = teacher.Element("id")?.Value;
+                        if (teacherId == teacherId1)
                         {
-                            CourseId = courseId,
-                            CourseName = courseName,
-                            Sessions = sessions,
-                            Date = date,
-                            Teacher = teacherId,
-                            
-                        });
+                            teacherName = teacher.Element("name")?.Value;
+                            break;
+                         }
 
-                       
-                    
+                    }
+
+
+                    courses.Add(new Course
+                    {
+                        CourseId = courseId,
+                        CourseName = courseName,
+                        Sessions = sessions,
+                        Date = date,
+                        Teacher = teacherName,
+
+                    });
+
                 }
+
+                
             }
+
+
 
 
         }
 
         public void loadCourses ()
         {
-            
+
             xmlOperation(URL_XML_FILE);
+            dataGridViewCourse.DataError += dataGridViewCourse_DataError;
+            dataGridViewCourse.DataSource = null;
+            dataGridViewCourse.Rows.Clear();
             dataGridViewCourse.DataSource = courses;
             dataGridViewCourse.Columns[5].Visible = false;
-
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -138,7 +167,8 @@ namespace AttendanceManagementSystem.User_Controls
             //courses= filteredCourses;
 
             dataGridViewCourse.DataSource = filteredCourses;
-            
+            lblTotalCourse.Text = dataGridViewCourse.Rows.Count.ToString();
+
 
         }
 
@@ -158,12 +188,20 @@ namespace AttendanceManagementSystem.User_Controls
                 txtCourseId.Text = row.Cells[0].Value.ToString();
                 txtCourseName.Text = row.Cells[1].Value.ToString();
                 upDownSession.Value= (int)row.Cells[2].Value;
-                boxTeacher.Text = row.Cells[4].Value.ToString();
-              //  dateStartDate.Value = Convert.ToDateTime(row.Cells[3].Value);
+                if(row.Cells[4].Value != null)
+                {
+                    boxTeacher.Text = row.Cells[4].Value.ToString();
+                }
+                
+               
+                //dateStartDate.Value = Convert.ToDateTime(row.Cells[3].Value);
 
 
             }
         }
+        string tname;
+        string tname1;
+        string tid;
 
         private void btnUbdate_Click(object sender, EventArgs e)
         {
@@ -172,11 +210,42 @@ namespace AttendanceManagementSystem.User_Controls
             {
                 courseElement.Element("cName").Value = txtCourseName.Text;
                 courseElement.Element("totalsessionNum").Value = upDownSession.Text;
-                courseElement.Element("teacher").Element("teachId").Value = boxTeacher.Text;
-                courseElement.Element("sessions").Elements("session").FirstOrDefault().Element("date").Value = dateStartDate.Text;
+                tname1 = boxTeacher.Text;
+
+                teachers = doc.Root
+                            .Element("Users")
+                            .Elements("user")
+                            .Where(u => u.Element("role")?.Value == "teacher")
+                            .ToList();
+
+                if (teachers != null)
+                {
+                   
+                    foreach (var teacher in teachers)
+                    {
+                        tname = teacher.Element("name")?.Value;
+                        if (tname1 == tname)
+                        {
+                            if (teacher.Element("id")?.Value != null)
+                            {
+                                courseElement.Element("teacher").Element("teachId").Value = teacher.Element("id")?.Value;
+                                break;
+                            }
+                            else
+                            {
+                                courseElement.Element("teacher").Element("teachId").Value = "8456";
+                            }
+                            
+                        }
+                    }
+                }
+
+                        //courseElement.Element("teacher").Element("teachId").Value = boxTeacher.Text;
+                courseElement.Element("startDate").Value = dateStartDate.Text;
                 xml.Save(URL_XML_FILE);
 
                 loadCourses();
+                tabControlAddClass.SelectedTab = tabPageSearch;
 
             }
 
@@ -189,11 +258,20 @@ namespace AttendanceManagementSystem.User_Controls
             {
                 courseElement.Remove();
                 xml.Save(URL_XML_FILE);
+                try
+                {
+                    loadCourses();
+                    tabControlAddClass.SelectedTab = tabPageSearch;
 
-                loadCourses();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading information: " + ex.Message);
+
+                }
 
             }
-           
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -243,13 +321,39 @@ namespace AttendanceManagementSystem.User_Controls
                 MessageBox.Show("Course Added Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTextBox();
             }
+            loadCourses();
 
-            
+
         }
 
         private void tabPageAddClass_Leave(object sender, EventArgs e)
         {
             ClearTextBox();
+        }
+
+        private void dataGridViewCourse_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tabControlAddClass.SelectedTab = tabPage1;
+        }
+
+        private void dataGridViewCourse_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            e.Cancel = false;
+        }
+
+        private void tabPage1_Leave(object sender, EventArgs e)
+        {
+            ClearTextBox1();
+        }
+
+        private void ClearTextBox1()
+        {
+            txtCourseName.Clear();
+            txtCourseId.Clear();
+            boxTeacher.SelectedIndex = 0;
+            upDownSession.Value = 1;
+            dateStartDate.Value = DateTime.Now;
         }
     }
 }
