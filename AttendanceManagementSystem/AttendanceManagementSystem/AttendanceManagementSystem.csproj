@@ -110,6 +110,12 @@
       <DependentUpon>UserControlDashboard1.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="User_Controls\UserControlSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UserControlSettings.Designer.cs">
+      <DependentUpon>UserControlSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="XmlOperation.cs" />
     <EmbeddedResource Include="Forms\FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UserControlDashboard1.resx">
       <DependentUpon>UserControlDashboard1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UserControlSettings.resx">
+      <DependentUpon>UserControlSettings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

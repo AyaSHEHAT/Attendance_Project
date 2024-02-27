@@ -52,6 +52,8 @@
             this.userControlAddCourse = new AttendanceManagementSystem.User_Controls.UserControlAddCourse();
             this.userControlDashboard1 = new AttendanceManagementSystem.User_Controls.UserControlDashboard1();
             this.userControlAddUser1 = new AttendanceManagementSystem.User_Controls.UserControlAddUser();
+            this.userControlSetting = new AttendanceManagementSystem.User_Controls.UserControlSettings();
+
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -281,7 +283,7 @@
             this.buttonAttendance.Name = "buttonAttendance";
             this.buttonAttendance.Size = new System.Drawing.Size(271, 63);
             this.buttonAttendance.TabIndex = 0;
-            this.buttonAttendance.Text = "        Attendance";
+            this.buttonAttendance.Text = "        Settings";
             this.buttonAttendance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAttendance.UseVisualStyleBackColor = true;
@@ -338,6 +340,18 @@
             this.userControlAddUser1.Size = new System.Drawing.Size(981, 540);
             this.userControlAddUser1.TabIndex = 2;
             this.userControlAddUser1.Visible = false;
+
+
+            //userControlsettings
+            this.userControlSetting.BackColor = System.Drawing.Color.White;
+            this.userControlSetting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlSetting.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userControlSetting.Location = new System.Drawing.Point(280, 180);
+            this.userControlSetting.Margin = new System.Windows.Forms.Padding(4);
+            this.userControlSetting.Name = "userControlAddCourse";
+            this.userControlSetting.Size = new System.Drawing.Size(981, 540);
+            this.userControlSetting.TabIndex = 3;
+            this.userControlSetting.Visible = false;
             // 
             // FormAdmin
             // 
@@ -348,6 +362,10 @@
             this.Controls.Add(this.userControlAddUser1);
             this.Controls.Add(this.userControlAddCourse);
             this.Controls.Add(this.userControlDashboard1);
+            this.Controls.Add(this.userControlSetting);
+
+            
+
             this.Controls.Add(this.panelBack);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -394,6 +412,8 @@
         private User_Controls.UserControlDashboard1 userControlDashboard1;
         private User_Controls.UserControlAddCourse userControlAddCourse;
         private User_Controls.UserControlAddUser userControlAddUser1;
+        private User_Controls.UserControlSettings userControlSetting;
+
     }
 }
 
