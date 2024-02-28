@@ -55,9 +55,9 @@ namespace AttendanceManagementSystem.Forms
                 }else if(_role == "teacher")
                 {
                     this.Hide();
-                    FormStudent studentForm = new FormStudent();
-                    studentForm.Text = "Hello, World for Teacher";
-                    studentForm.ShowDialog();
+                    FormTeacher teacherForm= new FormTeacher();
+                    teacherForm.Text = "Hello, World for Teacher";
+                    teacherForm.ShowDialog();
                 }
                 else
                 {
