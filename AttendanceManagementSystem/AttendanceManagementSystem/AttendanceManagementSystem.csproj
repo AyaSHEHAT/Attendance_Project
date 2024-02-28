@@ -37,7 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\USER\AppData\Local\Temp\vsEBBB.tmp\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Saber\AppData\Local\Temp\vs566.tmp\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,7 +47,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\USER\AppData\Local\Temp\vsEBBB.tmp\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Saber\AppData\Local\Temp\vs566.tmp\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>group.ico</ApplicationIcon>
@@ -148,6 +148,12 @@
     <Compile Include="User_Controls\UserControlAddUser.Designer.cs">
       <DependentUpon>UserControlAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="User_Controls\UserControlAttendance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UserControlAttendance.Designer.cs">
+      <DependentUpon>UserControlAttendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="User_Controls\UserControlDashboard1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UserControlAddUser.resx">
       <DependentUpon>UserControlAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UserControlAttendance.resx">
+      <DependentUpon>UserControlAttendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UserControlDashboard1.resx">
       <DependentUpon>UserControlDashboard1.cs</DependentUpon>
