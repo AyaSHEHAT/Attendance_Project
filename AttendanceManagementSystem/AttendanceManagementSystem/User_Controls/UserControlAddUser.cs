@@ -229,12 +229,13 @@ namespace AttendanceManagementSystem.User_Controls
         {
             txtSearch2.Clear();
         }
-
+        string IdUser;
         private void dataGridViewUser_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
                 DataGridViewRow row = dataGridViewUser.Rows[e.RowIndex];
+                IdUser = row.Cells[7].Value.ToString();
                 txtId2.Text = row.Cells[7].Value.ToString();
                 txtName2.Text = row.Cells[8].Value.ToString();
                 txtEmail.Text = row.Cells[9].Value.ToString();
@@ -264,19 +265,19 @@ namespace AttendanceManagementSystem.User_Controls
         {
             int numericValue;
 
-            XElement userElement = xml.Descendants("user").FirstOrDefault(p => p.Element("id").Value == txtId2.Text);
+            XElement userElement = xml.Descendants("user").FirstOrDefault(p => p.Element("id").Value == IdUser);
             if (userElement != null)
             {
+                string EmailRegx = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+                string PassRegex = @"^[A-Za-z0-9]{8,}$";
+
                 if (txtId2.Text.Trim() == "" || txtId2.Text != userElement.Element("id").Value)
                 {
                     MessageBox.Show("Can not be change id", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
 
-                
-                string EmailRegx = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-                string PassRegex = @"^[A-Za-z0-9]{8,}$";
-                if (txtName2.Text.Trim() == string.Empty || int.TryParse(txtName2.Text, out numericValue))
+                else if (txtName2.Text.Trim() == string.Empty || int.TryParse(txtName2.Text, out numericValue))
                 {
                     MessageBox.Show("Enter a valid Name and must not be a number", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -375,6 +376,23 @@ namespace AttendanceManagementSystem.User_Controls
         private void dataGridViewUser_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             tabControlAddUser.SelectedTab = tabPageUpdateandDelete2;
+        }
+           
+
+        private void comboBoxusers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*if (role == "teacher")
+            {
+
+            }
+            else if ()
+            {
+
+            }
+            else
+            {
+
+            }*/
         }
     }
 

@@ -182,12 +182,15 @@ namespace AttendanceManagementSystem.User_Controls
             txtSearch.Clear();
            
         }
+        string x;
 
         private void dataGridViewCourse_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex != -1)
             {
-             DataGridViewRow row = dataGridViewCourse.Rows[e.RowIndex];
+                DataGridViewRow row = dataGridViewCourse.Rows[e.RowIndex];
+                x = row.Cells[0].Value.ToString();
+
                 txtCourseId.Text = row.Cells[0].Value.ToString();
                 txtCourseName.Text = row.Cells[1].Value.ToString();
                 upDownSession.Value= (int)row.Cells[2].Value;
@@ -210,7 +213,7 @@ namespace AttendanceManagementSystem.User_Controls
         {
             int numericValue;
 
-            XElement courseElement = xml.Descendants("course").FirstOrDefault(p => p.Element("cID").Value == txtCourseId.Text);
+            XElement courseElement = xml.Descendants("course").FirstOrDefault(p => p.Element("cID").Value == x);
             if (courseElement != null)
             {
                   if (txtCourseId.Text.Trim() == string.Empty || txtCourseId.Text != courseElement.Element("cID").Value)

@@ -23,17 +23,17 @@ namespace AttendanceManagementSystem
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            //Close();
-            DialogResult dialogResult = MessageBox.Show("Are you want to log out?","Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult==DialogResult.Yes)
-            { 
-                timerDtaeAndTime.Stop();
-                Close(); 
-            }
-            /*else
-                panelExpand.Hide();*/
+            
+           
+                 DialogResult dialogResult = MessageBox.Show("Are you want to log out?","Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                 if (dialogResult==DialogResult.Yes)
+                 { 
+                     timerDtaeAndTime.Stop();
+                     Close(); 
+                 }
+               
 
-        }
+            }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
