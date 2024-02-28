@@ -169,7 +169,7 @@ namespace AttendanceManagementSystem.Forms
         private static bool validateUserInput(out string _role,in string _pass,in string _id)
         {
             XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load("../../../../XML files\\Data.xml");
+            xmlDoc.Load(@"../../../../XML files\Data.xml");
 
             XmlNodeList userList = xmlDoc.SelectNodes("//Users/user");
            

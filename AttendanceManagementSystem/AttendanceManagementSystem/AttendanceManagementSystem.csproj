@@ -132,6 +132,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report_Student.cs" />
     <Compile Include="SettingsManager.cs" />
     <Compile Include="Report_teacher.cs" />
     <Compile Include="Student.cs" />
@@ -166,6 +167,12 @@
     </Compile>
     <Compile Include="User_Controls\UserControlSettings.Designer.cs">
       <DependentUpon>UserControlSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\UserControlStudentReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UserControlStudentReport.Designer.cs">
+      <DependentUpon>UserControlStudentReport.cs</DependentUpon>
     </Compile>
     <Compile Include="User_Controls\UserControlTeacherReport.cs">
       <SubType>UserControl</SubType>
@@ -210,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UserControlSettings.resx">
       <DependentUpon>UserControlSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UserControlStudentReport.resx">
+      <DependentUpon>UserControlStudentReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UserControlTeacherReport.resx">
       <DependentUpon>UserControlTeacherReport.cs</DependentUpon>

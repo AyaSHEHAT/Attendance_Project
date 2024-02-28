@@ -45,6 +45,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.userControlStudentReport1 = new AttendanceManagementSystem.User_Controls.UserControlStudentReport();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,7 +77,7 @@
             this.buttonReport.ForeColor = System.Drawing.Color.White;
             this.buttonReport.Image = global::AttendanceManagementSystem.Properties.Resources.report;
             this.buttonReport.Location = new System.Drawing.Point(13, 208);
-            this.buttonReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonReport.Margin = new System.Windows.Forms.Padding(4);
             this.buttonReport.Name = "buttonReport";
             this.buttonReport.Size = new System.Drawing.Size(259, 83);
             this.buttonReport.TabIndex = 0;
@@ -91,7 +92,7 @@
             this.panel4.Controls.Add(this.panelSlide);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 208);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(10, 512);
             this.panel4.TabIndex = 0;
@@ -100,7 +101,7 @@
             // 
             this.panelSlide.BackColor = System.Drawing.Color.White;
             this.panelSlide.Location = new System.Drawing.Point(0, 0);
-            this.panelSlide.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelSlide.Margin = new System.Windows.Forms.Padding(4);
             this.panelSlide.Name = "panelSlide";
             this.panelSlide.Size = new System.Drawing.Size(12, 83);
             this.panelSlide.TabIndex = 0;
@@ -114,7 +115,7 @@
             this.buttonLogout.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogout.ForeColor = System.Drawing.Color.White;
             this.buttonLogout.Location = new System.Drawing.Point(748, 40);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(98, 46);
             this.buttonLogout.TabIndex = 0;
@@ -130,7 +131,7 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(276, 208);
             this.panel2.TabIndex = 0;
@@ -163,7 +164,7 @@
             // 
             this.pictureBox1.Image = global::AttendanceManagementSystem.Properties.Resources.group2;
             this.pictureBox1.Location = new System.Drawing.Point(69, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(116, 114);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -180,7 +181,7 @@
             this.buttonMinimize.ForeColor = System.Drawing.Color.White;
             this.buttonMinimize.Image = global::AttendanceManagementSystem.Properties.Resources.minus_sign;
             this.buttonMinimize.Location = new System.Drawing.Point(675, 40);
-            this.buttonMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMinimize.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMinimize.Name = "buttonMinimize";
             this.buttonMinimize.Size = new System.Drawing.Size(65, 46);
             this.buttonMinimize.TabIndex = 0;
@@ -197,7 +198,7 @@
             this.panelBack.Controls.Add(this.labelTime);
             this.panelBack.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBack.Location = new System.Drawing.Point(276, 0);
-            this.panelBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelBack.Margin = new System.Windows.Forms.Padding(4);
             this.panelBack.Name = "panelBack";
             this.panelBack.Size = new System.Drawing.Size(985, 208);
             this.panelBack.TabIndex = 1;
@@ -234,10 +235,20 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(276, 720);
             this.panel1.TabIndex = 2;
+            // 
+            // userControlStudentReport1
+            // 
+            this.userControlStudentReport1.BackColor = System.Drawing.Color.White;
+            this.userControlStudentReport1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlStudentReport1.Location = new System.Drawing.Point(276, 208);
+            this.userControlStudentReport1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userControlStudentReport1.Name = "userControlStudentReport1";
+            this.userControlStudentReport1.Size = new System.Drawing.Size(985, 512);
+            this.userControlStudentReport1.TabIndex = 3;
             // 
             // FormStudent
             // 
@@ -245,14 +256,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1261, 720);
+            this.Controls.Add(this.userControlStudentReport1);
             this.Controls.Add(this.panelBack);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FormStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Attendance Management System";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormStudent_Load);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -282,5 +296,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Panel panel1;
+        private User_Controls.UserControlStudentReport userControlStudentReport1;
     }
 }
