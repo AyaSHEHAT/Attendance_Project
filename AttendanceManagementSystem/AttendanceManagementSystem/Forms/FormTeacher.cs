@@ -47,14 +47,17 @@ namespace AttendanceManagementSystem.Forms
         private void buttonReport_Click(object sender, EventArgs e)
         {
             MoveSidePanel(buttonReport);
-            userControlTeacherReport1.Visible= true;
+            //userControlTeacherReport1.Visible= true;
+            userControlTeacherReport2.Visible= true;
         }
 
         private void buttonAttendance_Click(object sender, EventArgs e)
         {
             MoveSidePanel(buttonAttendance);
 
-            userControlTeacherReport1.Visible= false;
+            //userControlTeacherReport1.Visible= false;
+            userControlTeacherReport2.Visible= false;
+
 
         }
 

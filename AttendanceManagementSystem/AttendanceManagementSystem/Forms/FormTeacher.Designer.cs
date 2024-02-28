@@ -35,24 +35,24 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonReport = new System.Windows.Forms.Button();
+            this.buttonAttendance = new System.Windows.Forms.Button();
             this.timerDtaeAndTime = new System.Windows.Forms.Timer(this.components);
             this.panelBack = new System.Windows.Forms.Panel();
+            this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.labelUsername = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
-            this.buttonMinimize = new System.Windows.Forms.Button();
-            this.buttonReport = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonAttendance = new System.Windows.Forms.Button();
             this.userControlSetting = new AttendanceManagementSystem.User_Controls.UserControlSettings();
-            this.userControlTeacherReport1 = new AttendanceManagementSystem.User_Controls.UserControlTeacherReport();
+            this.userControlTeacherReport2 = new AttendanceManagementSystem.User_Controls.UserControlTeacherReport();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelBack.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -107,6 +107,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Attendance Management ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AttendanceManagementSystem.Properties.Resources.group2;
+            this.pictureBox1.Location = new System.Drawing.Point(82, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(117, 103);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Indigo;
@@ -119,6 +129,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(280, 720);
             this.panel1.TabIndex = 4;
+            // 
+            // buttonReport
+            // 
+            this.buttonReport.FlatAppearance.BorderSize = 0;
+            this.buttonReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReport.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReport.ForeColor = System.Drawing.Color.White;
+            this.buttonReport.Image = global::AttendanceManagementSystem.Properties.Resources.report;
+            this.buttonReport.Location = new System.Drawing.Point(12, 261);
+            this.buttonReport.Name = "buttonReport";
+            this.buttonReport.Size = new System.Drawing.Size(260, 75);
+            this.buttonReport.TabIndex = 0;
+            this.buttonReport.Text = "        Report";
+            this.buttonReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonReport.UseVisualStyleBackColor = true;
+            this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
+            // 
+            // buttonAttendance
+            // 
+            this.buttonAttendance.FlatAppearance.BorderSize = 0;
+            this.buttonAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAttendance.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAttendance.ForeColor = System.Drawing.Color.White;
+            this.buttonAttendance.Image = global::AttendanceManagementSystem.Properties.Resources.attendance_list1;
+            this.buttonAttendance.Location = new System.Drawing.Point(12, 180);
+            this.buttonAttendance.Name = "buttonAttendance";
+            this.buttonAttendance.Size = new System.Drawing.Size(260, 75);
+            this.buttonAttendance.TabIndex = 1;
+            this.buttonAttendance.Text = "        Attendance";
+            this.buttonAttendance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonAttendance.UseVisualStyleBackColor = true;
+            this.buttonAttendance.Click += new System.EventHandler(this.buttonAttendance_Click);
             // 
             // timerDtaeAndTime
             // 
@@ -137,6 +181,23 @@
             this.panelBack.Name = "panelBack";
             this.panelBack.Size = new System.Drawing.Size(981, 180);
             this.panelBack.TabIndex = 7;
+            // 
+            // buttonMinimize
+            // 
+            this.buttonMinimize.BackColor = System.Drawing.Color.Indigo;
+            this.buttonMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonMinimize.FlatAppearance.BorderSize = 0;
+            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMinimize.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMinimize.ForeColor = System.Drawing.Color.White;
+            this.buttonMinimize.Image = global::AttendanceManagementSystem.Properties.Resources.minus_sign;
+            this.buttonMinimize.Location = new System.Drawing.Point(808, 34);
+            this.buttonMinimize.Name = "buttonMinimize";
+            this.buttonMinimize.Size = new System.Drawing.Size(52, 35);
+            this.buttonMinimize.TabIndex = 0;
+            this.buttonMinimize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonMinimize.UseVisualStyleBackColor = false;
+            this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
             // 
             // buttonLogout
             // 
@@ -188,67 +249,6 @@
             this.labelTime.TabIndex = 0;
             this.labelTime.Text = "{?}";
             // 
-            // buttonMinimize
-            // 
-            this.buttonMinimize.BackColor = System.Drawing.Color.Indigo;
-            this.buttonMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonMinimize.FlatAppearance.BorderSize = 0;
-            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinimize.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMinimize.ForeColor = System.Drawing.Color.White;
-            this.buttonMinimize.Image = global::AttendanceManagementSystem.Properties.Resources.minus_sign;
-            this.buttonMinimize.Location = new System.Drawing.Point(808, 34);
-            this.buttonMinimize.Name = "buttonMinimize";
-            this.buttonMinimize.Size = new System.Drawing.Size(52, 35);
-            this.buttonMinimize.TabIndex = 0;
-            this.buttonMinimize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonMinimize.UseVisualStyleBackColor = false;
-            this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
-            // 
-            // buttonReport
-            // 
-            this.buttonReport.FlatAppearance.BorderSize = 0;
-            this.buttonReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReport.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReport.ForeColor = System.Drawing.Color.White;
-            this.buttonReport.Image = global::AttendanceManagementSystem.Properties.Resources.report;
-            this.buttonReport.Location = new System.Drawing.Point(18, 295);
-            this.buttonReport.Name = "buttonReport";
-            this.buttonReport.Size = new System.Drawing.Size(254, 75);
-            this.buttonReport.TabIndex = 0;
-            this.buttonReport.Text = "        Report";
-            this.buttonReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonReport.UseVisualStyleBackColor = true;
-            this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AttendanceManagementSystem.Properties.Resources.group2;
-            this.pictureBox1.Location = new System.Drawing.Point(82, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 103);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // buttonAttendance
-            // 
-            this.buttonAttendance.FlatAppearance.BorderSize = 0;
-            this.buttonAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAttendance.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAttendance.ForeColor = System.Drawing.Color.White;
-            this.buttonAttendance.Image = global::AttendanceManagementSystem.Properties.Resources.attendance_list1;
-            this.buttonAttendance.Location = new System.Drawing.Point(24, 214);
-            this.buttonAttendance.Name = "buttonAttendance";
-            this.buttonAttendance.Size = new System.Drawing.Size(260, 75);
-            this.buttonAttendance.TabIndex = 1;
-            this.buttonAttendance.Text = "        Attendance";
-            this.buttonAttendance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonAttendance.UseVisualStyleBackColor = true;
-            this.buttonAttendance.Click += new System.EventHandler(this.buttonAttendance_Click);
-            // 
             // userControlSetting
             // 
             this.userControlSetting.BackColor = System.Drawing.Color.White;
@@ -261,17 +261,17 @@
             this.userControlSetting.TabIndex = 6;
             this.userControlSetting.Visible = false;
             // 
-            // userControlTeacherReport1
+            // userControlTeacherReport2
             // 
-            this.userControlTeacherReport1.BackColor = System.Drawing.Color.White;
-            this.userControlTeacherReport1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlTeacherReport1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.userControlTeacherReport1.Location = new System.Drawing.Point(280, 180);
-            this.userControlTeacherReport1.Margin = new System.Windows.Forms.Padding(4);
-            this.userControlTeacherReport1.Name = "userControlTeacherReport1";
-            this.userControlTeacherReport1.Size = new System.Drawing.Size(981, 540);
-            this.userControlTeacherReport1.TabIndex = 8;
-            this.userControlTeacherReport1.Visible = false;
+            this.userControlTeacherReport2.BackColor = System.Drawing.Color.White;
+            this.userControlTeacherReport2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlTeacherReport2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.userControlTeacherReport2.Location = new System.Drawing.Point(280, 180);
+            this.userControlTeacherReport2.Margin = new System.Windows.Forms.Padding(4);
+            this.userControlTeacherReport2.Name = "userControlTeacherReport2";
+            this.userControlTeacherReport2.Size = new System.Drawing.Size(981, 540);
+            this.userControlTeacherReport2.TabIndex = 8;
+            this.userControlTeacherReport2.Visible = false;
             // 
             // FormTeacher
             // 
@@ -279,7 +279,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1261, 720);
-            this.Controls.Add(this.userControlTeacherReport1);
+            this.Controls.Add(this.userControlTeacherReport2);
             this.Controls.Add(this.panelBack);
             this.Controls.Add(this.userControlSetting);
             this.Controls.Add(this.panel1);
@@ -294,10 +294,10 @@
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panelBack.ResumeLayout(false);
             this.panelBack.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,5 +321,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelTime;
         private User_Controls.UserControlTeacherReport userControlTeacherReport1;
+        private User_Controls.UserControlTeacherReport userControlTeacherReport2;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,6 +14,10 @@ namespace AttendanceManagementSystem.Forms
         [STAThread]
         static void Main()
         {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             //XmlOperation.printData();
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);

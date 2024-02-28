@@ -12,20 +12,26 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Xsl;
 using System.Drawing.Printing;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 
 namespace AttendanceManagementSystem.User_Controls
 {
     public partial class UserControlTeacherReport : UserControl
     {
-        XDocument doc = XDocument.Load(@"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\Attendance_Project\XML files\Data.xml");
-        List<Report_teacher> Students = new List<Report_teacher>();
+        int userId = 8456;
+        XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
         public UserControlTeacherReport()
         {
             InitializeComponent();
+
             var courses = doc.Root
-                            .Element("Courses")
-                            .Elements("course")
-                            .ToList();
+                             .Element("Courses")
+                             .Elements("course")
+                             .Where(c => c.Element("teacher").Element("teachId")?.Value == userId.ToString()) // Filter by teachId
+                             .ToList();
 
             if (courses.Any())
             {
@@ -120,8 +126,6 @@ namespace AttendanceManagementSystem.User_Controls
                                              }).ToList();
 
             dataGridViewCourse.DataSource = students;
-
-            MessageBox.Show(transformedXml, "Transformed HTML Content", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
@@ -143,13 +147,13 @@ namespace AttendanceManagementSystem.User_Controls
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             // Define the bounds for printing
-            Rectangle bounds = e.MarginBounds;
+            System.Drawing.Rectangle bounds = e.MarginBounds;
 
             // Create a bitmap to hold the content of the DataGridView
             Bitmap bitmap = new Bitmap(dataGridViewCourse.Width, dataGridViewCourse.Height);
 
             // Draw the DataGridView to the bitmap
-            dataGridViewCourse.DrawToBitmap(bitmap, new Rectangle(0, 0, dataGridViewCourse.Width, dataGridViewCourse.Height));
+            dataGridViewCourse.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, dataGridViewCourse.Width, dataGridViewCourse.Height));
 
             // Draw the bitmap to the printer device
             e.Graphics.DrawImage(bitmap, bounds);
@@ -159,17 +163,87 @@ namespace AttendanceManagementSystem.User_Controls
         {
             PrintDocument printDocument = new PrintDocument();
 
-            // Set up event handlers for printing
             printDocument.PrintPage += PrintDocument_PrintPage;
-
-            // Show print dialog to configure printing options
             PrintDialog printDialog = new PrintDialog();
             printDialog.Document = printDocument;
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
-                // Print the document
                 printDocument.Print();
             }
+        }
+        private int GenerateRandomNumber()
+        {
+            // Generate a random number
+            Random rnd = new Random();
+            return rnd.Next(1000, 9999); // Generate a random number between 1000 and 9999
+        }
+
+        private void ExportToPdf(int randomNumber)
+        {
+            string fileName = $"../../../../Reports\\AttendanceReport_{randomNumber}.pdf";
+
+            Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
+            PdfWriter.GetInstance(pdfDoc, new FileStream(fileName, FileMode.Create));
+
+            pdfDoc.Open();
+
+            pdfDoc.Add(new Paragraph("Attendance Report"));
+            PdfPTable pdfTable = new PdfPTable(dataGridViewCourse.Columns.Count);
+            foreach (DataGridViewColumn column in dataGridViewCourse.Columns)
+            {
+                pdfTable.AddCell(column.HeaderText);
+            }
+            foreach (DataGridViewRow row in dataGridViewCourse.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    pdfTable.AddCell(cell.Value.ToString());
+                }
+            }
+            pdfDoc.Add(pdfTable);
+
+            pdfDoc.Close();
+
+            MessageBox.Show($"Attendance report exported as PDF successfully!\n in location '{fileName}'", "Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void ExportToExcel(int randomNumber)
+        {
+            using (ExcelPackage excelPackage = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Attendance Report");
+
+                for (int i = 0; i < dataGridViewCourse.Columns.Count; i++)
+                {
+                    worksheet.Cells[1, i + 1].Value = dataGridViewCourse.Columns[i].HeaderText;
+                }
+                for (int i = 0; i < dataGridViewCourse.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataGridViewCourse.Columns.Count; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1].Value = dataGridViewCourse.Rows[i].Cells[j].Value;
+                    }
+                }
+
+                FileInfo excelFile = new FileInfo($"../../../../Reports\\AttendanceReport_{randomNumber}.xlsx");
+                excelPackage.SaveAs(excelFile);
+
+                MessageBox.Show($"Attendance report exported as Excel successfully! \n in location '{excelFile.FullName}'", "Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
+
+
+        private void buttonPdf_Click(object sender, EventArgs e)
+        {
+            ExportToPdf(GenerateRandomNumber());
+        }
+
+        private void buttonExcel_Click(object sender, EventArgs e)
+        {
+            ExportToExcel(GenerateRandomNumber());
+
         }
     }
 }

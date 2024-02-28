@@ -45,12 +45,12 @@ namespace AttendanceManagementSystem.User_Controls
             string PassRegex = @"^[A-Za-z0-9]{8,}$";
             if (textBoxUserName.Text.Trim()==string.Empty || int.TryParse(textBoxUserName.Text, out numericValue))
             {
-                MessageBox.Show("Enter a valid Course name and must not be a number", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Enter a valid Name and must not be a number", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             else if (textBoxUserID.Text.Trim()==string.Empty)
             {
-                MessageBox.Show("Enter a valid Course ID", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Enter a valid User ID", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             else if (textBoxEmail.Text.Trim()==string.Empty || Regex.IsMatch(textBoxEmail.Text.Trim(),EmailRegx)==false)
@@ -92,7 +92,7 @@ namespace AttendanceManagementSystem.User_Controls
                 );
                 usersElement.Add(newUserElement);
                 doc.Save(@"../../../../XML files\Data.xml");
-                MessageBox.Show("Course Added Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("User Added Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTextBox();
             }
 

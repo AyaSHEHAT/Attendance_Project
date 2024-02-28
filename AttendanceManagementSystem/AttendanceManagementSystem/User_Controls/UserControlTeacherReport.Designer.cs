@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +41,8 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonExcel = new System.Windows.Forms.Button();
+            this.buttonPdf = new System.Windows.Forms.Button();
             this.buttonPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourse)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +50,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Location = new System.Drawing.Point(112, 175);
+            this.panel1.Location = new System.Drawing.Point(43, 145);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(270, 2);
             this.panel1.TabIndex = 2;
@@ -58,7 +59,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(109, 119);
+            this.label1.Location = new System.Drawing.Point(40, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 19);
             this.label1.TabIndex = 3;
@@ -80,7 +81,7 @@
             this.comboBoxCourses.BackColor = System.Drawing.Color.White;
             this.comboBoxCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxCourses.FormattingEnabled = true;
-            this.comboBoxCourses.Location = new System.Drawing.Point(112, 138);
+            this.comboBoxCourses.Location = new System.Drawing.Point(43, 108);
             this.comboBoxCourses.Name = "comboBoxCourses";
             this.comboBoxCourses.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBoxCourses.Size = new System.Drawing.Size(270, 31);
@@ -92,7 +93,7 @@
             this.comboBoxDate.BackColor = System.Drawing.Color.White;
             this.comboBoxDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxDate.FormattingEnabled = true;
-            this.comboBoxDate.Location = new System.Drawing.Point(585, 138);
+            this.comboBoxDate.Location = new System.Drawing.Point(516, 108);
             this.comboBoxDate.Name = "comboBoxDate";
             this.comboBoxDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBoxDate.Size = new System.Drawing.Size(270, 31);
@@ -102,7 +103,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.Location = new System.Drawing.Point(585, 175);
+            this.panel2.Location = new System.Drawing.Point(516, 145);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(270, 2);
             this.panel2.TabIndex = 6;
@@ -111,7 +112,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(581, 119);
+            this.label3.Location = new System.Drawing.Point(512, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 19);
             this.label3.TabIndex = 7;
@@ -126,14 +127,6 @@
             this.dataGridViewCourse.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCourse.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewCourse.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCourse.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewCourse.ColumnHeadersHeight = 30;
             this.dataGridViewCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewCourse.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -142,7 +135,7 @@
             this.Column3,
             this.Column5,
             this.Column4});
-            this.dataGridViewCourse.Location = new System.Drawing.Point(112, 191);
+            this.dataGridViewCourse.Location = new System.Drawing.Point(43, 161);
             this.dataGridViewCourse.Name = "dataGridViewCourse";
             this.dataGridViewCourse.ReadOnly = true;
             this.dataGridViewCourse.RowHeadersWidth = 51;
@@ -190,6 +183,30 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
+            // buttonExcel
+            // 
+            this.buttonExcel.BackColor = System.Drawing.Color.Indigo;
+            this.buttonExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExcel.Image = global::AttendanceManagementSystem.Properties.Resources.excel_new;
+            this.buttonExcel.Location = new System.Drawing.Point(868, 420);
+            this.buttonExcel.Name = "buttonExcel";
+            this.buttonExcel.Size = new System.Drawing.Size(61, 41);
+            this.buttonExcel.TabIndex = 12;
+            this.buttonExcel.UseVisualStyleBackColor = false;
+            this.buttonExcel.Click += new System.EventHandler(this.buttonExcel_Click);
+            // 
+            // buttonPdf
+            // 
+            this.buttonPdf.BackColor = System.Drawing.Color.Indigo;
+            this.buttonPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPdf.Image = global::AttendanceManagementSystem.Properties.Resources.icons8_export_pdf_24;
+            this.buttonPdf.Location = new System.Drawing.Point(868, 344);
+            this.buttonPdf.Name = "buttonPdf";
+            this.buttonPdf.Size = new System.Drawing.Size(61, 41);
+            this.buttonPdf.TabIndex = 11;
+            this.buttonPdf.UseVisualStyleBackColor = false;
+            this.buttonPdf.Click += new System.EventHandler(this.buttonPdf_Click);
+            // 
             // buttonPrint
             // 
             this.buttonPrint.BackColor = System.Drawing.Color.Indigo;
@@ -207,6 +224,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.buttonExcel);
+            this.Controls.Add(this.buttonPdf);
             this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.dataGridViewCourse);
             this.Controls.Add(this.comboBoxDate);
@@ -217,7 +236,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControlTeacherReport";
             this.Size = new System.Drawing.Size(942, 501);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourse)).EndInit();
@@ -242,5 +261,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Button buttonPrint;
+        private System.Windows.Forms.Button buttonPdf;
+        private System.Windows.Forms.Button buttonExcel;
     }
 }
