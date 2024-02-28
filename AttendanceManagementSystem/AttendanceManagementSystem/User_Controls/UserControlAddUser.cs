@@ -14,19 +14,29 @@ namespace AttendanceManagementSystem.User_Controls
 {
     public partial class UserControlAddUser : UserControl
     {
-       
+        XDocument xml;
+        private string URL_XML_FILE = @"../../../../XML files\Data.xml";
+
         XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
 
-      //  XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
-        
+        List<User> usersList = new List<User>();
+        List<Teacher> teachersList = new List<Teacher>();
+        List<Student> studentsList = new List<Student>();
 
-       
+        List<XElement> teachers;
+        // DataTable dt;
+        string teacherName;
 
 
         public UserControlAddUser()
         {
             InitializeComponent();
+
+            //call loadUsers to load data from xml file and save it in courses object
+            loadUsers();
+
         }
+
         public void ClearTextBox()
         {
             textBoxUserName.Clear();
@@ -95,6 +105,7 @@ namespace AttendanceManagementSystem.User_Controls
                 MessageBox.Show("User Added Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTextBox();
             }
+            loadUsers();
 
         }
 
@@ -103,47 +114,88 @@ namespace AttendanceManagementSystem.User_Controls
             ClearTextBox();
         }
 
-        private void tabPageAdduser_Click(object sender, EventArgs e)
+
+
+        //  show date in grid view
+        public void xmlOperation(string file)
         {
+            teachersList.Clear();
+            try
+            {
+                xml = XDocument.Load(file);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading information: " + ex.Message);
+            }
+
+            
+            foreach (XElement userElement in xml.Descendants("user"))
+            {
+                string Id = userElement.Element("id").Value;
+                string Name = userElement.Element("name").Value;
+                string Email = userElement.Element("email").Value;
+                string Pass = userElement.Element("userPass").Value;
+                string Age = userElement.Element("age").Value;
+                string Address = userElement.Element("address").Value;
+                string Role = userElement.Element("role").Value;
+
+
+
+
+                usersList.Add(new User
+                {
+                    Id = Id,
+                    Name = Name,
+                    Email = Email,
+                    Password = Pass,
+                    Age=Age,
+                    Address = Address,
+                    Role=Role
+
+
+                });
+
+            }
 
         }
 
-        private void panelRole_Paint(object sender, PaintEventArgs e)
+        public void loadUsers()
         {
 
+            xmlOperation(URL_XML_FILE);
+          
+
+            dataGridViewUser.DataError += dataGridViewUser_DataError;
+            dataGridViewUser.DataSource = null;
+            dataGridViewUser.Rows.Clear();
+
+            dataGridViewUser.Columns.Add("Id", "ID");
+            dataGridViewUser.Columns.Add("Name", "Name");
+            dataGridViewUser.Columns.Add("Email", "Email");
+            dataGridViewUser.Columns.Add("Password", "Password");
+            dataGridViewUser.Columns.Add("Age", "Age");
+            dataGridViewUser.Columns.Add("Address", "Address");
+            dataGridViewUser.Columns.Add("Role", "Role");
+            dataGridViewUser.Columns[0].Visible = false;
+            dataGridViewUser.Columns[1].Visible = false;
+            dataGridViewUser.Columns[2].Visible = false;
+            dataGridViewUser.Columns[3].Visible = false;
+            dataGridViewUser.Columns[4].Visible = false;
+            dataGridViewUser.Columns[5].Visible = false;
+            dataGridViewUser.Columns[6].Visible = false;
+
+
+
+
+            dataGridViewUser.DataSource = usersList;
+           
         }
 
-        private void radioBtnStudent_CheckedChanged(object sender, EventArgs e)
+        private void dataGridViewUser_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-
-        }
-
-        private void radioBtnTeacher_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void textBoxUserName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void tabPageSearch_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPageUpdateandDelete_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
+            e.ThrowException = false;
+            e.Cancel = false;
         }
     }
 }

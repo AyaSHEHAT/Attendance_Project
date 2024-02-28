@@ -133,20 +133,20 @@ namespace AttendanceManagementSystem.User_Controls
 
             }
 
-
-
-
         }
 
         public void loadCourses ()
         {
 
             xmlOperation(URL_XML_FILE);
+            dataGridViewCourse.AutoGenerateColumns = false;
+
             dataGridViewCourse.DataError += dataGridViewCourse_DataError;
             dataGridViewCourse.DataSource = null;
             dataGridViewCourse.Rows.Clear();
             dataGridViewCourse.DataSource = courses;
-            dataGridViewCourse.Columns[5].Visible = false;
+
+            // dataGridViewCourse.Columns[5].Visible = false;
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)

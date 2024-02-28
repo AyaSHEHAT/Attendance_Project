@@ -9,9 +9,10 @@ namespace AttendanceManagementSystem
     internal class Student : User
     {
         public List<Course> Courses { get; set; }
-        public Student(int id, string name, string email, string password, string phone, string address, string role) : base(id, name, email, password, phone, address, "Student")
+        public Student(int id, string name, string email, string password, string phone, string address, string role) 
         {
             Courses = new List<Course>();
+            role = "Student";
         }
     }
 }

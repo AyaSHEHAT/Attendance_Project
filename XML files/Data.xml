@@ -212,5 +212,14 @@
         <teachId>8456</teachId>
       </teacher>
     </course>
+    <course>
+      <cID>123</cID>
+      <cName>nn</cName>
+      <totalsessionNum>1</totalsessionNum>
+      <startDate>2024-02-28</startDate>
+      <teacher>
+        <teachId>8123</teachId>
+      </teacher>
+    </course>
   </Courses>
 </Data>

@@ -3,20 +3,44 @@
   "WorkspaceRootPath": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|d:\\iti\\xml\\project\\new folder\\attendance_project\\attendancemanagementsystem\\attendancemanagementsystem\\user_controls\\usercontroladduser.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontroladduser.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|d:\\iti\\xml\\project\\new folder\\attendance_project\\attendancemanagementsystem\\attendancemanagementsystem\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|d:\\iti\\xml\\project\\new folder\\attendance_project\\attendancemanagementsystem\\attendancemanagementsystem\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|d:\\iti\\xml\\project\\new folder\\attendance_project\\attendancemanagementsystem\\attendancemanagementsystem\\user_controls\\usercontroladdcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontroladdcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|d:\\iti\\xml\\project\\new folder\\attendance_project\\attendancemanagementsystem\\attendancemanagementsystem\\user_controls\\usercontroladdcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontroladdcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\user_controls\\usercontroladduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontroladduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|d:\\iti\\xml\\project\\new folder\\attendance_project\\attendancemanagementsystem\\attendancemanagementsystem\\user_controls\\usercontroladduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\user_controls\\usercontroladduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontroladduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\user_controls\\usercontroladduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontroladduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\user_controls\\usercontroladdcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontroladdcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|d:\\iti\\xml\\project\\new folder\\attendance_project\\attendancemanagementsystem\\attendancemanagementsystem\\teacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\teacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|d:\\iti\\xml\\project\\new folder\\attendance_project\\attendancemanagementsystem\\attendancemanagementsystem\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|d:\\iti\\xml\\project\\new folder\\attendance_project\\attendancemanagementsystem\\attendancemanagementsystem\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,31 +55,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserControlAddUser.Designer.cs",
+              "DocumentMoniker": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddUser.Designer.cs",
+              "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlAddUser.Designer.cs",
+              "ToolTip": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddUser.Designer.cs",
+              "RelativeToolTip": "AttendanceManagementSystem\\User_Controls\\UserControlAddUser.Designer.cs",
+              "ViewState": "AQIAAEwDAACgzMzMzGwwwFUDAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T14:10:39.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Course.cs",
+              "DocumentMoniker": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Course.cs",
+              "RelativeDocumentMoniker": "AttendanceManagementSystem\\Course.cs",
+              "ToolTip": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Course.cs",
+              "RelativeToolTip": "AttendanceManagementSystem\\Course.cs",
+              "ViewState": "AQIAAAcAAACgZWZmZmYUwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T13:17:24.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User.cs",
+              "RelativeDocumentMoniker": "AttendanceManagementSystem\\User.cs",
+              "ToolTip": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User.cs",
+              "RelativeToolTip": "AttendanceManagementSystem\\User.cs",
+              "ViewState": "AQIAAAYAAACAMjMzMzMLwA4AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T13:16:55.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "UserControlAddCourse.cs",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.cs",
               "ToolTip": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.cs",
               "RelativeToolTip": "AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.cs",
-              "ViewState": "AQIAACEBAAAAwP/////7vy0BAAAzAAAA",
+              "ViewState": "AQIAAIgAAAAAmpmZmVknwJQAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-28T04:24:26.465Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserControlAddCourse.cs [Design]",
-              "DocumentMoniker": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.cs",
-              "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.cs",
-              "ToolTip": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.cs [Design]",
-              "RelativeToolTip": "AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.cs [Design]",
+              "DocumentIndex": 5,
+              "Title": "UserControlAddUser.cs",
+              "DocumentMoniker": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddUser.cs",
+              "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlAddUser.cs",
+              "ToolTip": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddUser.cs",
+              "RelativeToolTip": "AttendanceManagementSystem\\User_Controls\\UserControlAddUser.cs",
+              "ViewState": "AQIAAKoAAAAAmJmZmRkiwLkAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T04:21:42.857Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-02-27T20:49:40.18Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "UserControlAddUser.cs [Design]",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddUser.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlAddUser.cs",
@@ -67,15 +131,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserControlAddUser.cs",
-              "DocumentMoniker": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddUser.cs",
-              "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlAddUser.cs",
-              "ToolTip": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddUser.cs",
-              "RelativeToolTip": "AttendanceManagementSystem\\User_Controls\\UserControlAddUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAHAAAA",
+              "DocumentIndex": 6,
+              "Title": "UserControlAddCourse.cs [Design]",
+              "DocumentMoniker": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.cs",
+              "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.cs",
+              "ToolTip": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.cs [Design]",
+              "RelativeToolTip": "AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-27T20:49:40.18Z",
+              "WhenOpened": "2024-02-28T04:21:42.857Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Admin.cs",
+              "RelativeDocumentMoniker": "AttendanceManagementSystem\\Admin.cs",
+              "ToolTip": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Admin.cs",
+              "RelativeToolTip": "AttendanceManagementSystem\\Admin.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAswAwAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T13:30:27.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Teacher.cs",
+              "DocumentMoniker": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Teacher.cs",
+              "RelativeDocumentMoniker": "AttendanceManagementSystem\\Teacher.cs",
+              "ToolTip": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Teacher.cs",
+              "RelativeToolTip": "AttendanceManagementSystem\\Teacher.cs",
+              "ViewState": "AQIAAAQAAACMmZmZmRkZwA0AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T13:33:22.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Student.cs",
+              "DocumentMoniker": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Student.cs",
+              "RelativeDocumentMoniker": "AttendanceManagementSystem\\Student.cs",
+              "ToolTip": "D:\\ITI\\xml\\project\\New folder\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Student.cs",
+              "RelativeToolTip": "AttendanceManagementSystem\\Student.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAswA4AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T13:32:26.478Z",
               "EditorCaption": ""
             }
           ]

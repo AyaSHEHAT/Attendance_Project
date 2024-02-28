@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.tabControlAddUser = new System.Windows.Forms.TabControl();
             this.tabPageAdduser = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.numericUpDownAge = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
             this.panelRole = new System.Windows.Forms.Panel();
             this.radioBtnStudent = new System.Windows.Forms.RadioButton();
             this.radioBtnTeacher = new System.Windows.Forms.RadioButton();
@@ -53,15 +56,51 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPageSearch = new System.Windows.Forms.TabPage();
+            this.label19 = new System.Windows.Forms.Label();
+            this.lblTotalCourse = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dataGridViewUser = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.tabPageUpdateandDelete = new System.Windows.Forms.TabPage();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUbdate = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDownAge = new System.Windows.Forms.NumericUpDown();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.tabControlAddUser.SuspendLayout();
             this.tabPageAdduser.SuspendLayout();
-            this.panelRole.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
+            this.panelRole.SuspendLayout();
+            this.tabPageSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPageUpdateandDelete.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlAddUser
@@ -109,10 +148,49 @@
             this.tabPageAdduser.Location = new System.Drawing.Point(4, 4);
             this.tabPageAdduser.Name = "tabPageAdduser";
             this.tabPageAdduser.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdduser.Size = new System.Drawing.Size(934, 467);
+            this.tabPageAdduser.Size = new System.Drawing.Size(934, 469);
             this.tabPageAdduser.TabIndex = 0;
             this.tabPageAdduser.Text = "Add User";
-            this.tabPageAdduser.Click += new System.EventHandler(this.tabPageAdduser_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.Location = new System.Drawing.Point(113, 445);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(270, 2);
+            this.panel3.TabIndex = 11;
+            // 
+            // numericUpDownAge
+            // 
+            this.numericUpDownAge.Location = new System.Drawing.Point(113, 411);
+            this.numericUpDownAge.Maximum = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
+            this.numericUpDownAge.Minimum = new decimal(new int[] {
+            19,
+            0,
+            0,
+            0});
+            this.numericUpDownAge.Name = "numericUpDownAge";
+            this.numericUpDownAge.Size = new System.Drawing.Size(267, 24);
+            this.numericUpDownAge.TabIndex = 10;
+            this.numericUpDownAge.Value = new decimal(new int[] {
+            19,
+            0,
+            0,
+            0});
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(109, 386);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 17);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Age:";
             // 
             // panelRole
             // 
@@ -130,12 +208,11 @@
             this.radioBtnStudent.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBtnStudent.Location = new System.Drawing.Point(22, 56);
             this.radioBtnStudent.Name = "radioBtnStudent";
-            this.radioBtnStudent.Size = new System.Drawing.Size(89, 23);
+            this.radioBtnStudent.Size = new System.Drawing.Size(75, 21);
             this.radioBtnStudent.TabIndex = 1;
             this.radioBtnStudent.TabStop = true;
             this.radioBtnStudent.Text = "Student";
             this.radioBtnStudent.UseVisualStyleBackColor = true;
-            this.radioBtnStudent.CheckedChanged += new System.EventHandler(this.radioBtnStudent_CheckedChanged);
             // 
             // radioBtnTeacher
             // 
@@ -143,12 +220,11 @@
             this.radioBtnTeacher.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBtnTeacher.Location = new System.Drawing.Point(22, 22);
             this.radioBtnTeacher.Name = "radioBtnTeacher";
-            this.radioBtnTeacher.Size = new System.Drawing.Size(96, 23);
+            this.radioBtnTeacher.Size = new System.Drawing.Size(80, 21);
             this.radioBtnTeacher.TabIndex = 0;
             this.radioBtnTeacher.TabStop = true;
             this.radioBtnTeacher.Text = "Teacher";
             this.radioBtnTeacher.UseVisualStyleBackColor = true;
-            this.radioBtnTeacher.CheckedChanged += new System.EventHandler(this.radioBtnTeacher_CheckedChanged);
             // 
             // label4
             // 
@@ -156,7 +232,7 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(535, 306);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 19);
+            this.label4.Size = new System.Drawing.Size(42, 17);
             this.label4.TabIndex = 0;
             this.label4.Text = "Role:";
             // 
@@ -166,7 +242,7 @@
             this.textBoxUserAddress.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserAddress.Location = new System.Drawing.Point(112, 330);
             this.textBoxUserAddress.Name = "textBoxUserAddress";
-            this.textBoxUserAddress.Size = new System.Drawing.Size(270, 21);
+            this.textBoxUserAddress.Size = new System.Drawing.Size(270, 17);
             this.textBoxUserAddress.TabIndex = 5;
             // 
             // panel6
@@ -191,7 +267,7 @@
             this.textBoxUserID.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserID.Location = new System.Drawing.Point(539, 151);
             this.textBoxUserID.Name = "textBoxUserID";
-            this.textBoxUserID.Size = new System.Drawing.Size(270, 21);
+            this.textBoxUserID.Size = new System.Drawing.Size(270, 17);
             this.textBoxUserID.TabIndex = 2;
             // 
             // label7
@@ -200,7 +276,7 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(535, 122);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 19);
+            this.label7.Size = new System.Drawing.Size(26, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "ID:";
             // 
@@ -210,9 +286,8 @@
             this.textBoxEmail.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail.Location = new System.Drawing.Point(112, 243);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(270, 21);
+            this.textBoxEmail.Size = new System.Drawing.Size(270, 17);
             this.textBoxEmail.TabIndex = 3;
-            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
             // 
             // panel4
             // 
@@ -242,7 +317,7 @@
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(108, 219);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 19);
+            this.label6.Size = new System.Drawing.Size(46, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "Email";
             // 
@@ -252,7 +327,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(109, 306);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 19);
+            this.label5.Size = new System.Drawing.Size(65, 17);
             this.label5.TabIndex = 0;
             this.label5.Text = "Address:";
             // 
@@ -270,7 +345,7 @@
             this.textBoxUserPass.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserPass.Location = new System.Drawing.Point(539, 243);
             this.textBoxUserPass.Name = "textBoxUserPass";
-            this.textBoxUserPass.Size = new System.Drawing.Size(270, 21);
+            this.textBoxUserPass.Size = new System.Drawing.Size(270, 17);
             this.textBoxUserPass.TabIndex = 4;
             // 
             // label3
@@ -279,7 +354,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(535, 214);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 19);
+            this.label3.Size = new System.Drawing.Size(74, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Password:";
             // 
@@ -297,9 +372,8 @@
             this.textBoxUserName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserName.Location = new System.Drawing.Point(112, 151);
             this.textBoxUserName.Name = "textBoxUserName";
-            this.textBoxUserName.Size = new System.Drawing.Size(270, 21);
+            this.textBoxUserName.Size = new System.Drawing.Size(270, 17);
             this.textBoxUserName.TabIndex = 1;
-            this.textBoxUserName.TextChanged += new System.EventHandler(this.textBoxUserName_TextChanged);
             // 
             // label1
             // 
@@ -307,7 +381,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(109, 122);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 19);
+            this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
             // 
@@ -318,80 +392,414 @@
             this.label2.ForeColor = System.Drawing.Color.Indigo;
             this.label2.Location = new System.Drawing.Point(3, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 27);
+            this.label2.Size = new System.Drawing.Size(94, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Add User";
             // 
             // tabPageSearch
             // 
+            this.tabPageSearch.Controls.Add(this.label19);
+            this.tabPageSearch.Controls.Add(this.lblTotalCourse);
+            this.tabPageSearch.Controls.Add(this.label17);
+            this.tabPageSearch.Controls.Add(this.dataGridViewUser);
+            this.tabPageSearch.Controls.Add(this.pictureBox1);
+            this.tabPageSearch.Controls.Add(this.panel14);
+            this.tabPageSearch.Controls.Add(this.txtSearch);
+            this.tabPageSearch.Controls.Add(this.label18);
             this.tabPageSearch.Location = new System.Drawing.Point(4, 4);
             this.tabPageSearch.Name = "tabPageSearch";
             this.tabPageSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSearch.Size = new System.Drawing.Size(934, 467);
+            this.tabPageSearch.Size = new System.Drawing.Size(934, 469);
             this.tabPageSearch.TabIndex = 1;
             this.tabPageSearch.Text = "Search";
             this.tabPageSearch.UseVisualStyleBackColor = true;
-            this.tabPageSearch.Click += new System.EventHandler(this.tabPageSearch_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Indigo;
+            this.label19.Location = new System.Drawing.Point(6, 3);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(84, 23);
+            this.label19.TabIndex = 17;
+            this.label19.Text = "Search :";
+            // 
+            // lblTotalCourse
+            // 
+            this.lblTotalCourse.AutoSize = true;
+            this.lblTotalCourse.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCourse.Location = new System.Drawing.Point(844, 424);
+            this.lblTotalCourse.Name = "lblTotalCourse";
+            this.lblTotalCourse.Size = new System.Drawing.Size(28, 18);
+            this.lblTotalCourse.TabIndex = 16;
+            this.lblTotalCourse.Text = "(?)";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(737, 426);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(101, 17);
+            this.label17.TabIndex = 15;
+            this.label17.Text = "Total Courses:";
+            // 
+            // dataGridViewUser
+            // 
+            this.dataGridViewUser.AllowUserToAddRows = false;
+            this.dataGridViewUser.AllowUserToDeleteRows = false;
+            this.dataGridViewUser.AllowUserToResizeColumns = false;
+            this.dataGridViewUser.AllowUserToResizeRows = false;
+            this.dataGridViewUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewUser.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewUser.ColumnHeadersHeight = 30;
+            this.dataGridViewUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridViewUser.Location = new System.Drawing.Point(31, 108);
+            this.dataGridViewUser.Name = "dataGridViewUser";
+            this.dataGridViewUser.ReadOnly = true;
+            this.dataGridViewUser.RowHeadersWidth = 51;
+            this.dataGridViewUser.ShowRowErrors = false;
+            this.dataGridViewUser.Size = new System.Drawing.Size(872, 318);
+            this.dataGridViewUser.TabIndex = 14;
+            this.dataGridViewUser.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewUser_DataError);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pictureBox1.Image = global::AttendanceManagementSystem.Properties.Resources.magnify;
+            this.pictureBox1.Location = new System.Drawing.Point(398, 50);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.LightGray;
+            this.panel14.Location = new System.Drawing.Point(153, 81);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(270, 2);
+            this.panel14.TabIndex = 10;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(153, 54);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(270, 17);
+            this.txtSearch.TabIndex = 12;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(150, 25);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(105, 17);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "Course Name:";
             // 
             // tabPageUpdateandDelete
             // 
+            this.tabPageUpdateandDelete.Controls.Add(this.btnDelete);
+            this.tabPageUpdateandDelete.Controls.Add(this.btnUbdate);
+            this.tabPageUpdateandDelete.Controls.Add(this.label16);
+            this.tabPageUpdateandDelete.Controls.Add(this.panel7);
+            this.tabPageUpdateandDelete.Controls.Add(this.numericUpDown1);
+            this.tabPageUpdateandDelete.Controls.Add(this.label9);
+            this.tabPageUpdateandDelete.Controls.Add(this.panel8);
+            this.tabPageUpdateandDelete.Controls.Add(this.label10);
+            this.tabPageUpdateandDelete.Controls.Add(this.textBox1);
+            this.tabPageUpdateandDelete.Controls.Add(this.panel9);
+            this.tabPageUpdateandDelete.Controls.Add(this.panel10);
+            this.tabPageUpdateandDelete.Controls.Add(this.textBox2);
+            this.tabPageUpdateandDelete.Controls.Add(this.label11);
+            this.tabPageUpdateandDelete.Controls.Add(this.textBox3);
+            this.tabPageUpdateandDelete.Controls.Add(this.panel11);
+            this.tabPageUpdateandDelete.Controls.Add(this.label12);
+            this.tabPageUpdateandDelete.Controls.Add(this.label13);
+            this.tabPageUpdateandDelete.Controls.Add(this.panel12);
+            this.tabPageUpdateandDelete.Controls.Add(this.textBox4);
+            this.tabPageUpdateandDelete.Controls.Add(this.label14);
+            this.tabPageUpdateandDelete.Controls.Add(this.panel13);
+            this.tabPageUpdateandDelete.Controls.Add(this.textBox5);
+            this.tabPageUpdateandDelete.Controls.Add(this.label15);
             this.tabPageUpdateandDelete.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageUpdateandDelete.Location = new System.Drawing.Point(4, 4);
             this.tabPageUpdateandDelete.Name = "tabPageUpdateandDelete";
             this.tabPageUpdateandDelete.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageUpdateandDelete.Size = new System.Drawing.Size(934, 467);
+            this.tabPageUpdateandDelete.Size = new System.Drawing.Size(934, 469);
             this.tabPageUpdateandDelete.TabIndex = 2;
             this.tabPageUpdateandDelete.Text = "Update and delete";
             this.tabPageUpdateandDelete.UseVisualStyleBackColor = true;
-            this.tabPageUpdateandDelete.Click += new System.EventHandler(this.tabPageUpdateandDelete_Click);
             // 
-            // toolTip1
+            // btnDelete
             // 
-            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelete.BackColor = System.Drawing.Color.Firebrick;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(704, 360);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(114, 37);
+            this.btnDelete.TabIndex = 35;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
-            // label8
+            // btnUbdate
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(109, 386);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 19);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Age:";
+            this.btnUbdate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUbdate.BackColor = System.Drawing.Color.Indigo;
+            this.btnUbdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUbdate.FlatAppearance.BorderSize = 0;
+            this.btnUbdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUbdate.ForeColor = System.Drawing.Color.White;
+            this.btnUbdate.Location = new System.Drawing.Point(552, 360);
+            this.btnUbdate.Name = "btnUbdate";
+            this.btnUbdate.Size = new System.Drawing.Size(114, 37);
+            this.btnUbdate.TabIndex = 34;
+            this.btnUbdate.Text = "Update";
+            this.btnUbdate.UseVisualStyleBackColor = false;
             // 
-            // numericUpDownAge
+            // label16
             // 
-            this.numericUpDownAge.Location = new System.Drawing.Point(113, 411);
-            this.numericUpDownAge.Maximum = new decimal(new int[] {
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Indigo;
+            this.label16.Location = new System.Drawing.Point(6, 3);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(124, 23);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "Update User";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.LightGray;
+            this.panel7.Location = new System.Drawing.Point(122, 394);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(270, 2);
+            this.panel7.TabIndex = 32;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(122, 360);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
             40,
             0,
             0,
             0});
-            this.numericUpDownAge.Minimum = new decimal(new int[] {
+            this.numericUpDown1.Minimum = new decimal(new int[] {
             19,
             0,
             0,
             0});
-            this.numericUpDownAge.Name = "numericUpDownAge";
-            this.numericUpDownAge.Size = new System.Drawing.Size(267, 28);
-            this.numericUpDownAge.TabIndex = 10;
-            this.numericUpDownAge.Value = new decimal(new int[] {
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(267, 24);
+            this.numericUpDown1.TabIndex = 31;
+            this.numericUpDown1.Value = new decimal(new int[] {
             19,
             0,
             0,
             0});
             // 
-            // panel3
+            // label9
             // 
-            this.panel3.BackColor = System.Drawing.Color.LightGray;
-            this.panel3.Location = new System.Drawing.Point(113, 445);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(270, 2);
-            this.panel3.TabIndex = 11;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(118, 335);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 17);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Age:";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.Controls.Add(this.radioButton1);
+            this.panel8.Controls.Add(this.radioButton2);
+            this.panel8.Location = new System.Drawing.Point(600, 227);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(200, 100);
+            this.panel8.TabIndex = 28;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(22, 56);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(75, 21);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Student";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(22, 22);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(80, 21);
+            this.radioButton2.TabIndex = 0;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Teacher";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(544, 255);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 17);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "Role:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(121, 279);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(270, 17);
+            this.textBox1.TabIndex = 27;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.LightGray;
+            this.panel9.Location = new System.Drawing.Point(121, 306);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(270, 2);
+            this.panel9.TabIndex = 18;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.LightGray;
+            this.panel10.Location = new System.Drawing.Point(548, 127);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(270, 2);
+            this.panel10.TabIndex = 19;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(548, 100);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(270, 17);
+            this.textBox2.TabIndex = 24;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(544, 71);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(26, 17);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "ID:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(121, 192);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(270, 17);
+            this.textBox3.TabIndex = 25;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.LightGray;
+            this.panel11.Location = new System.Drawing.Point(121, 219);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(270, 2);
+            this.panel11.TabIndex = 21;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(117, 168);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(46, 17);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Email";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(118, 255);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(65, 17);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Address:";
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.LightGray;
+            this.panel12.Location = new System.Drawing.Point(548, 219);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(270, 2);
+            this.panel12.TabIndex = 15;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(548, 192);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(270, 17);
+            this.textBox4.TabIndex = 26;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(544, 163);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(74, 17);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Password:";
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.LightGray;
+            this.panel13.Location = new System.Drawing.Point(121, 127);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(270, 2);
+            this.panel13.TabIndex = 13;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(121, 100);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(270, 17);
+            this.textBox5.TabIndex = 23;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(118, 71);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(54, 17);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Name:";
             // 
             // UserControlAddUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tabControlAddUser);
@@ -402,9 +810,18 @@
             this.tabControlAddUser.ResumeLayout(false);
             this.tabPageAdduser.ResumeLayout(false);
             this.tabPageAdduser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
             this.panelRole.ResumeLayout(false);
             this.panelRole.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
+            this.tabPageSearch.ResumeLayout(false);
+            this.tabPageSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPageUpdateandDelete.ResumeLayout(false);
+            this.tabPageUpdateandDelete.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -440,5 +857,38 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.NumericUpDown numericUpDownAge;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUbdate;
+        private System.Windows.Forms.Label lblTotalCourse;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.DataGridView dataGridViewUser;
     }
 }
