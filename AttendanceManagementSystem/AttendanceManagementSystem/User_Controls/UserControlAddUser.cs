@@ -175,6 +175,12 @@ namespace AttendanceManagementSystem.User_Controls
             dataGridViewUser.Columns[4].Visible = false;
             dataGridViewUser.Columns[5].Visible = false;
             dataGridViewUser.Columns[6].Visible = false;
+           
+
+
+
+
+
 
 
 
@@ -187,6 +193,30 @@ namespace AttendanceManagementSystem.User_Controls
         {
             e.ThrowException = false;
             e.Cancel = false;
+        }
+
+        private void tabPageSearch2_Click(object sender, EventArgs e)
+        {
+            txtTotalUser.Text = dataGridViewUser.Rows.Count.ToString();
+
+        }
+
+        private void tabPageSearch2_Enter(object sender, EventArgs e)
+        {
+            txtTotalUser.Text = dataGridViewUser.Rows.Count.ToString();
+        }
+
+        private void txtSearch2_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtSearch2.Text.Trim().ToLower();
+
+
+            var filteredUsers = usersList.Where(user => user.Name.ToLower().Contains(searchText)).ToList();
+
+
+            dataGridViewUser.DataSource = filteredUsers;
+            txtTotalUser.Text = dataGridViewUser.Rows.Count.ToString();
+
         }
     }
 }

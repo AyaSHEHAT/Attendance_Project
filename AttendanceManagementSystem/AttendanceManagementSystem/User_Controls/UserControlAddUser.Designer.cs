@@ -55,16 +55,16 @@
             this.textBoxUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tabPageSearch = new System.Windows.Forms.TabPage();
+            this.tabPageSearch2 = new System.Windows.Forms.TabPage();
             this.label19 = new System.Windows.Forms.Label();
-            this.lblTotalCourse = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.txtTotalUser = new System.Windows.Forms.Label();
+            this.lblusers = new System.Windows.Forms.Label();
             this.dataGridViewUser = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.tabPageUpdateandDelete = new System.Windows.Forms.TabPage();
+            this.txtSearch2 = new System.Windows.Forms.TextBox();
+            this.lblUsersearch = new System.Windows.Forms.Label();
+            this.tabPageUpdateandDelete2 = new System.Windows.Forms.TabPage();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUbdate = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
@@ -95,10 +95,10 @@
             this.tabPageAdduser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
             this.panelRole.SuspendLayout();
-            this.tabPageSearch.SuspendLayout();
+            this.tabPageSearch2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabPageUpdateandDelete.SuspendLayout();
+            this.tabPageUpdateandDelete2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel8.SuspendLayout();
             this.SuspendLayout();
@@ -107,8 +107,8 @@
             // 
             this.tabControlAddUser.Alignment = System.Windows.Forms.TabAlignment.Bottom;
             this.tabControlAddUser.Controls.Add(this.tabPageAdduser);
-            this.tabControlAddUser.Controls.Add(this.tabPageSearch);
-            this.tabControlAddUser.Controls.Add(this.tabPageUpdateandDelete);
+            this.tabControlAddUser.Controls.Add(this.tabPageSearch2);
+            this.tabControlAddUser.Controls.Add(this.tabPageUpdateandDelete2);
             this.tabControlAddUser.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tabControlAddUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlAddUser.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -396,23 +396,25 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Add User";
             // 
-            // tabPageSearch
+            // tabPageSearch2
             // 
-            this.tabPageSearch.Controls.Add(this.label19);
-            this.tabPageSearch.Controls.Add(this.lblTotalCourse);
-            this.tabPageSearch.Controls.Add(this.label17);
-            this.tabPageSearch.Controls.Add(this.dataGridViewUser);
-            this.tabPageSearch.Controls.Add(this.pictureBox1);
-            this.tabPageSearch.Controls.Add(this.panel14);
-            this.tabPageSearch.Controls.Add(this.txtSearch);
-            this.tabPageSearch.Controls.Add(this.label18);
-            this.tabPageSearch.Location = new System.Drawing.Point(4, 4);
-            this.tabPageSearch.Name = "tabPageSearch";
-            this.tabPageSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSearch.Size = new System.Drawing.Size(934, 469);
-            this.tabPageSearch.TabIndex = 1;
-            this.tabPageSearch.Text = "Search";
-            this.tabPageSearch.UseVisualStyleBackColor = true;
+            this.tabPageSearch2.Controls.Add(this.label19);
+            this.tabPageSearch2.Controls.Add(this.txtTotalUser);
+            this.tabPageSearch2.Controls.Add(this.lblusers);
+            this.tabPageSearch2.Controls.Add(this.dataGridViewUser);
+            this.tabPageSearch2.Controls.Add(this.pictureBox1);
+            this.tabPageSearch2.Controls.Add(this.panel14);
+            this.tabPageSearch2.Controls.Add(this.txtSearch2);
+            this.tabPageSearch2.Controls.Add(this.lblUsersearch);
+            this.tabPageSearch2.Location = new System.Drawing.Point(4, 4);
+            this.tabPageSearch2.Name = "tabPageSearch2";
+            this.tabPageSearch2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageSearch2.Size = new System.Drawing.Size(934, 469);
+            this.tabPageSearch2.TabIndex = 1;
+            this.tabPageSearch2.Text = "Search";
+            this.tabPageSearch2.UseVisualStyleBackColor = true;
+            this.tabPageSearch2.Click += new System.EventHandler(this.tabPageSearch2_Click);
+            this.tabPageSearch2.Enter += new System.EventHandler(this.tabPageSearch2_Enter);
             // 
             // label19
             // 
@@ -425,25 +427,26 @@
             this.label19.TabIndex = 17;
             this.label19.Text = "Search :";
             // 
-            // lblTotalCourse
+            // txtTotalUser
             // 
-            this.lblTotalCourse.AutoSize = true;
-            this.lblTotalCourse.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCourse.Location = new System.Drawing.Point(844, 424);
-            this.lblTotalCourse.Name = "lblTotalCourse";
-            this.lblTotalCourse.Size = new System.Drawing.Size(28, 18);
-            this.lblTotalCourse.TabIndex = 16;
-            this.lblTotalCourse.Text = "(?)";
+            this.txtTotalUser.AutoSize = true;
+            this.txtTotalUser.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalUser.Location = new System.Drawing.Point(844, 424);
+            this.txtTotalUser.Name = "txtTotalUser";
+            this.txtTotalUser.Size = new System.Drawing.Size(28, 18);
+            this.txtTotalUser.TabIndex = 16;
+            this.txtTotalUser.Text = "(?)";
+            this.txtTotalUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label17
+            // lblusers
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(737, 426);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(101, 17);
-            this.label17.TabIndex = 15;
-            this.label17.Text = "Total Courses:";
+            this.lblusers.AutoSize = true;
+            this.lblusers.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusers.Location = new System.Drawing.Point(737, 426);
+            this.lblusers.Name = "lblusers";
+            this.lblusers.Size = new System.Drawing.Size(81, 17);
+            this.lblusers.TabIndex = 15;
+            this.lblusers.Text = "Total users:";
             // 
             // dataGridViewUser
             // 
@@ -484,58 +487,59 @@
             this.panel14.Size = new System.Drawing.Size(270, 2);
             this.panel14.TabIndex = 10;
             // 
-            // txtSearch
+            // txtSearch2
             // 
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(153, 54);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(270, 17);
-            this.txtSearch.TabIndex = 12;
+            this.txtSearch2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearch2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch2.Location = new System.Drawing.Point(153, 54);
+            this.txtSearch2.Name = "txtSearch2";
+            this.txtSearch2.Size = new System.Drawing.Size(270, 17);
+            this.txtSearch2.TabIndex = 12;
+            this.txtSearch2.TextChanged += new System.EventHandler(this.txtSearch2_TextChanged);
             // 
-            // label18
+            // lblUsersearch
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(150, 25);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(105, 17);
-            this.label18.TabIndex = 11;
-            this.label18.Text = "Course Name:";
+            this.lblUsersearch.AutoSize = true;
+            this.lblUsersearch.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsersearch.Location = new System.Drawing.Point(150, 25);
+            this.lblUsersearch.Name = "lblUsersearch";
+            this.lblUsersearch.Size = new System.Drawing.Size(86, 17);
+            this.lblUsersearch.TabIndex = 11;
+            this.lblUsersearch.Text = "User Name:";
             // 
-            // tabPageUpdateandDelete
+            // tabPageUpdateandDelete2
             // 
-            this.tabPageUpdateandDelete.Controls.Add(this.btnDelete);
-            this.tabPageUpdateandDelete.Controls.Add(this.btnUbdate);
-            this.tabPageUpdateandDelete.Controls.Add(this.label16);
-            this.tabPageUpdateandDelete.Controls.Add(this.panel7);
-            this.tabPageUpdateandDelete.Controls.Add(this.numericUpDown1);
-            this.tabPageUpdateandDelete.Controls.Add(this.label9);
-            this.tabPageUpdateandDelete.Controls.Add(this.panel8);
-            this.tabPageUpdateandDelete.Controls.Add(this.label10);
-            this.tabPageUpdateandDelete.Controls.Add(this.textBox1);
-            this.tabPageUpdateandDelete.Controls.Add(this.panel9);
-            this.tabPageUpdateandDelete.Controls.Add(this.panel10);
-            this.tabPageUpdateandDelete.Controls.Add(this.textBox2);
-            this.tabPageUpdateandDelete.Controls.Add(this.label11);
-            this.tabPageUpdateandDelete.Controls.Add(this.textBox3);
-            this.tabPageUpdateandDelete.Controls.Add(this.panel11);
-            this.tabPageUpdateandDelete.Controls.Add(this.label12);
-            this.tabPageUpdateandDelete.Controls.Add(this.label13);
-            this.tabPageUpdateandDelete.Controls.Add(this.panel12);
-            this.tabPageUpdateandDelete.Controls.Add(this.textBox4);
-            this.tabPageUpdateandDelete.Controls.Add(this.label14);
-            this.tabPageUpdateandDelete.Controls.Add(this.panel13);
-            this.tabPageUpdateandDelete.Controls.Add(this.textBox5);
-            this.tabPageUpdateandDelete.Controls.Add(this.label15);
-            this.tabPageUpdateandDelete.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPageUpdateandDelete.Location = new System.Drawing.Point(4, 4);
-            this.tabPageUpdateandDelete.Name = "tabPageUpdateandDelete";
-            this.tabPageUpdateandDelete.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageUpdateandDelete.Size = new System.Drawing.Size(934, 469);
-            this.tabPageUpdateandDelete.TabIndex = 2;
-            this.tabPageUpdateandDelete.Text = "Update and delete";
-            this.tabPageUpdateandDelete.UseVisualStyleBackColor = true;
+            this.tabPageUpdateandDelete2.Controls.Add(this.btnDelete);
+            this.tabPageUpdateandDelete2.Controls.Add(this.btnUbdate);
+            this.tabPageUpdateandDelete2.Controls.Add(this.label16);
+            this.tabPageUpdateandDelete2.Controls.Add(this.panel7);
+            this.tabPageUpdateandDelete2.Controls.Add(this.numericUpDown1);
+            this.tabPageUpdateandDelete2.Controls.Add(this.label9);
+            this.tabPageUpdateandDelete2.Controls.Add(this.panel8);
+            this.tabPageUpdateandDelete2.Controls.Add(this.label10);
+            this.tabPageUpdateandDelete2.Controls.Add(this.textBox1);
+            this.tabPageUpdateandDelete2.Controls.Add(this.panel9);
+            this.tabPageUpdateandDelete2.Controls.Add(this.panel10);
+            this.tabPageUpdateandDelete2.Controls.Add(this.textBox2);
+            this.tabPageUpdateandDelete2.Controls.Add(this.label11);
+            this.tabPageUpdateandDelete2.Controls.Add(this.textBox3);
+            this.tabPageUpdateandDelete2.Controls.Add(this.panel11);
+            this.tabPageUpdateandDelete2.Controls.Add(this.label12);
+            this.tabPageUpdateandDelete2.Controls.Add(this.label13);
+            this.tabPageUpdateandDelete2.Controls.Add(this.panel12);
+            this.tabPageUpdateandDelete2.Controls.Add(this.textBox4);
+            this.tabPageUpdateandDelete2.Controls.Add(this.label14);
+            this.tabPageUpdateandDelete2.Controls.Add(this.panel13);
+            this.tabPageUpdateandDelete2.Controls.Add(this.textBox5);
+            this.tabPageUpdateandDelete2.Controls.Add(this.label15);
+            this.tabPageUpdateandDelete2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPageUpdateandDelete2.Location = new System.Drawing.Point(4, 4);
+            this.tabPageUpdateandDelete2.Name = "tabPageUpdateandDelete2";
+            this.tabPageUpdateandDelete2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageUpdateandDelete2.Size = new System.Drawing.Size(934, 469);
+            this.tabPageUpdateandDelete2.TabIndex = 2;
+            this.tabPageUpdateandDelete2.Text = "Update and delete";
+            this.tabPageUpdateandDelete2.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
@@ -813,12 +817,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
             this.panelRole.ResumeLayout(false);
             this.panelRole.PerformLayout();
-            this.tabPageSearch.ResumeLayout(false);
-            this.tabPageSearch.PerformLayout();
+            this.tabPageSearch2.ResumeLayout(false);
+            this.tabPageSearch2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabPageUpdateandDelete.ResumeLayout(false);
-            this.tabPageUpdateandDelete.PerformLayout();
+            this.tabPageUpdateandDelete2.ResumeLayout(false);
+            this.tabPageUpdateandDelete2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -830,7 +834,7 @@
 
         private System.Windows.Forms.TabControl tabControlAddUser;
         private System.Windows.Forms.TabPage tabPageAdduser;
-        private System.Windows.Forms.TabPage tabPageSearch;
+        private System.Windows.Forms.TabPage tabPageSearch2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Label label6;
@@ -853,7 +857,7 @@
         private System.Windows.Forms.RadioButton radioBtnStudent;
         private System.Windows.Forms.RadioButton radioBtnTeacher;
         private System.Windows.Forms.Panel panelRole;
-        private System.Windows.Forms.TabPage tabPageUpdateandDelete;
+        private System.Windows.Forms.TabPage tabPageUpdateandDelete2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.NumericUpDown numericUpDownAge;
         private System.Windows.Forms.Label label8;
@@ -882,12 +886,12 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUbdate;
-        private System.Windows.Forms.Label lblTotalCourse;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label txtTotalUser;
+        private System.Windows.Forms.Label lblusers;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtSearch2;
+        private System.Windows.Forms.Label lblUsersearch;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DataGridView dataGridViewUser;
     }
