@@ -204,24 +204,6 @@
       </teacher>
     </course>
     <course>
-      <cID>254</cID>
-      <cName>jh</cName>
-      <totalsessionNum>1</totalsessionNum>
-      <startDate>2024-02-22</startDate>
-      <teacher>
-        <teachId>8789</teachId>
-      </teacher>
-    </course>
-    <course>
-      <cID>201</cID>
-      <cName>Angular</cName>
-      <totalsessionNum>6</totalsessionNum>
-      <startDate>2024-02-22</startDate>
-      <teacher>
-        <teachId>8456</teachId>
-      </teacher>
-    </course>
-    <course>
       <cID>123</cID>
       <cName>xml</cName>
       <totalsessionNum>4</totalsessionNum>
