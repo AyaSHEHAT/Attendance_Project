@@ -37,7 +37,7 @@ namespace AttendanceManagementSystem.User_Controls
             radioBtnStudent.Checked = false;
             radioBtnTeacher.Checked = false;    
         }
-        private void buttonAdd_Click(object sender, EventArgs e)
+        private void buttonAdd_Click_1(object sender, EventArgs e)
         {
             int numericValue;
             string role;
@@ -45,20 +45,20 @@ namespace AttendanceManagementSystem.User_Controls
             string PassRegex = @"^[A-Za-z0-9]{8,}$";
             if (textBoxUserName.Text.Trim()==string.Empty || int.TryParse(textBoxUserName.Text, out numericValue))
             {
-                MessageBox.Show("Enter a valid Course name and must not be a number", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Enter a valid Name and must not be a number", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             else if (textBoxUserID.Text.Trim()==string.Empty)
             {
-                MessageBox.Show("Enter a valid Course ID", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Enter a valid User ID", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            else if (textBoxEmail.Text.Trim()==string.Empty || Regex.IsMatch(textBoxEmail.Text.Trim(),EmailRegx))
+            else if (textBoxEmail.Text.Trim()==string.Empty || Regex.IsMatch(textBoxEmail.Text.Trim(),EmailRegx)==false)
             {
                 MessageBox.Show("Enter a vailid email. ex: example@example.com", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            else if (textBoxUserPass.Text.Trim()==string.Empty || Regex.IsMatch(textBoxUserPass.Text.Trim(), PassRegex))
+            else if (textBoxUserPass.Text.Trim()==string.Empty || Regex.IsMatch(textBoxUserPass.Text.Trim(), PassRegex)==false)
             {
                 MessageBox.Show("Enter a vailid password that must be 8 characters or more and has small and capital letters and digits", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -84,6 +84,7 @@ namespace AttendanceManagementSystem.User_Controls
                 XElement newUserElement = new XElement("user",
                     new XElement("id", textBoxUserID.Text),
                     new XElement("name", textBoxUserName.Text),
+                    new XElement("age", numericUpDownAge.Value),
                     new XElement("email", textBoxEmail.Text),
                     new XElement("address", textBoxUserAddress.Text),
                      new XElement("userPass", textBoxUserPass.Text),
@@ -91,7 +92,7 @@ namespace AttendanceManagementSystem.User_Controls
                 );
                 usersElement.Add(newUserElement);
                 doc.Save(@"../../../../XML files\Data.xml");
-                MessageBox.Show("Course Added Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("User Added Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTextBox();
             }
 
@@ -100,6 +101,49 @@ namespace AttendanceManagementSystem.User_Controls
         private void tabControlAddUser_Leave(object sender, EventArgs e)
         {
             ClearTextBox();
+        }
+
+        private void tabPageAdduser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelRole_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void radioBtnStudent_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioBtnTeacher_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void textBoxUserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void tabPageSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPageUpdateandDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }

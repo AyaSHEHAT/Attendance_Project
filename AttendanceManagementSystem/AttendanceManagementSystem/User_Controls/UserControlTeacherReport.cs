@@ -12,20 +12,25 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Xsl;
 using System.Drawing.Printing;
-
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 
 namespace AttendanceManagementSystem.User_Controls
 {
     public partial class UserControlTeacherReport : UserControl
     {
-        XDocument doc = XDocument.Load(@"../../../../XML files/Data.xml");
-        List<Report_teacher> Students = new List<Report_teacher>();
+        int userId = 8456;
+        XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
         public UserControlTeacherReport()
         {
             InitializeComponent();
+
             var courses = doc.Root
                              .Element("Courses")
                              .Elements("course")
+                             .Where(c => c.Element("teacher").Element("teachId")?.Value == userId.ToString()) // Filter by teachId
                              .ToList();
 
             if (courses.Any())
@@ -48,19 +53,11 @@ namespace AttendanceManagementSystem.User_Controls
 
         }
 
-        private void comboBoxCourses_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            loadCourses();
-           
-        }
-
         public void loadCourses()
         {
-           
-            // Check if a course is selected in the comboBox
+
             if (comboBoxCourses.SelectedIndex >= 0)
             {
-                // Clear comboBoxDate before populating it
                 comboBoxDate.Items.Clear();
 
                 string selectedCourse = comboBoxCourses.SelectedItem.ToString();
@@ -73,12 +70,10 @@ namespace AttendanceManagementSystem.User_Controls
 
                 if (courseElement != null)
                 {
-                    // Get all dates for the sessions of the selected course
                     var dates = courseElement.Descendants("date").Select(d => d.Value).ToList();
 
                     if (dates.Any())
                     {
-                        // Populate comboBoxDate with the dates
                         foreach (var date in dates)
                         {
                             comboBoxDate.Items.Add(date);
@@ -101,48 +96,24 @@ namespace AttendanceManagementSystem.User_Controls
                 MessageBox.Show("Please select a course.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void comboBoxDate_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
 
-            if (comboBoxDate.SelectedIndex >= 0)
-            {
-                // Get the selected course name from comboBoxCourses
-                string selectedCourse = comboBoxCourses.SelectedItem.ToString();
-                string courseName = selectedCourse.Split('-')[1].Trim();
-
-                // Get the selected date from comboBoxDate
-                string selectedDate = comboBoxDate.SelectedItem.ToString();
-
-                // Perform XSLT transformation and load data into dataGridViewCourse
-                applyXsltTransformation(courseName, selectedDate);
-            }
-        }
 
         private void applyXsltTransformation(string courseName, string selectedDate)
         {
-            // Load the XSLT file
             XslCompiledTransform xslt = new XslCompiledTransform();
             xslt.Load(@"../../../../XML files/courseAndStudent.xslt");
 
-            // Create a writer for the output file
             using (XmlWriter writer = XmlWriter.Create(@"C:\Reports\TransformedAttendance.html"))
             {
-                // Define parameters for the XSLT transformation
                 XsltArgumentList arguments = new XsltArgumentList();
                 arguments.AddParam("selectedCourseName", "", courseName);
                 arguments.AddParam("selectedDate", "", selectedDate);
 
-                // Perform the transformation with parameters, writing directly to the file
                 xslt.Transform(doc.CreateReader(), arguments, writer);
             }
 
-            // Load the transformed HTML file into a string for display in a MessageBox
             string transformedXml = File.ReadAllText(@"C:\Reports\TransformedAttendance.html");
-
-            // Parse the transformed HTML content into an XDocument to extract student data
             XDocument transformedDoc = XDocument.Load(@"C:\Reports\TransformedAttendance.html");
-
-            // Extract student data from the transformed HTML
             var students = transformedDoc.Root.Descendants("tr")
                                              .Skip(1) // Skip the header row
                                              .Select(tr => new Report_teacher
@@ -154,23 +125,35 @@ namespace AttendanceManagementSystem.User_Controls
                                                  Status = tr.Elements("td").Skip(4).First().Value
                                              }).ToList();
 
-            // Populate the DataGridView with the student data
             dataGridViewCourse.DataSource = students;
-
-            // Show a MessageBox with the transformed HTML content
-            MessageBox.Show(transformedXml, "Transformed HTML Content", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+
+        private void comboBoxCourses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadCourses();
+        }
+
+        private void comboBoxDate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxDate.SelectedIndex >= 0)
+            {
+                string selectedCourse = comboBoxCourses.SelectedItem.ToString();
+                string courseName = selectedCourse.Split('-')[1].Trim();
+                string selectedDate = comboBoxDate.SelectedItem.ToString();
+                applyXsltTransformation(courseName, selectedDate);
+            }
+        }
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             // Define the bounds for printing
-            Rectangle bounds = e.MarginBounds;
+            System.Drawing.Rectangle bounds = e.MarginBounds;
 
             // Create a bitmap to hold the content of the DataGridView
             Bitmap bitmap = new Bitmap(dataGridViewCourse.Width, dataGridViewCourse.Height);
 
             // Draw the DataGridView to the bitmap
-            dataGridViewCourse.DrawToBitmap(bitmap, new Rectangle(0, 0, dataGridViewCourse.Width, dataGridViewCourse.Height));
+            dataGridViewCourse.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, dataGridViewCourse.Width, dataGridViewCourse.Height));
 
             // Draw the bitmap to the printer device
             e.Graphics.DrawImage(bitmap, bounds);
@@ -180,17 +163,87 @@ namespace AttendanceManagementSystem.User_Controls
         {
             PrintDocument printDocument = new PrintDocument();
 
-            // Set up event handlers for printing
             printDocument.PrintPage += PrintDocument_PrintPage;
-
-            // Show print dialog to configure printing options
             PrintDialog printDialog = new PrintDialog();
             printDialog.Document = printDocument;
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
-                // Print the document
                 printDocument.Print();
             }
+        }
+        private int GenerateRandomNumber()
+        {
+            // Generate a random number
+            Random rnd = new Random();
+            return rnd.Next(1000, 9999); // Generate a random number between 1000 and 9999
+        }
+
+        private void ExportToPdf(int randomNumber)
+        {
+            string fileName = $"../../../../Reports\\AttendanceReport_{randomNumber}.pdf";
+
+            Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
+            PdfWriter.GetInstance(pdfDoc, new FileStream(fileName, FileMode.Create));
+
+            pdfDoc.Open();
+
+            pdfDoc.Add(new Paragraph("Attendance Report"));
+            PdfPTable pdfTable = new PdfPTable(dataGridViewCourse.Columns.Count);
+            foreach (DataGridViewColumn column in dataGridViewCourse.Columns)
+            {
+                pdfTable.AddCell(column.HeaderText);
+            }
+            foreach (DataGridViewRow row in dataGridViewCourse.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    pdfTable.AddCell(cell.Value.ToString());
+                }
+            }
+            pdfDoc.Add(pdfTable);
+
+            pdfDoc.Close();
+
+            MessageBox.Show($"Attendance report exported as PDF successfully!\n in location '{fileName}'", "Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void ExportToExcel(int randomNumber)
+        {
+            using (ExcelPackage excelPackage = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Attendance Report");
+
+                for (int i = 0; i < dataGridViewCourse.Columns.Count; i++)
+                {
+                    worksheet.Cells[1, i + 1].Value = dataGridViewCourse.Columns[i].HeaderText;
+                }
+                for (int i = 0; i < dataGridViewCourse.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataGridViewCourse.Columns.Count; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1].Value = dataGridViewCourse.Rows[i].Cells[j].Value;
+                    }
+                }
+
+                FileInfo excelFile = new FileInfo($"../../../../Reports\\AttendanceReport_{randomNumber}.xlsx");
+                excelPackage.SaveAs(excelFile);
+
+                MessageBox.Show($"Attendance report exported as Excel successfully! \n in location '{excelFile.FullName}'", "Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
+
+
+        private void buttonPdf_Click(object sender, EventArgs e)
+        {
+            ExportToPdf(GenerateRandomNumber());
+        }
+
+        private void buttonExcel_Click(object sender, EventArgs e)
+        {
+            ExportToExcel(GenerateRandomNumber());
+
         }
     }
 }
