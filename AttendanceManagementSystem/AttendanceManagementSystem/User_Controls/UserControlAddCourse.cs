@@ -125,12 +125,13 @@ namespace AttendanceManagementSystem.User_Controls
                     });
 
                 }
+                else
+                {
+                    MessageBox.Show("No teachers found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-                
+
             }
-
-
-
 
         }
 
@@ -138,11 +139,14 @@ namespace AttendanceManagementSystem.User_Controls
         {
 
             xmlOperation(URL_XML_FILE);
+            dataGridViewCourse.AutoGenerateColumns = false;
+
             dataGridViewCourse.DataError += dataGridViewCourse_DataError;
             dataGridViewCourse.DataSource = null;
             dataGridViewCourse.Rows.Clear();
             dataGridViewCourse.DataSource = courses;
-            dataGridViewCourse.Columns[5].Visible = false;
+
+            // dataGridViewCourse.Columns[5].Visible = false;
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -163,8 +167,7 @@ namespace AttendanceManagementSystem.User_Controls
           
 
             var filteredCourses = courses.Where(course => course.CourseName.ToLower().Contains(searchText)).ToList();
-            // Bind the filtered data to the DataGridView
-            //courses= filteredCourses;
+           
 
             dataGridViewCourse.DataSource = filteredCourses;
             lblTotalCourse.Text = dataGridViewCourse.Rows.Count.ToString();
@@ -201,50 +204,85 @@ namespace AttendanceManagementSystem.User_Controls
         }
         string tname;
         string tname1;
-        string tid;
+       
 
         private void btnUbdate_Click(object sender, EventArgs e)
         {
+            int numericValue;
+
             XElement courseElement = xml.Descendants("course").FirstOrDefault(p => p.Element("cID").Value == txtCourseId.Text);
             if (courseElement != null)
             {
-                courseElement.Element("cName").Value = txtCourseName.Text;
-                courseElement.Element("totalsessionNum").Value = upDownSession.Text;
-                tname1 = boxTeacher.Text;
-
-                teachers = doc.Root
-                            .Element("Users")
-                            .Elements("user")
-                            .Where(u => u.Element("role")?.Value == "teacher")
-                            .ToList();
-
-                if (teachers != null)
+                  if (txtCourseId.Text.Trim() == string.Empty || txtCourseId.Text != courseElement.Element("cID").Value)
                 {
-                   
-                    foreach (var teacher in teachers)
-                    {
-                        tname = teacher.Element("name")?.Value;
-                        if (tname1 == tname)
-                        {
-                            if (teacher.Element("id")?.Value != null)
-                            {
-                                courseElement.Element("teacher").Element("teachId").Value = teacher.Element("id")?.Value;
-                                break;
-                            }
-                            else
-                            {
-                                courseElement.Element("teacher").Element("teachId").Value = "8456";
-                            }
-                            
-                        }
-                    }
+                    MessageBox.Show("Can not be change id", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
 
-                        //courseElement.Element("teacher").Element("teachId").Value = boxTeacher.Text;
-                courseElement.Element("startDate").Value = dateStartDate.Text;
-                xml.Save(URL_XML_FILE);
+                else if (txtCourseName.Text.Trim() == string.Empty || int.TryParse(textBoxCrsName.Text, out numericValue))
+                {
+                    MessageBox.Show("Enter a valid Course name and must not be a number", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                loadCourses();
+                }
+               
+                else if (boxTeacher.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Assign the course to specific Teacher", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    courseElement.Element("cName").Value = txtCourseName.Text;
+                    courseElement.Element("totalsessionNum").Value = upDownSession.Text;
+                    tname1 = boxTeacher.Text;
+
+                    teachers = doc.Root
+                                .Element("Users")
+                                .Elements("user")
+                                .Where(u => u.Element("role")?.Value == "teacher")
+                                .ToList();
+
+                    if (teachers != null)
+                    {
+
+                        foreach (var teacher in teachers)
+                        {
+                            tname = teacher.Element("name")?.Value;
+                            if (tname1 == tname)
+                            {
+                                if (teacher.Element("id")?.Value != null)
+                                {
+                                    courseElement.Element("teacher").Element("teachId").Value = teacher.Element("id")?.Value;
+
+                                    break;
+                                }
+                                else
+                                {
+                                    courseElement.Element("teacher").Element("teachId").Value = "8456";
+                                }
+
+                            }
+                        }
+                    }
+
+                    courseElement.Element("startDate").Value = dateStartDate.Text;
+                    xml.Save(URL_XML_FILE);
+                    MessageBox.Show("Course Upate Successfully", "Update course", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    loadCourses();
+                    tabControlAddClass.SelectedTab = tabPageSearch;
+
+                }
+
+               
+
+                        //courseElement.Element("teacher").Element("teachId").Value = boxTeacher.Text;
+                
+
+            }
+            else
+            {
+                MessageBox.Show("First select row from table", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tabControlAddClass.SelectedTab = tabPageSearch;
 
             }
@@ -256,20 +294,34 @@ namespace AttendanceManagementSystem.User_Controls
             XElement courseElement = xml.Descendants("course").FirstOrDefault(p => p.Element("cID").Value == txtCourseId.Text);
             if (courseElement != null)
             {
-                courseElement.Remove();
-                xml.Save(URL_XML_FILE);
-                try
+                DialogResult dialogResult = MessageBox.Show("Are you want to delete this course ?", "Delete course" ,MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    loadCourses();
-                    tabControlAddClass.SelectedTab = tabPageSearch;
+                    courseElement.Remove();
+                    xml.Save(URL_XML_FILE);
+                    MessageBox.Show("Course Deleted Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    try
+                    {
+                        loadCourses();
+                        tabControlAddClass.SelectedTab = tabPageSearch;
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error loading information: " + ex.Message);
+
+                    }
 
 
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading information: " + ex.Message);
 
-                }
+            }
+            else
+            {
+                MessageBox.Show("First select row from table", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tabControlAddClass.SelectedTab = tabPageSearch;
 
             }
         }
