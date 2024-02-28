@@ -143,18 +143,9 @@ namespace AttendanceManagementSystem.User_Controls
 
 
 
-                usersList.Add(new User
-                {
-                    Id = Id,
-                    Name = Name,
-                    Email = Email,
-                    Password = Pass,
-                    Age=Age,
-                    Address = Address,
-                    Role=Role
-
-
-                });
+                usersList.Add(new User(
+                    Id, Name, Email, Pass, Age, Address, Role
+                    ));
 
             }
 

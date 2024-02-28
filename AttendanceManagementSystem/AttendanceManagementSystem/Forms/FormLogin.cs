@@ -180,7 +180,9 @@ namespace AttendanceManagementSystem.Forms
                 if (( _pass == password) && (_id == Id))
                     {
                         _role = userNode.SelectSingleNode("role").InnerText;
-                        return true;
+                        User.currentUser = Id;
+                        User.currentRole = _role;
+                    return true;
                     }
             }
             _role = null;
