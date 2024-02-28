@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iTextSharp.xmp.impl;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,7 +46,7 @@ namespace AttendanceManagementSystem.User_Controls
             textBoxEmail.Clear();
             textBoxUserAddress.Clear();
             radioBtnStudent.Checked = false;
-            radioBtnTeacher.Checked = false;    
+            radioBtnTeacher.Checked = false;
         }
         private void buttonAdd_Click_1(object sender, EventArgs e)
         {
@@ -53,32 +54,32 @@ namespace AttendanceManagementSystem.User_Controls
             string role;
             string EmailRegx = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
             string PassRegex = @"^[A-Za-z0-9]{8,}$";
-            if (textBoxUserName.Text.Trim()==string.Empty || int.TryParse(textBoxUserName.Text, out numericValue))
+            if (textBoxUserName.Text.Trim() == string.Empty || int.TryParse(textBoxUserName.Text, out numericValue))
             {
                 MessageBox.Show("Enter a valid Name and must not be a number", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            else if (textBoxUserID.Text.Trim()==string.Empty)
+            else if (textBoxUserID.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Enter a valid User ID", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            else if (textBoxEmail.Text.Trim()==string.Empty || Regex.IsMatch(textBoxEmail.Text.Trim(),EmailRegx)==false)
+            else if (textBoxEmail.Text.Trim() == string.Empty || Regex.IsMatch(textBoxEmail.Text.Trim(), EmailRegx) == false)
             {
                 MessageBox.Show("Enter a vailid email. ex: example@example.com", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            else if (textBoxUserPass.Text.Trim()==string.Empty || Regex.IsMatch(textBoxUserPass.Text.Trim(), PassRegex)==false)
+            else if (textBoxUserPass.Text.Trim() == string.Empty || Regex.IsMatch(textBoxUserPass.Text.Trim(), PassRegex) == false)
             {
                 MessageBox.Show("Enter a vailid password that must be 8 characters or more and has small and capital letters and digits", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            else if (textBoxUserAddress.Text.Trim()==string.Empty)
+            else if (textBoxUserAddress.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("you must add Address", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            else if (radioBtnStudent.Checked==false && radioBtnTeacher.Checked==false)
+            else if (radioBtnStudent.Checked == false && radioBtnTeacher.Checked == false)
             {
                 MessageBox.Show("You must choose the Role Of the user", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -87,9 +88,9 @@ namespace AttendanceManagementSystem.User_Controls
             {
                 if (radioBtnStudent.Checked)
                 {
-                    role="student";
+                    role = "student";
                 }
-                else { role="teacher"; }
+                else { role = "teacher"; }
                 XElement usersElement = doc.Root.Element("Users");
                 XElement newUserElement = new XElement("user",
                     new XElement("id", textBoxUserID.Text),
@@ -129,7 +130,7 @@ namespace AttendanceManagementSystem.User_Controls
                 MessageBox.Show("Error loading information: " + ex.Message);
             }
 
-            
+
             foreach (XElement userElement in xml.Descendants("user"))
             {
                 string Id = userElement.Element("id").Value;
@@ -155,7 +156,8 @@ namespace AttendanceManagementSystem.User_Controls
         {
 
             xmlOperation(URL_XML_FILE);
-          
+           // dataGridViewUser.AutoGenerateColumns = false;
+
 
             dataGridViewUser.DataError += dataGridViewUser_DataError;
             dataGridViewUser.DataSource = null;
@@ -175,7 +177,7 @@ namespace AttendanceManagementSystem.User_Controls
             dataGridViewUser.Columns[4].Visible = false;
             dataGridViewUser.Columns[5].Visible = false;
             dataGridViewUser.Columns[6].Visible = false;
-           
+
 
 
 
@@ -186,7 +188,7 @@ namespace AttendanceManagementSystem.User_Controls
 
 
             dataGridViewUser.DataSource = usersList;
-           
+
         }
 
         private void dataGridViewUser_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -218,5 +220,111 @@ namespace AttendanceManagementSystem.User_Controls
             txtTotalUser.Text = dataGridViewUser.Rows.Count.ToString();
 
         }
+
+        private void tabPageSearch2_Leave(object sender, EventArgs e)
+        {
+            txtSearch2.Clear();
+        }
+
+        private void dataGridViewUser_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow row = dataGridViewUser.Rows[e.RowIndex];
+                txtId2.Text = row.Cells[7].Value.ToString();
+                txtName2.Text = row.Cells[8].Value.ToString();
+                txtEmail.Text = row.Cells[9].Value.ToString();
+                txtPassword.Text = row.Cells[10].Value.ToString();
+                upDownAge.Text = row.Cells[11].Value.ToString();
+                txtAddress.Text = row.Cells[12].Value.ToString();
+
+
+              /* string role= row.Cells[13].Value.ToString();
+
+                if (role== "student")
+                {
+                    rdoStudent.Checked = true;
+                }
+                else if (role== "teacher")
+                {
+                    rdoStudent.Checked = true;
+
+
+                }*/
+                
+                // admin
+
+            }
+        }
+        private void btnUbdate_Click(object sender, EventArgs e)
+        {
+            int numericValue;
+
+            XElement userElement = xml.Descendants("user").FirstOrDefault(p => p.Element("id").Value == txtId2.Text);
+            if (userElement != null)
+            {
+                if (txtId2.Text.Trim() == "" || txtId2.Text != userElement.Element("id").Value)
+                {
+                    MessageBox.Show("Can not be change id", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+
+                
+                string EmailRegx = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+                string PassRegex = @"^[A-Za-z0-9]{8,}$";
+                if (txtName2.Text.Trim() == string.Empty || int.TryParse(txtName2.Text, out numericValue))
+                {
+                    MessageBox.Show("Enter a valid Name and must not be a number", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                
+                else if (txtEmail.Text.Trim() == string.Empty || Regex.IsMatch(txtEmail.Text.Trim(), EmailRegx) == false)
+                {
+                    MessageBox.Show("Enter a vailid email. ex: example@example.com", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else if (txtPassword.Text.Trim() == string.Empty || Regex.IsMatch(txtPassword.Text.Trim(), PassRegex) == false)
+                {
+                    MessageBox.Show("Enter a vailid password that must be 8 characters or more and has small and capital letters and digits", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else if (txtAddress.Text.Trim() == string.Empty)
+                {
+                    MessageBox.Show("you must add Address", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+               
+                else
+                {
+                    userElement.Element("name").Value = txtName2.Text;
+                    userElement.Element("age").Value = upDownAge.Text;
+                    userElement.Element("email").Value = txtEmail.Text;
+                    userElement.Element("address").Value = txtAddress.Text;
+                    userElement.Element("userPass").Value = txtPassword.Text;
+
+                    
+                    xml.Save(URL_XML_FILE);
+                    MessageBox.Show("User Upate Successfully", "Update User", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    loadUsers();
+                    tabControlAddUser.SelectedTab = tabPageSearch2;
+
+                }
+
+
+
+                //courseElement.Element("teacher").Element("teachId").Value = boxTeacher.Text;
+
+
+            }
+            else
+            {
+                MessageBox.Show("First select row from table", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tabControlAddUser.SelectedTab = tabPageSearch2;
+
+            }
+        }
     }
-}
+
+        
+    }

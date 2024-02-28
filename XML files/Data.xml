@@ -70,7 +70,7 @@
       <id>8789</id>
       <name>Nasr</name>
       <age>39</age>
-      <email>nasr@yahoo.com</email>
+      <email>nasr2@yahoo.com</email>
       <address>mansoura</address>
       <userPass>asdf1234</userPass>
       <role>teacher</role>
@@ -98,8 +98,8 @@
     <course>
       <cID>200</cID>
       <cName>C#</cName>
-      <totalsessionNum>6</totalsessionNum>
-      <startDate>2020-01-20</startDate>
+      <totalsessionNum>7</totalsessionNum>
+      <startDate>2024/02/28</startDate>
       <sessions>
         <session>
           <date>2021-02-01</date>

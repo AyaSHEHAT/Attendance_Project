@@ -69,26 +69,22 @@
             this.btnUbdate = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.upDownAge = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtId2 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtName2 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControlAddUser.SuspendLayout();
@@ -99,8 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPageUpdateandDelete2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownAge)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlAddUser
@@ -415,6 +410,7 @@
             this.tabPageSearch2.UseVisualStyleBackColor = true;
             this.tabPageSearch2.Click += new System.EventHandler(this.tabPageSearch2_Click);
             this.tabPageSearch2.Enter += new System.EventHandler(this.tabPageSearch2_Enter);
+            this.tabPageSearch2.Leave += new System.EventHandler(this.tabPageSearch2_Leave);
             // 
             // label19
             // 
@@ -466,6 +462,7 @@
             this.dataGridViewUser.ShowRowErrors = false;
             this.dataGridViewUser.Size = new System.Drawing.Size(872, 318);
             this.dataGridViewUser.TabIndex = 14;
+            this.dataGridViewUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUser_CellClick);
             this.dataGridViewUser.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewUser_DataError);
             // 
             // pictureBox1
@@ -513,24 +510,22 @@
             this.tabPageUpdateandDelete2.Controls.Add(this.btnUbdate);
             this.tabPageUpdateandDelete2.Controls.Add(this.label16);
             this.tabPageUpdateandDelete2.Controls.Add(this.panel7);
-            this.tabPageUpdateandDelete2.Controls.Add(this.numericUpDown1);
+            this.tabPageUpdateandDelete2.Controls.Add(this.upDownAge);
             this.tabPageUpdateandDelete2.Controls.Add(this.label9);
-            this.tabPageUpdateandDelete2.Controls.Add(this.panel8);
-            this.tabPageUpdateandDelete2.Controls.Add(this.label10);
-            this.tabPageUpdateandDelete2.Controls.Add(this.textBox1);
+            this.tabPageUpdateandDelete2.Controls.Add(this.txtAddress);
             this.tabPageUpdateandDelete2.Controls.Add(this.panel9);
             this.tabPageUpdateandDelete2.Controls.Add(this.panel10);
-            this.tabPageUpdateandDelete2.Controls.Add(this.textBox2);
+            this.tabPageUpdateandDelete2.Controls.Add(this.txtId2);
             this.tabPageUpdateandDelete2.Controls.Add(this.label11);
-            this.tabPageUpdateandDelete2.Controls.Add(this.textBox3);
+            this.tabPageUpdateandDelete2.Controls.Add(this.txtEmail);
             this.tabPageUpdateandDelete2.Controls.Add(this.panel11);
             this.tabPageUpdateandDelete2.Controls.Add(this.label12);
             this.tabPageUpdateandDelete2.Controls.Add(this.label13);
             this.tabPageUpdateandDelete2.Controls.Add(this.panel12);
-            this.tabPageUpdateandDelete2.Controls.Add(this.textBox4);
+            this.tabPageUpdateandDelete2.Controls.Add(this.txtPassword);
             this.tabPageUpdateandDelete2.Controls.Add(this.label14);
             this.tabPageUpdateandDelete2.Controls.Add(this.panel13);
-            this.tabPageUpdateandDelete2.Controls.Add(this.textBox5);
+            this.tabPageUpdateandDelete2.Controls.Add(this.txtName2);
             this.tabPageUpdateandDelete2.Controls.Add(this.label15);
             this.tabPageUpdateandDelete2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageUpdateandDelete2.Location = new System.Drawing.Point(4, 4);
@@ -549,7 +544,7 @@
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(704, 360);
+            this.btnDelete.Location = new System.Drawing.Point(704, 347);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(114, 37);
             this.btnDelete.TabIndex = 35;
@@ -564,12 +559,13 @@
             this.btnUbdate.FlatAppearance.BorderSize = 0;
             this.btnUbdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUbdate.ForeColor = System.Drawing.Color.White;
-            this.btnUbdate.Location = new System.Drawing.Point(552, 360);
+            this.btnUbdate.Location = new System.Drawing.Point(552, 347);
             this.btnUbdate.Name = "btnUbdate";
             this.btnUbdate.Size = new System.Drawing.Size(114, 37);
             this.btnUbdate.TabIndex = 34;
             this.btnUbdate.Text = "Update";
             this.btnUbdate.UseVisualStyleBackColor = false;
+            this.btnUbdate.Click += new System.EventHandler(this.btnUbdate_Click);
             // 
             // label16
             // 
@@ -590,23 +586,23 @@
             this.panel7.Size = new System.Drawing.Size(270, 2);
             this.panel7.TabIndex = 32;
             // 
-            // numericUpDown1
+            // upDownAge
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(122, 360);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.upDownAge.Location = new System.Drawing.Point(122, 360);
+            this.upDownAge.Maximum = new decimal(new int[] {
             40,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.upDownAge.Minimum = new decimal(new int[] {
             19,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(267, 24);
-            this.numericUpDown1.TabIndex = 31;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.upDownAge.Name = "upDownAge";
+            this.upDownAge.Size = new System.Drawing.Size(267, 24);
+            this.upDownAge.TabIndex = 31;
+            this.upDownAge.Value = new decimal(new int[] {
             19,
             0,
             0,
@@ -622,58 +618,14 @@
             this.label9.TabIndex = 30;
             this.label9.Text = "Age:";
             // 
-            // panel8
+            // txtAddress
             // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Controls.Add(this.radioButton1);
-            this.panel8.Controls.Add(this.radioButton2);
-            this.panel8.Location = new System.Drawing.Point(600, 227);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(200, 100);
-            this.panel8.TabIndex = 28;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(22, 56);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(75, 21);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Student";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(22, 22);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(80, 21);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Teacher";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(544, 255);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 17);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Role:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(121, 279);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(270, 17);
-            this.textBox1.TabIndex = 27;
+            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(121, 279);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(270, 17);
+            this.txtAddress.TabIndex = 27;
             // 
             // panel9
             // 
@@ -691,14 +643,14 @@
             this.panel10.Size = new System.Drawing.Size(270, 2);
             this.panel10.TabIndex = 19;
             // 
-            // textBox2
+            // txtId2
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(548, 100);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(270, 17);
-            this.textBox2.TabIndex = 24;
+            this.txtId2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtId2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId2.Location = new System.Drawing.Point(548, 100);
+            this.txtId2.Name = "txtId2";
+            this.txtId2.Size = new System.Drawing.Size(270, 17);
+            this.txtId2.TabIndex = 24;
             // 
             // label11
             // 
@@ -710,14 +662,14 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "ID:";
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(121, 192);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(270, 17);
-            this.textBox3.TabIndex = 25;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(121, 192);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(270, 17);
+            this.txtEmail.TabIndex = 25;
             // 
             // panel11
             // 
@@ -755,14 +707,14 @@
             this.panel12.Size = new System.Drawing.Size(270, 2);
             this.panel12.TabIndex = 15;
             // 
-            // textBox4
+            // txtPassword
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(548, 192);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(270, 17);
-            this.textBox4.TabIndex = 26;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(548, 192);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(270, 17);
+            this.txtPassword.TabIndex = 26;
             // 
             // label14
             // 
@@ -782,14 +734,14 @@
             this.panel13.Size = new System.Drawing.Size(270, 2);
             this.panel13.TabIndex = 13;
             // 
-            // textBox5
+            // txtName2
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(121, 100);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(270, 17);
-            this.textBox5.TabIndex = 23;
+            this.txtName2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtName2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName2.Location = new System.Drawing.Point(121, 100);
+            this.txtName2.Name = "txtName2";
+            this.txtName2.Size = new System.Drawing.Size(270, 17);
+            this.txtName2.TabIndex = 23;
             // 
             // label15
             // 
@@ -823,9 +775,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPageUpdateandDelete2.ResumeLayout(false);
             this.tabPageUpdateandDelete2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownAge)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -863,26 +813,22 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown upDownAge;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtId2;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtName2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUbdate;
