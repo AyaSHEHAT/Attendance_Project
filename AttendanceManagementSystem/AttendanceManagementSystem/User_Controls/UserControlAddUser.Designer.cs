@@ -463,6 +463,7 @@
             this.dataGridViewUser.Size = new System.Drawing.Size(872, 318);
             this.dataGridViewUser.TabIndex = 14;
             this.dataGridViewUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUser_CellClick);
+            this.dataGridViewUser.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUser_CellDoubleClick);
             this.dataGridViewUser.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewUser_DataError);
             // 
             // pictureBox1
@@ -535,6 +536,7 @@
             this.tabPageUpdateandDelete2.TabIndex = 2;
             this.tabPageUpdateandDelete2.Text = "Update and delete";
             this.tabPageUpdateandDelete2.UseVisualStyleBackColor = true;
+            this.tabPageUpdateandDelete2.Leave += new System.EventHandler(this.tabPageUpdateandDelete2_Leave);
             // 
             // btnDelete
             // 

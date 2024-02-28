@@ -80,6 +80,15 @@
       <userPass>alaa1234</userPass>
       <role>student</role>
     </user>
+    <user>
+      <id>100</id>
+      <name>helmy</name>
+      <age>21</age>
+      <email>helmy@www.com</email>
+      <address>sina</address>
+      <userPass>Mmmm1232</userPass>
+      <role>teacher</role>
+    </user>
   </Users>
   <Courses>
     <course>

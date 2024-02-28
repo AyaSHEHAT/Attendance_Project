@@ -48,6 +48,16 @@ namespace AttendanceManagementSystem.User_Controls
             radioBtnStudent.Checked = false;
             radioBtnTeacher.Checked = false;
         }
+        public void ClearTextBox2()
+        {
+            txtName2.Clear();
+            txtId2.Clear();
+            txtPassword.Clear();
+            txtEmail.Clear();
+            txtAddress.Clear();
+           
+        }
+
         private void buttonAdd_Click_1(object sender, EventArgs e)
         {
             int numericValue;
@@ -178,13 +188,6 @@ namespace AttendanceManagementSystem.User_Controls
             dataGridViewUser.Columns[4].Visible = false;
             dataGridViewUser.Columns[5].Visible = false;
             dataGridViewUser.Columns[6].Visible = false;
-
-
-
-
-
-
-
 
 
 
@@ -362,6 +365,16 @@ namespace AttendanceManagementSystem.User_Controls
                 tabControlAddUser.SelectedTab = tabPageSearch2;
 
             }
+        }
+
+        private void tabPageUpdateandDelete2_Leave(object sender, EventArgs e)
+        {
+            ClearTextBox2();
+        }
+
+        private void dataGridViewUser_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tabControlAddUser.SelectedTab = tabPageUpdateandDelete2;
         }
     }
 
