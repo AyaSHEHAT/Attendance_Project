@@ -54,7 +54,7 @@ namespace AttendanceManagementSystem.Forms
         private void buttonAttendance_Click(object sender, EventArgs e)
         {
             MoveSidePanel(buttonAttendance);
-
+            userControlAttendance1.Visible= true;
             //userControlTeacherReport1.Visible= false;
             userControlTeacherReport2.Visible= false;
 

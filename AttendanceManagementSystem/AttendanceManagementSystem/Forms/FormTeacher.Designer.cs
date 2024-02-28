@@ -47,7 +47,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.userControlSetting = new AttendanceManagementSystem.User_Controls.UserControlSettings();
-            this.userControlTeacherReport2 = new AttendanceManagementSystem.User_Controls.UserControlTeacherReport();
+            this.userControlAttendance1 = new AttendanceManagementSystem.User_Controls.UserControlAttendance();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,7 +92,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(102, 141);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 23);
+            this.label2.Size = new System.Drawing.Size(62, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "System";
             // 
@@ -103,7 +103,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(14, 118);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(270, 23);
+            this.label1.Size = new System.Drawing.Size(216, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Attendance Management ";
             // 
@@ -223,7 +223,7 @@
             this.labelUsername.ForeColor = System.Drawing.Color.Indigo;
             this.labelUsername.Location = new System.Drawing.Point(685, 38);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(35, 23);
+            this.labelUsername.Size = new System.Drawing.Size(28, 19);
             this.labelUsername.TabIndex = 0;
             this.labelUsername.Text = "{?}";
             // 
@@ -234,7 +234,7 @@
             this.label4.ForeColor = System.Drawing.Color.Indigo;
             this.label4.Location = new System.Drawing.Point(569, 38);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 23);
+            this.label4.Size = new System.Drawing.Size(87, 19);
             this.label4.TabIndex = 0;
             this.label4.Text = "Welcome:";
             // 
@@ -245,7 +245,7 @@
             this.labelTime.ForeColor = System.Drawing.Color.Indigo;
             this.labelTime.Location = new System.Drawing.Point(24, 38);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(35, 23);
+            this.labelTime.Size = new System.Drawing.Size(28, 19);
             this.labelTime.TabIndex = 0;
             this.labelTime.Text = "{?}";
             // 
@@ -261,25 +261,23 @@
             this.userControlSetting.TabIndex = 6;
             this.userControlSetting.Visible = false;
             // 
-            // userControlTeacherReport2
+            // userControlAttendance1
             // 
-            this.userControlTeacherReport2.BackColor = System.Drawing.Color.White;
-            this.userControlTeacherReport2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlTeacherReport2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.userControlTeacherReport2.Location = new System.Drawing.Point(280, 180);
-            this.userControlTeacherReport2.Margin = new System.Windows.Forms.Padding(4);
-            this.userControlTeacherReport2.Name = "userControlTeacherReport2";
-            this.userControlTeacherReport2.Size = new System.Drawing.Size(981, 540);
-            this.userControlTeacherReport2.TabIndex = 8;
-            this.userControlTeacherReport2.Visible = false;
+            this.userControlAttendance1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlAttendance1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.userControlAttendance1.Location = new System.Drawing.Point(280, 180);
+            this.userControlAttendance1.Margin = new System.Windows.Forms.Padding(4);
+            this.userControlAttendance1.Name = "userControlAttendance1";
+            this.userControlAttendance1.Size = new System.Drawing.Size(981, 540);
+            this.userControlAttendance1.TabIndex = 8;
             // 
             // FormTeacher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1261, 720);
-            this.Controls.Add(this.userControlTeacherReport2);
+            this.Controls.Add(this.userControlAttendance1);
             this.Controls.Add(this.panelBack);
             this.Controls.Add(this.userControlSetting);
             this.Controls.Add(this.panel1);
@@ -322,5 +320,6 @@
         private System.Windows.Forms.Label labelTime;
         private User_Controls.UserControlTeacherReport userControlTeacherReport1;
         private User_Controls.UserControlTeacherReport userControlTeacherReport2;
+        private User_Controls.UserControlAttendance userControlAttendance1;
     }
 }
