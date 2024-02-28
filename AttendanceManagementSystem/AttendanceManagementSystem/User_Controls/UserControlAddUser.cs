@@ -120,7 +120,7 @@ namespace AttendanceManagementSystem.User_Controls
         //  show date in grid view
         public void xmlOperation(string file)
         {
-            teachersList.Clear();
+            usersList.Clear();
             try
             {
                 xml = XDocument.Load(file);
@@ -162,6 +162,7 @@ namespace AttendanceManagementSystem.User_Controls
             dataGridViewUser.DataError += dataGridViewUser_DataError;
             dataGridViewUser.DataSource = null;
             dataGridViewUser.Rows.Clear();
+            dataGridViewUser.Columns.Clear();
 
             dataGridViewUser.Columns.Add("Id", "ID");
             dataGridViewUser.Columns.Add("Name", "Name");
@@ -304,8 +305,9 @@ namespace AttendanceManagementSystem.User_Controls
 
                     
                     xml.Save(URL_XML_FILE);
+                   
                     MessageBox.Show("User Upate Successfully", "Update User", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    
                     loadUsers();
                     tabControlAddUser.SelectedTab = tabPageSearch2;
 
@@ -315,6 +317,43 @@ namespace AttendanceManagementSystem.User_Controls
 
                 //courseElement.Element("teacher").Element("teachId").Value = boxTeacher.Text;
 
+
+            }
+            else
+            {
+                MessageBox.Show("First select row from table", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tabControlAddUser.SelectedTab = tabPageSearch2;
+
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            XElement userElement = xml.Descendants("user").FirstOrDefault(p => p.Element("id").Value == txtId2.Text);
+            if (userElement != null)
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you want to delete this user ?", "Delete user", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    userElement.Remove();
+                    xml.Save(URL_XML_FILE);
+                    MessageBox.Show("user Deleted Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    try
+                    {
+                        loadUsers();
+                        tabControlAddUser.SelectedTab = tabPageSearch2;
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error loading information: " + ex.Message);
+
+                    }
+
+
+                }
 
             }
             else

@@ -14,25 +14,12 @@
       </listOfCourses>
     </user>
     <user>
-      <id>800151254</id>
-      <name>hend</name>
-      <age>23</age>
-      <email>hend@yahoo.com</email>
-      <address>mansoura</address>
-      <userPass>asdf1234</userPass>
-      <role>student</role>
-      <listOfCourses>
-        <courseName>C#</courseName>
-        <courseName>XML</courseName>
-      </listOfCourses>
-    </user>
-    <user>
       <id>800151654</id>
-      <name>aya</name>
-      <age>24</age>
+      <name>helmy</name>
+      <age>25</age>
       <email>aya@yahoo.com</email>
-      <address>mansoura</address>
-      <userPass>Ahsh1234</userPass>
+      <address>sina</address>
+      <userPass>Mmmm5552</userPass>
       <role>student</role>
       <listOfCourses>
         <courseName>C#</courseName>
@@ -69,7 +56,7 @@
     <user>
       <id>8789</id>
       <name>Nasr</name>
-      <age>39</age>
+      <age>40</age>
       <email>nasr2@yahoo.com</email>
       <address>mansoura</address>
       <userPass>asdf1234</userPass>
