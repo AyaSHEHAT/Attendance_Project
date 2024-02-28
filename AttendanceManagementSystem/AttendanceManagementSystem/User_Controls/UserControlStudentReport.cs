@@ -22,127 +22,76 @@ namespace AttendanceManagementSystem.User_Controls
     {
 
 
-        int userId = 800159561;
-        XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
+        int userId = 800151254;
+        XDocument doc = XDocument.Load(@"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\Attendance_Project\XML files\Data.xml");
         public UserControlStudentReport()
         {
             InitializeComponent();
 
-            var courses = doc.Root
-                             .Element("Courses")
-                             .Elements("course")
-                             .Where(c => c.Element("users").Element("user").Element("id")?.Value == userId.ToString()) // Filter by teachId
-                             .ToList();
-
-            if (courses.Any())
-            {
-                foreach (var course in courses)
-                {
-                    string courseId = course.Element("cID")?.Value;
-                    string courseName = course.Element("cName")?.Value;
-                    comboBoxCourses.Items.Add($"{courseId} - {courseName}");
-                }
-
-                comboBoxCourses.SelectedIndex = -1;
-                comboBoxDate.SelectedIndex = -1;
-            }
-            else
-            {
-                MessageBox.Show("No Courses found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           LoadCourses();
         }
-        public void loadCourses()
+        public void LoadCourses()
         {
+            var studentCourses = doc.Root
+                                    .Elements("Users")
+                                    .Elements("user")
+                                    .Where(user => (Int64)user.Element("id") == userId && (string)user.Element("role") == "student")
+                                    .Elements("listOfCourses")
+                                    .Elements("courseName")
+                                    .Select(courseName => (string)courseName)
+                                    .ToList();
 
-            if (comboBoxCourses.SelectedIndex >= 0)
+            if (studentCourses.Any())
             {
-                comboBoxDate.Items.Clear();
-
-                string selectedCourse = comboBoxCourses.SelectedItem.ToString();
-                string courseName = selectedCourse.Split('-')[1].Trim();
-
-                var courseElement = doc.Root
-                                        .Element("Courses")
-                                        .Elements("course")
-                                        .FirstOrDefault(c => c.Element("cName").Value == courseName);
-
-                if (courseElement != null)
-                {
-                    var dates = courseElement.Descendants("date").Select(d => d.Value).ToList();
-
-                    if (dates.Any())
-                    {
-                        foreach (var date in dates)
-                        {
-                            comboBoxDate.Items.Add(date);
-                        }
-
-                        comboBoxDate.SelectedIndex = -1; // Select the first date by default
-                    }
-                    else
-                    {
-                        MessageBox.Show("No sessions found for the selected course.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Selected course not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                comboBoxCourses.Items.AddRange(studentCourses.ToArray());
+                comboBoxCourses.SelectedIndex = -1;
             }
             else
             {
-                MessageBox.Show("Please select a course.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No Courses found for the student.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-
-        private void applyXsltTransformation(string courseName, string selectedDate)
+        private void applyXsltTransformation(string courseName, int userId)
         {
             XslCompiledTransform xslt = new XslCompiledTransform();
-            xslt.Load(@"../../../../XML files/courseAndStudent.xslt");
-
-            using (XmlWriter writer = XmlWriter.Create(@"C:\Reports\TransformedAttendance.html"))
+            xslt.Load(@"../../../../XML files\StudentReport.xslt");
+            using (XmlWriter writer = XmlWriter.Create(@"C:\Reports\StudentReport.html", new XmlWriterSettings { ConformanceLevel = ConformanceLevel.Auto }))
             {
                 XsltArgumentList arguments = new XsltArgumentList();
                 arguments.AddParam("selectedCourseName", "", courseName);
-                arguments.AddParam("selectedDate", "", selectedDate);
+                arguments.AddParam("userID", "", userId.ToString());
 
                 xslt.Transform(doc.CreateReader(), arguments, writer);
             }
 
-            string transformedXml = File.ReadAllText(@"C:\Reports\TransformedAttendance.html");
-            XDocument transformedDoc = XDocument.Load(@"C:\Reports\TransformedAttendance.html");
+
+            string transformedXml = File.ReadAllText(@"C:\Reports\StudentReport.html");
+
+            XDocument transformedDoc = XDocument.Load(@"C:\Reports\StudentReport.html");
             var students = transformedDoc.Root.Descendants("tr")
-                                             .Skip(1) // Skip the header row
-                                             .Select(tr => new Report_teacher
-                                             {
-                                                 StdId = int.Parse(tr.Elements("td").First().Value),
-                                                 StdName = tr.Elements("td").Skip(1).First().Value,
-                                                 Date = tr.Elements("td").Skip(2).First().Value,
-                                                 CName = tr.Elements("td").Skip(3).First().Value,
-                                                 Status = tr.Elements("td").Skip(4).First().Value
-                                             }).ToList();
+                                  .Skip(1) // Skip the header row
+                                  .Select(tr => new Report_Student(
+                                          tr.Elements("td").Skip(0).FirstOrDefault()?.Value ?? "", // Use null conditional operator and null-coalescing operator
+                                          tr.Elements("td").Skip(1).FirstOrDefault()?.Value ?? "",
+                                          tr.Elements("td").Skip(2).FirstOrDefault()?.Value ?? ""
+                                    )).ToList();
 
             dataGridViewCourse.DataSource = students;
-        }
 
+        }
 
         private void comboBoxCourses_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadCourses();
-        }
-
-        private void comboBoxDate_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxDate.SelectedIndex >= 0)
+            if (comboBoxCourses.SelectedIndex >= 0)
             {
+                dataGridViewCourse.Rows.Clear();
                 string selectedCourse = comboBoxCourses.SelectedItem.ToString();
-                string courseName = selectedCourse.Split('-')[1].Trim();
-                string selectedDate = comboBoxDate.SelectedItem.ToString();
-                applyXsltTransformation(courseName, selectedDate);
+                applyXsltTransformation(selectedCourse, userId);
             }
         }
-        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+      
+       private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             // Define the bounds for printing
             System.Drawing.Rectangle bounds = e.MarginBounds;
@@ -178,14 +127,14 @@ namespace AttendanceManagementSystem.User_Controls
 
         private void ExportToPdf(int randomNumber)
         {
-            string fileName = $"../../../../Reports\\AttendanceReport_{randomNumber}.pdf";
+            string fileName = $"../../../../Reports\\AttendanceReportforStudent{userId}_{randomNumber}.pdf";
 
             Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
             PdfWriter.GetInstance(pdfDoc, new FileStream(fileName, FileMode.Create));
 
             pdfDoc.Open();
 
-            pdfDoc.Add(new Paragraph("Attendance Report"));
+            pdfDoc.Add(new Paragraph($"Attendance Report of student {userId}"));
             PdfPTable pdfTable = new PdfPTable(dataGridViewCourse.Columns.Count);
             foreach (DataGridViewColumn column in dataGridViewCourse.Columns)
             {
@@ -209,7 +158,7 @@ namespace AttendanceManagementSystem.User_Controls
         {
             using (ExcelPackage excelPackage = new ExcelPackage())
             {
-                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Attendance Report");
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add($"Attendance Report of student {userId}");
 
                 for (int i = 0; i < dataGridViewCourse.Columns.Count; i++)
                 {
@@ -223,7 +172,7 @@ namespace AttendanceManagementSystem.User_Controls
                     }
                 }
 
-                FileInfo excelFile = new FileInfo($"../../../../Reports\\AttendanceReport_{randomNumber}.xlsx");
+                FileInfo excelFile = new FileInfo($"../../../../Reports\\AttendanceReportforStudent{userId}_{randomNumber}.xlsx");
                 excelPackage.SaveAs(excelFile);
 
                 MessageBox.Show($"Attendance report exported as Excel successfully! \n in location '{excelFile.FullName}'", "Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);

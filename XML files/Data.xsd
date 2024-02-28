@@ -25,10 +25,18 @@
 									<xs:sequence>
 										<xs:element name="id" type="xs:integer"/>
 										<xs:element name="name" type="xs:string"/>
+										<xs:element name="age" type="xs:integer"/>
 										<xs:element name="email" type="xs:string"/>
 										<xs:element name="address" type="xs:string"/>
 										<xs:element name="userPass" type="stringPass"/>
 										<xs:element name="role" type="xs:string"/>
+										<xs:element name="listOfCourses" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+											<xs:element name="courseName" minOccurs="0" maxOccurs="unbounded"/>
+											</xs:sequence>
+										</xs:complexType>
+										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>

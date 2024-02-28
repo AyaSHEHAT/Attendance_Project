@@ -45,6 +45,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.userControlStudentReport1 = new AttendanceManagementSystem.User_Controls.UserControlStudentReport();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -239,12 +240,23 @@
             this.panel1.Size = new System.Drawing.Size(276, 720);
             this.panel1.TabIndex = 2;
             // 
+            // userControlStudentReport1
+            // 
+            this.userControlStudentReport1.BackColor = System.Drawing.Color.White;
+            this.userControlStudentReport1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlStudentReport1.Location = new System.Drawing.Point(276, 208);
+            this.userControlStudentReport1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userControlStudentReport1.Name = "userControlStudentReport1";
+            this.userControlStudentReport1.Size = new System.Drawing.Size(985, 512);
+            this.userControlStudentReport1.TabIndex = 3;
+            // 
             // FormStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1261, 720);
+            this.Controls.Add(this.userControlStudentReport1);
             this.Controls.Add(this.panelBack);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -284,5 +296,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Panel panel1;
+        private User_Controls.UserControlStudentReport userControlStudentReport1;
     }
 }

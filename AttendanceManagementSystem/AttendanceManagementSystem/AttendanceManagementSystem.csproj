@@ -132,6 +132,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report_Student.cs" />
     <Compile Include="SettingsManager.cs" />
     <Compile Include="Report_teacher.cs" />
     <Compile Include="Student.cs" />
