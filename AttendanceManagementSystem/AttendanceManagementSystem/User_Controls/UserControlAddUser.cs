@@ -21,12 +21,12 @@ namespace AttendanceManagementSystem.User_Controls
         XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
 
         List<User> usersList = new List<User>();
-        List<Teacher> teachersList = new List<Teacher>();
-        List<Student> studentsList = new List<Student>();
+        
 
         List<XElement> teachers;
         // DataTable dt;
         string teacherName;
+        List<User> filtere;
 
 
         public UserControlAddUser()
@@ -216,14 +216,21 @@ namespace AttendanceManagementSystem.User_Controls
         {
             string searchText = txtSearch2.Text.Trim().ToLower();
 
-
-            var filteredUsers = usersList.Where(user => user.Name.ToLower().Contains(searchText)).ToList();
-
-
-            dataGridViewUser.DataSource = filteredUsers;
-            txtTotalUser.Text = dataGridViewUser.Rows.Count.ToString();
-
+            // Check if filtere list is not null
+            if (filtere != null && filtere.Any())
+            {
+                var filteredUsers = filtere.Where(user => user.Name.ToLower().Contains(searchText)).ToList();
+                dataGridViewUser.DataSource = filteredUsers;
+                txtTotalUser.Text = filteredUsers.Count.ToString();
+            }
+            else
+            {
+                var filteredUsers = usersList.Where(user => user.Name.ToLower().Contains(searchText)).ToList();
+                dataGridViewUser.DataSource = filteredUsers;
+                txtTotalUser.Text = filteredUsers.Count.ToString();
+            }
         }
+
 
         private void tabPageSearch2_Leave(object sender, EventArgs e)
         {
@@ -381,18 +388,29 @@ namespace AttendanceManagementSystem.User_Controls
 
         private void comboBoxusers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*if (role == "teacher")
+            
+            if (comboBoxusers.SelectedIndex ==1)
             {
+                 filtere = usersList.Where(user => user.Role.ToLower().Contains("teacher")).ToList();
 
+
+                dataGridViewUser.DataSource = filtere;
+                txtTotalUser.Text = dataGridViewUser.Rows.Count.ToString();
             }
-            else if ()
+            else if (comboBoxusers.SelectedIndex == 2)
             {
+                 filtere = usersList.Where(user => user.Role.ToLower().Contains("student")).ToList();
 
+
+                dataGridViewUser.DataSource = filtere;
+                txtTotalUser.Text = dataGridViewUser.Rows.Count.ToString();
             }
             else
             {
-
-            }*/
+                //call loadUsers to load data from xml file and save it in courses object
+                loadUsers();
+                txtTotalUser.Text = dataGridViewUser.Rows.Count.ToString();
+            }
         }
     }
 
