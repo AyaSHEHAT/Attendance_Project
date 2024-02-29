@@ -452,6 +452,30 @@ namespace AttendanceManagementSystem.User_Controls
                 txtTotalUser.Text = dataGridViewUser.Rows.Count.ToString();
             }
         }
+
+       
+
+        private void tabPageAdduser_Enter(object sender, EventArgs e)
+        {
+            SettingsManager settings = SettingsManager.Instance;
+            if (settings.DarkModeEnabled)
+            {
+
+                tabPageAdduser.BackColor = Color.Gray;
+                tabPageSearch2.BackColor = Color.Gray;
+                tabPageUpdateandDelete2.BackColor = Color.Gray;
+                tabPageSearch2.ForeColor = Color.Black;
+
+            }
+            else
+            {
+
+                tabPageAdduser.BackColor = Color.White;
+                tabPageSearch2.BackColor = Color.White;
+                tabPageUpdateandDelete2.BackColor = Color.White;
+
+            }
+        }
     }
 
         

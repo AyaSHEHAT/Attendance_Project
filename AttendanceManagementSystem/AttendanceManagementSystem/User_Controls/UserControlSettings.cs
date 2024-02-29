@@ -15,6 +15,7 @@ namespace AttendanceManagementSystem.User_Controls
     public partial class UserControlSettings : UserControl
     {
         public event ChangeFormColorEventHandler ChangeFormColorEvent;
+        public event EventHandler<string> DateFormatChanged;
         public UserControlSettings()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace AttendanceManagementSystem.User_Controls
             if (settings.DarkModeEnabled)
             {
                 // Set dark mode colors and styles
-                this.BackColor = Color.Black;
+                this.BackColor = Color.Gray;
                 this.ForeColor = Color.White;
                 checkBoxDark.ForeColor = System.Drawing.Color.Indigo;
                 // Update other UI elements as needed
@@ -50,6 +51,25 @@ namespace AttendanceManagementSystem.User_Controls
             SettingsManager.Instance.ToggleDarkMode();
             UpdateUIForDarkMode();
             ChangeFormColorEvent?.Invoke(this, Color.Red);
+        }
+
+        private void comboBoxDate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+            string selectedDateFormat = comboBoxDate.SelectedItem.ToString();
+            DateFormatChanged?.Invoke(this, selectedDateFormat);
+
+            foreach (Control control in Controls)
+            {
+               
+                if (control is DateTimePicker dateTimePicker)
+                {
+                    
+                    dateTimePicker.CustomFormat = selectedDateFormat;
+                    dateTimePicker.Format = DateTimePickerFormat.Custom;
+                }
+            }
+
         }
     }
 }

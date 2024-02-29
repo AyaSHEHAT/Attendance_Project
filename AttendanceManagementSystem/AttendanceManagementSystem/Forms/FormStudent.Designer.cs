@@ -45,7 +45,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.userControlStudentReport1 = new AttendanceManagementSystem.User_Controls.UserControlStudentReport();
+            this.btnSt = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,7 +65,7 @@
             this.labelUsername.Location = new System.Drawing.Point(591, 63);
             this.labelUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(35, 23);
+            this.labelUsername.Size = new System.Drawing.Size(28, 19);
             this.labelUsername.TabIndex = 0;
             this.labelUsername.Text = "{?}";
             // 
@@ -144,7 +144,7 @@
             this.label2.Location = new System.Drawing.Point(106, 169);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 23);
+            this.label2.Size = new System.Drawing.Size(62, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "System";
             // 
@@ -156,7 +156,7 @@
             this.label1.Location = new System.Drawing.Point(16, 139);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(270, 23);
+            this.label1.Size = new System.Drawing.Size(216, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Attendance Management ";
             // 
@@ -211,7 +211,7 @@
             this.label4.Location = new System.Drawing.Point(446, 63);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 23);
+            this.label4.Size = new System.Drawing.Size(87, 19);
             this.label4.TabIndex = 0;
             this.label4.Text = "Welcome:";
             // 
@@ -223,13 +223,14 @@
             this.labelTime.Location = new System.Drawing.Point(28, 63);
             this.labelTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(35, 23);
+            this.labelTime.Size = new System.Drawing.Size(28, 19);
             this.labelTime.TabIndex = 0;
             this.labelTime.Text = "{?}";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Indigo;
+            this.panel1.Controls.Add(this.btnSt);
             this.panel1.Controls.Add(this.buttonReport);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
@@ -240,23 +241,29 @@
             this.panel1.Size = new System.Drawing.Size(276, 720);
             this.panel1.TabIndex = 2;
             // 
-            // userControlStudentReport1
+            // btnSt
             // 
-            this.userControlStudentReport1.BackColor = System.Drawing.Color.White;
-            this.userControlStudentReport1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlStudentReport1.Location = new System.Drawing.Point(276, 208);
-            this.userControlStudentReport1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.userControlStudentReport1.Name = "userControlStudentReport1";
-            this.userControlStudentReport1.Size = new System.Drawing.Size(985, 512);
-            this.userControlStudentReport1.TabIndex = 3;
+            this.btnSt.FlatAppearance.BorderSize = 0;
+            this.btnSt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSt.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSt.ForeColor = System.Drawing.Color.White;
+            this.btnSt.Image = global::AttendanceManagementSystem.Properties.Resources.attendance_list1;
+            this.btnSt.Location = new System.Drawing.Point(8, 323);
+            this.btnSt.Name = "btnSt";
+            this.btnSt.Size = new System.Drawing.Size(260, 75);
+            this.btnSt.TabIndex = 3;
+            this.btnSt.Text = "       Settings";
+            this.btnSt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSt.UseVisualStyleBackColor = true;
+            this.btnSt.Click += new System.EventHandler(this.btnStTch_Click);
             // 
             // FormStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1261, 720);
-            this.Controls.Add(this.userControlStudentReport1);
             this.Controls.Add(this.panelBack);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -296,6 +303,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Panel panel1;
+        private User_Controls.UserControlSettings userControlSetting;
         private User_Controls.UserControlStudentReport userControlStudentReport1;
+        private System.Windows.Forms.Button btnSt;
+       
+
     }
 }

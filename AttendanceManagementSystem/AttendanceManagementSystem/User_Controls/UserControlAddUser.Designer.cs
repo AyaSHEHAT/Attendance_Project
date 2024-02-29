@@ -152,6 +152,8 @@
             this.tabPageAdduser.Size = new System.Drawing.Size(934, 467);
             this.tabPageAdduser.TabIndex = 0;
             this.tabPageAdduser.Text = "Add User";
+           
+            this.tabPageAdduser.Enter += new System.EventHandler(this.tabPageAdduser_Enter);
             // 
             // label17
             // 

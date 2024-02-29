@@ -127,6 +127,7 @@
             this.tabPageAddClass.Size = new System.Drawing.Size(934, 467);
             this.tabPageAddClass.TabIndex = 0;
             this.tabPageAddClass.Text = "Add Class";
+            this.tabPageAddClass.Enter += new System.EventHandler(this.tabPageAddClass_Enter);
             this.tabPageAddClass.Leave += new System.EventHandler(this.tabPageAddClass_Leave);
             // 
             // buttonAdd
@@ -686,9 +687,9 @@
         #endregion
 
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.TabControl tabControlAddClass;
-        private System.Windows.Forms.TabPage tabPageAddClass;
-        private System.Windows.Forms.TabPage tabPageSearch;
+        public System.Windows.Forms.TabControl tabControlAddClass;
+        public System.Windows.Forms.TabPage tabPageAddClass;
+        public System.Windows.Forms.TabPage tabPageSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
@@ -709,7 +710,7 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TabPage tabPage1;
+        public System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridViewCourse;
         private System.Windows.Forms.Label label9;

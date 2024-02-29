@@ -424,7 +424,7 @@
         private User_Controls.UserControlDashboard1 userControlDashboard1;
         private User_Controls.UserControlAddCourse userControlAddCourse;
         private User_Controls.UserControlAddUser userControlAddUser1;
-        private User_Controls.UserControlSettings userControlSetting;
+        public User_Controls.UserControlSettings userControlSetting;
         private User_Controls.UserControlAdminReport userControlAdminReport1;
     }
 }
