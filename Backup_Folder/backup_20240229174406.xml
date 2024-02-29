@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:\ITI-PD&amp;BI\XML\XML-Project\Old2-Attendance_Project\XML files\Data.xsd">
   <Users>
     <user>
@@ -17,31 +17,7 @@
       <id>800151654</id>
       <name>helmy</name>
       <age>25</age>
-      <email>helmy201@yahoo.com</email>
-      <address>sina</address>
-      <userPass>Mmmm5552</userPass>
-      <role>student</role>
-      <listOfCourses>
-        <courseName>C#</courseName>
-      </listOfCourses>
-    </user>
-    <user>
-      <id>800151655</id>
-      <name>ali</name>
-      <age>25</age>
-      <email>ali102@yahoo.com</email>
-      <address>sina</address>
-      <userPass>Mmmm5552</userPass>
-      <role>student</role>
-      <listOfCourses>
-        <courseName>C#</courseName>
-      </listOfCourses>
-    </user>
-    <user>
-      <id>800151656</id>
-      <name>alaa</name>
-      <age>25</age>
-      <email>alaa021@yahoo.com</email>
+      <email>aya@yahoo.com</email>
       <address>sina</address>
       <userPass>Mmmm5552</userPass>
       <role>student</role>
@@ -189,7 +165,7 @@
         </session>
         <session>
           <date>2021-04-06</date>
-          <sessionNum>4</sessionNum>
+          <sessionNum>5</sessionNum>
           <students>
             <student>
               <stdId>800151254</stdId>

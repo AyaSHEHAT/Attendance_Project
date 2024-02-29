@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -14,6 +15,11 @@ namespace AttendanceManagementSystem
 {
     public partial class FormAdmin : Form
     {
+        private const string DatabaseFilePath = @"../../../../XML files\\Data.xml";
+        private const string BackupFolderPath = @"../../../../Backup_Folder";
+        private System.Threading.Timer backupTimer; // Keep a reference to the timer
+
+
         //public string Username="Aya", Role="student";
         //public string Username = "Asmaa", Role = "teacher";
         public string Username = "Nada", Role = "admin";
@@ -37,6 +43,7 @@ namespace AttendanceManagementSystem
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            ScheduleBackup();
             //panelExpand.Hide();
             //panelExpand.Visible = false;
             labelUsername.Text = Username;
@@ -129,5 +136,79 @@ namespace AttendanceManagementSystem
         {
             panelSlide.Location=new Point(button.Location.X - button.Location.X,button.Location.Y - 180);
         }
+
+
+        private void ScheduleBackup()
+        {
+            // Schedule the backup task every 5 seconds
+            var delay = TimeSpan.FromSeconds(60);
+
+            // Schedule the backup task
+            var timer = new System.Threading.Timer(BackupDatabase, null, delay, TimeSpan.FromSeconds(60));
+        }
+
+        private void BackupDatabase(object state)
+        {
+            try
+            {
+                // Create the backup folder if it doesn't exist
+                if (!Directory.Exists(BackupFolderPath))
+                {
+                    Directory.CreateDirectory(BackupFolderPath);
+                    Log("Backup folder created: " + BackupFolderPath);
+                }
+
+                // Generate backup file name with timestamp
+                var backupFileName = $"backup_{DateTime.Now:yyyyMMddHHmmss}.xml";
+                var backupFilePath = Path.Combine(BackupFolderPath, backupFileName);
+
+                // Copy the database file to the backup folder
+                File.Copy(DatabaseFilePath, backupFilePath);
+
+                // Log backup success
+                Log("Backup created: " + backupFileName);
+            }
+            catch (Exception ex)
+            {
+                // Log backup error
+                Log("Backup error: " + ex.Message);
+            }
+        }
+
+
+        //private void BackupDatabase(object state)
+        //{
+        //    try
+        //    {
+        //        // Create the backup folder if it doesn't exist
+        //        if (!Directory.Exists(BackupFolderPath))
+        //        {
+        //            Directory.CreateDirectory(BackupFolderPath);
+        //        }
+
+        //        // Generate backup file name with timestamp
+        //        var backupFileName = $"backup_{DateTime.Now:yyyyMMddHHmmss}.xml";
+        //        var backupFilePath = Path.Combine(BackupFolderPath, backupFileName);
+
+        //        // Copy the database file to the backup folder
+        //        File.Copy(DatabaseFilePath, backupFilePath);
+
+        //        // Log backup success
+        //        Log("Backup created: " + backupFileName);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Log backup error
+        //        Log("Backup error: " + ex.Message);
+        //    }
+        //}
+
+        private void Log(string message)
+        {
+            // Log the message to a file or display it in the application
+            // You can implement your own logging mechanism here
+            Console.WriteLine(message);
+        }
+
     }
 }

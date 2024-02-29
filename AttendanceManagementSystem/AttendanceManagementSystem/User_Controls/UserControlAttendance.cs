@@ -96,7 +96,7 @@ namespace AttendanceManagementSystem.User_Controls
                 // Retrieve checkbox value
                 var res = Atteend ? "attended" : "absent";
                 // You can now use studentID and attended in your further processing
-                MessageBox.Show($"Student with ID {studentID} , {(Atteend ? "attended" : "was absent")} , {theDate}, in course {cname}.");
+                //MessageBox.Show($"Student with ID {studentID} , {(Atteend ? "attended" : "was absent")} , {theDate}, in course {cname}.");
                 writeStudentAttendance(studentID, res, cname, theDate);
             }
         }
