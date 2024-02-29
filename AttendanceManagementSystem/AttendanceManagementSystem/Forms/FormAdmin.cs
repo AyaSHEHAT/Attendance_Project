@@ -103,25 +103,27 @@ namespace AttendanceManagementSystem
                 SettingsManager settings = SettingsManager.Instance;
                 if (settings.DarkModeEnabled)
                 {
-                Flag=1;
+               
                     
                     panel1.BackColor = Color.DarkGray;
                     panel1.ForeColor = Color.White;
                     panel2.BackColor = Color.DarkGray;
                     panel2.ForeColor = Color.White;
-                    panelBack.BackColor = Color.Black;
+                    panelBack.BackColor = Color.Gray;
                     panelBack.ForeColor = Color.White;
-                panelSlide.BackColor = Color.Black;
+                panelSlide.BackColor = Color.Gray;
                 panel4.BackColor = Color.DarkGray;
                 //panelSlide.ForeColor = Color.White;
-                userControlAddCourse.BackColor = Color.Black;
+                userControlAddCourse.BackColor = Color.Gray;
               
                
                 userControlAddCourse.ForeColor = Color.White;
-                userControlAddUser1.BackColor = Color.Black;
+                
+                userControlAddUser1.BackColor = Color.Gray;
                 userControlAddUser1.ForeColor = Color.White;
-                userControlDashboard1.BackColor = Color.Black;
+                userControlDashboard1.BackColor = Color.Gray;
                 userControlDashboard1.ForeColor = Color.White;
+                
                /* user.BackColor = Color.Black;
                 userControlAddCourse.ForeColor = Color.White;*/
 
@@ -129,7 +131,7 @@ namespace AttendanceManagementSystem
             }
             else
                 {
-                  Flag = 0;
+                  
                 panel1.BackColor = System.Drawing.Color.Indigo;
                 panel1.ForeColor = SystemColors.ControlText;
                 panel2.BackColor = System.Drawing.Color.Indigo;
@@ -179,6 +181,7 @@ namespace AttendanceManagementSystem
             userControlAddCourse.Visible= true;
             userControlAddUser1.Visible= false;
             userControlSetting.Visible = false;
+            
 
         }
 

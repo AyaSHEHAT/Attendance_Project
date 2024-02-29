@@ -27,7 +27,7 @@ namespace AttendanceManagementSystem.User_Controls
             if (settings.DarkModeEnabled)
             {
                 // Set dark mode colors and styles
-                this.BackColor = Color.Black;
+                this.BackColor = Color.Gray;
                 this.ForeColor = Color.White;
                 checkBoxDark.ForeColor = System.Drawing.Color.Indigo;
                 // Update other UI elements as needed
