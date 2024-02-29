@@ -462,5 +462,21 @@ namespace AttendanceManagementSystem.User_Controls
             }
             
         }
+
+
+        // date formate 
+        public void UserControl1_DateFormatChanged(object sender, string selectedDateFormat)
+        {
+            // Update the date format of date controls in UserControl2
+            foreach (Control control in Controls)
+            {
+                if (control is DateTimePicker dateTimePicker)
+                {
+                    dateTimePicker.CustomFormat = selectedDateFormat;
+                    dateTimePicker.Format = DateTimePickerFormat.Custom;
+                }
+            }
+        }
     }
 }
+

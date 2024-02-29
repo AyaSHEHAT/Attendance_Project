@@ -87,16 +87,23 @@ namespace AttendanceManagementSystem
            
         }
 
-        public int Flag = 0;
+        
         public FormAdmin()
         {
             InitializeComponent();
             timerDtaeAndTime.Start();
             userControlSetting.ChangeFormColorEvent += settingControl_ChangeFormColorEvent;
-
+            userControlSetting.DateFormatChanged += UserControl1_DateFormatChanged;
         }
 
-       
+        //date format 
+        private void UserControl1_DateFormatChanged(object sender, string selectedDateFormat)
+        {
+            // Call the method in UserControl2 to update the date format
+            userControlAddCourse.UserControl1_DateFormatChanged(sender, selectedDateFormat);
+        }
+
+
         private void settingControl_ChangeFormColorEvent(object sender, Color newColor)
         {
             

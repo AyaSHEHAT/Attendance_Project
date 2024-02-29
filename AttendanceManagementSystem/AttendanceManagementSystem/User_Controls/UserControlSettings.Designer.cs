@@ -33,7 +33,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxlan = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxDate = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             // 
             this.checkBoxDark.AutoSize = true;
             this.checkBoxDark.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxDark.Location = new System.Drawing.Point(149, 71);
+            this.checkBoxDark.Location = new System.Drawing.Point(178, 163);
             this.checkBoxDark.Name = "checkBoxDark";
             this.checkBoxDark.Size = new System.Drawing.Size(56, 20);
             this.checkBoxDark.TabIndex = 2;
@@ -64,7 +64,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(40, 71);
+            this.label4.Location = new System.Drawing.Point(69, 163);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 17);
             this.label4.TabIndex = 7;
@@ -79,7 +79,7 @@
             this.comboBoxlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxlan.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxlan.FormattingEnabled = true;
-            this.comboBoxlan.Location = new System.Drawing.Point(149, 141);
+            this.comboBoxlan.Location = new System.Drawing.Point(178, 233);
             this.comboBoxlan.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxlan.Name = "comboBoxlan";
             this.comboBoxlan.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -91,35 +91,40 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 141);
+            this.label1.Location = new System.Drawing.Point(71, 233);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 17);
             this.label1.TabIndex = 17;
             this.label1.Text = "Language";
             // 
-            // comboBox1
+            // comboBoxDate
             // 
-            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            this.comboBoxDate.AutoCompleteCustomSource.AddRange(new string[] {
             "English",
             "Arabic"});
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(149, 222);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.comboBox1.Size = new System.Drawing.Size(141, 24);
-            this.comboBox1.TabIndex = 20;
-            this.comboBox1.Text = "YY/MM/DD";
+            this.comboBoxDate.BackColor = System.Drawing.Color.White;
+            this.comboBoxDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxDate.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxDate.FormattingEnabled = true;
+            this.comboBoxDate.Items.AddRange(new object[] {
+            "dd/MM/yyyy",
+            "MM/dd/yyyy",
+            "yyyy-MM-dd"});
+            this.comboBoxDate.Location = new System.Drawing.Point(178, 314);
+            this.comboBoxDate.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxDate.Name = "comboBoxDate";
+            this.comboBoxDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.comboBoxDate.Size = new System.Drawing.Size(141, 24);
+            this.comboBoxDate.TabIndex = 20;
+            this.comboBoxDate.Text = "dd/MM/yyyy";
+            this.comboBoxDate.SelectedIndexChanged += new System.EventHandler(this.comboBoxDate_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 222);
+            this.label3.Location = new System.Drawing.Point(71, 314);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 17);
@@ -132,7 +137,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.checkBoxDark);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxlan);
             this.Controls.Add(this.label1);
@@ -152,7 +157,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxlan;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBoxDark;
     }
