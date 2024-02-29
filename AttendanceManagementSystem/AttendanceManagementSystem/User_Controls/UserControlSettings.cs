@@ -14,10 +14,11 @@ namespace AttendanceManagementSystem.User_Controls
 
     public partial class UserControlSettings : UserControl
     {
+        public event ChangeFormColorEventHandler ChangeFormColorEvent;
         public UserControlSettings()
         {
             InitializeComponent();
-            radioBtnLight.Checked = true;
+            
         }
 
         private void UpdateUIForDarkMode()
@@ -28,30 +29,27 @@ namespace AttendanceManagementSystem.User_Controls
                 // Set dark mode colors and styles
                 this.BackColor = Color.Black;
                 this.ForeColor = Color.White;
+                checkBoxDark.ForeColor = System.Drawing.Color.Indigo;
                 // Update other UI elements as needed
             }
             else
             {
                 // Set light mode colors and styles
-                this.BackColor = SystemColors.Control;
+                this.BackColor = Color.White;
                 this.ForeColor = SystemColors.ControlText;
+                checkBoxDark.ForeColor = SystemColors.ControlText;
                 // Update other UI elements as needed
             }
         }
-        private void radioBtnark_CheckedChanged(object sender, EventArgs e)
-        {
-            /*SettingsManager.Instance.ToggleDarkMode();
-            UpdateUIForDarkMode();*/
-            this.BackColor = Color.Black;
-            this.ForeColor = Color.White;
-           
+        
 
-        }
+       
 
-        private void radioBtnLight_CheckedChanged(object sender, EventArgs e)
+        private void checkBoxDark_CheckedChanged(object sender, EventArgs e)
         {
-             this.BackColor = Color.White;
-                this.ForeColor = Color.Black;
+            SettingsManager.Instance.ToggleDarkMode();
+            UpdateUIForDarkMode();
+            ChangeFormColorEvent?.Invoke(this, Color.Red);
         }
     }
 }

@@ -26,6 +26,9 @@ namespace AttendanceManagementSystem.User_Controls
         {
             InitializeComponent();
 
+            
+
+
             //call loadcourse to load data from xml file and save it in courses object
             loadCourses();
 
@@ -328,7 +331,7 @@ namespace AttendanceManagementSystem.User_Controls
 
             }
         }
-
+       
         private void buttonAdd_Click(object sender, EventArgs e)
         {
                 int numericValue;
@@ -377,7 +380,7 @@ namespace AttendanceManagementSystem.User_Controls
                 ClearTextBox();
             }
             loadCourses();
-
+           
 
         }
 
@@ -410,5 +413,8 @@ namespace AttendanceManagementSystem.User_Controls
             upDownSession.Value = 1;
             dateStartDate.Value = DateTime.Now;
         }
+
+        
+
     }
 }

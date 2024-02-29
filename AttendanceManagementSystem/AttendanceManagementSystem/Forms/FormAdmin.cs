@@ -86,11 +86,80 @@ namespace AttendanceManagementSystem
 
            
         }
+
+        public int Flag = 0;
         public FormAdmin()
         {
             InitializeComponent();
             timerDtaeAndTime.Start();
+            userControlSetting.ChangeFormColorEvent += settingControl_ChangeFormColorEvent;
+
         }
+
+       
+        private void settingControl_ChangeFormColorEvent(object sender, Color newColor)
+        {
+            
+                SettingsManager settings = SettingsManager.Instance;
+                if (settings.DarkModeEnabled)
+                {
+                Flag=1;
+                    
+                    panel1.BackColor = Color.DarkGray;
+                    panel1.ForeColor = Color.White;
+                    panel2.BackColor = Color.DarkGray;
+                    panel2.ForeColor = Color.White;
+                    panelBack.BackColor = Color.Black;
+                    panelBack.ForeColor = Color.White;
+                panelSlide.BackColor = Color.Black;
+                panel4.BackColor = Color.DarkGray;
+                //panelSlide.ForeColor = Color.White;
+                userControlAddCourse.BackColor = Color.Black;
+              
+               
+                userControlAddCourse.ForeColor = Color.White;
+                userControlAddUser1.BackColor = Color.Black;
+                userControlAddUser1.ForeColor = Color.White;
+                userControlDashboard1.BackColor = Color.Black;
+                userControlDashboard1.ForeColor = Color.White;
+               /* user.BackColor = Color.Black;
+                userControlAddCourse.ForeColor = Color.White;*/
+
+
+            }
+            else
+                {
+                  Flag = 0;
+                panel1.BackColor = System.Drawing.Color.Indigo;
+                panel1.ForeColor = SystemColors.ControlText;
+                panel2.BackColor = System.Drawing.Color.Indigo;
+                panel2.ForeColor = SystemColors.ControlText;
+                panelBack.BackColor = Color.White;
+                panelBack.ForeColor = Color.Black;
+                panelSlide.BackColor = System.Drawing.Color.White;
+                panel4.BackColor = System.Drawing.Color.Indigo;
+                // panelSlide.ForeColor = Color.White;
+                userControlAddCourse.BackColor = Color.White;
+                userControlAddCourse.ForeColor = SystemColors.ControlText;
+                userControlAddUser1.BackColor = Color.White;
+                userControlAddUser1.ForeColor = SystemColors.ControlText;
+                userControlDashboard1.BackColor = Color.White;
+                userControlDashboard1.ForeColor = SystemColors.ControlText;
+
+            }
+            
+        }
+        /*private void settingControl_ChangeFormColorEvent2(object sender, Color newColor)
+        {
+            
+                this.BackColor = Color.DarkGray; 
+                this.ForeColor = Color.White; 
+                panelBack.BackColor = newColor;
+                panelBack.ForeColor = Color.White;
+                panel1.BackColor = Color.DarkGray;
+                
+
+        }*/
 
         private void buttonDashboard_Click(object sender, EventArgs e)
         {
