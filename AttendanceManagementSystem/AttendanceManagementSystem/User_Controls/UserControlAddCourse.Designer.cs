@@ -51,6 +51,11 @@
             this.lblTotalCourse = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridViewCourse = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -74,11 +79,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlAddClass.SuspendLayout();
             this.tabPageAddClass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSessionNumber)).BeginInit();
@@ -127,6 +127,7 @@
             this.tabPageAddClass.Size = new System.Drawing.Size(934, 469);
             this.tabPageAddClass.TabIndex = 0;
             this.tabPageAddClass.Text = "Add Class";
+            this.tabPageAddClass.Enter += new System.EventHandler(this.tabPageAddClass_Enter);
             this.tabPageAddClass.Leave += new System.EventHandler(this.tabPageAddClass_Leave);
             // 
             // buttonAdd
@@ -354,6 +355,46 @@
             this.dataGridViewCourse.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCourse_CellClick);
             this.dataGridViewCourse.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCourse_CellDoubleClick);
             this.dataGridViewCourse.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewCourse_DataError);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "CourseId";
+            this.Column1.HeaderText = "Course Id";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // CourseName
+            // 
+            this.CourseName.DataPropertyName = "CourseName";
+            this.CourseName.HeaderText = "Course Name";
+            this.CourseName.MinimumWidth = 6;
+            this.CourseName.Name = "CourseName";
+            this.CourseName.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Sessions";
+            this.Column3.HeaderText = "No. of Sessions";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Date";
+            this.Column5.HeaderText = "Start Date";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Teacher";
+            this.Column4.HeaderText = "Teacher ";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // pictureBox1
             // 
@@ -618,46 +659,6 @@
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "CourseId";
-            this.Column1.HeaderText = "Course Id";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // CourseName
-            // 
-            this.CourseName.DataPropertyName = "CourseName";
-            this.CourseName.HeaderText = "Course Name";
-            this.CourseName.MinimumWidth = 6;
-            this.CourseName.Name = "CourseName";
-            this.CourseName.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Sessions";
-            this.Column3.HeaderText = "No. of Sessions";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Date";
-            this.Column5.HeaderText = "Start Date";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Teacher";
-            this.Column4.HeaderText = "Teacher ";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
             // UserControlAddCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -686,9 +687,9 @@
         #endregion
 
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.TabControl tabControlAddClass;
-        private System.Windows.Forms.TabPage tabPageAddClass;
-        private System.Windows.Forms.TabPage tabPageSearch;
+        public System.Windows.Forms.TabControl tabControlAddClass;
+        public System.Windows.Forms.TabPage tabPageAddClass;
+        public System.Windows.Forms.TabPage tabPageSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
@@ -709,7 +710,7 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TabPage tabPage1;
+        public System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridViewCourse;
         private System.Windows.Forms.Label label9;

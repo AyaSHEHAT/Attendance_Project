@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
+using System.Drawing.Drawing2D;
 
 namespace AttendanceManagementSystem.User_Controls
 {
@@ -25,6 +26,11 @@ namespace AttendanceManagementSystem.User_Controls
         public UserControlAddCourse()
         {
             InitializeComponent();
+            tabPageAddClass.ParentChanged += TabPage_Load;
+
+
+
+
 
             //call loadcourse to load data from xml file and save it in courses object
             loadCourses();
@@ -57,6 +63,29 @@ namespace AttendanceManagementSystem.User_Controls
                 MessageBox.Show("No teachers found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        SettingsManager settings = SettingsManager.Instance;
+        private void TabPage_Load(object sender, EventArgs e)
+        {
+            // Check the state of dark mode and change the color of the tab page accordingly
+            
+            
+
+                if (settings.DarkModeEnabled)
+                {
+                    tabPageAddClass.BackColor = Color.Gray; // Set the color to black (for example)
+                }
+                else
+                {
+                    tabPageAddClass.BackColor = Color.White; // 
+                                                                // Set the color to default
+                }
+            
+        }
+       
+           
+
+
         public void ClearTextBox()
         {
             textBoxCrsName.Clear();
@@ -328,7 +357,7 @@ namespace AttendanceManagementSystem.User_Controls
 
             }
         }
-
+       
         private void buttonAdd_Click(object sender, EventArgs e)
         {
                 int numericValue;
@@ -377,7 +406,7 @@ namespace AttendanceManagementSystem.User_Controls
                 ClearTextBox();
             }
             loadCourses();
-
+           
 
         }
 
@@ -410,5 +439,44 @@ namespace AttendanceManagementSystem.User_Controls
             upDownSession.Value = 1;
             dateStartDate.Value = DateTime.Now;
         }
+
+        private void tabPageAddClass_Enter(object sender, EventArgs e)
+        {
+            SettingsManager settings = SettingsManager.Instance;
+            if (settings.DarkModeEnabled)
+            {
+
+                tabPageAddClass.BackColor = Color.Gray;
+                tabPageSearch.BackColor = Color.Gray;
+                tabPage1.BackColor = Color.Gray;
+                tabPageSearch.ForeColor = Color.Black;
+                
+            }
+            else
+            {
+
+                tabPageAddClass.BackColor = Color.White;
+                tabPageSearch.BackColor = Color.White;      
+                tabPage1.BackColor = Color.White;
+                
+            }
+            
+        }
+
+
+        // date formate 
+        public void UserControl1_DateFormatChanged(object sender, string selectedDateFormat)
+        {
+            // Update the date format of date controls in UserControl2
+            foreach (Control control in Controls)
+            {
+                if (control is DateTimePicker dateTimePicker)
+                {
+                    dateTimePicker.CustomFormat = selectedDateFormat;
+                    dateTimePicker.Format = DateTimePickerFormat.Custom;
+                }
+            }
+        }
     }
 }
+

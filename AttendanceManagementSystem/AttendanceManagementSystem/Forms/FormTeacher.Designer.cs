@@ -46,8 +46,9 @@
             this.labelUsername = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
-            this.userControlSetting = new AttendanceManagementSystem.User_Controls.UserControlSettings();
+            this.btnStTch = new System.Windows.Forms.Button();
             this.userControlAttendance1 = new AttendanceManagementSystem.User_Controls.UserControlAttendance();
+            this.userControlSetting = new AttendanceManagementSystem.User_Controls.UserControlSettings();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -120,6 +121,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Indigo;
+            this.panel1.Controls.Add(this.btnStTch);
             this.panel1.Controls.Add(this.buttonReport);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
@@ -249,6 +251,33 @@
             this.labelTime.TabIndex = 0;
             this.labelTime.Text = "{?}";
             // 
+            // btnStTch
+            // 
+            this.btnStTch.FlatAppearance.BorderSize = 0;
+            this.btnStTch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStTch.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStTch.ForeColor = System.Drawing.Color.White;
+            this.btnStTch.Image = global::AttendanceManagementSystem.Properties.Resources.attendance_list1;
+            this.btnStTch.Location = new System.Drawing.Point(10, 323);
+            this.btnStTch.Name = "btnStTch";
+            this.btnStTch.Size = new System.Drawing.Size(260, 75);
+            this.btnStTch.TabIndex = 2;
+            this.btnStTch.Text = "       Settings";
+            this.btnStTch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStTch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStTch.UseVisualStyleBackColor = true;
+            this.btnStTch.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // userControlAttendance1
+            // 
+            this.userControlAttendance1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlAttendance1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.userControlAttendance1.Location = new System.Drawing.Point(280, 180);
+            this.userControlAttendance1.Margin = new System.Windows.Forms.Padding(4);
+            this.userControlAttendance1.Name = "userControlAttendance1";
+            this.userControlAttendance1.Size = new System.Drawing.Size(981, 540);
+            this.userControlAttendance1.TabIndex = 8;
+            // 
             // userControlSetting
             // 
             this.userControlSetting.BackColor = System.Drawing.Color.White;
@@ -260,16 +289,6 @@
             this.userControlSetting.Size = new System.Drawing.Size(981, 720);
             this.userControlSetting.TabIndex = 6;
             this.userControlSetting.Visible = false;
-            // 
-            // userControlAttendance1
-            // 
-            this.userControlAttendance1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlAttendance1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.userControlAttendance1.Location = new System.Drawing.Point(280, 180);
-            this.userControlAttendance1.Margin = new System.Windows.Forms.Padding(4);
-            this.userControlAttendance1.Name = "userControlAttendance1";
-            this.userControlAttendance1.Size = new System.Drawing.Size(981, 540);
-            this.userControlAttendance1.TabIndex = 8;
             // 
             // FormTeacher
             // 
@@ -321,5 +340,6 @@
         private User_Controls.UserControlTeacherReport userControlTeacherReport1;
         private User_Controls.UserControlTeacherReport userControlTeacherReport2;
         private User_Controls.UserControlAttendance userControlAttendance1;
+        private System.Windows.Forms.Button btnStTch;
     }
 }
