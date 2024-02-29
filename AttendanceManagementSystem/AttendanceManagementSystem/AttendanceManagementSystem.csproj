@@ -225,6 +225,9 @@
     <EmbeddedResource Include="User_Controls\UserControlDashboard1.resx">
       <DependentUpon>UserControlDashboard1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UserControlSettings.ar.resx">
+      <DependentUpon>UserControlSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UserControlSettings.resx">
       <DependentUpon>UserControlSettings.cs</DependentUpon>
     </EmbeddedResource>
