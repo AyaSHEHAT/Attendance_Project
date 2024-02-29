@@ -283,7 +283,8 @@
             this.panelBack.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-
+            this.Controls.Add(this.userControlStudentReport1);
+            this.Controls.Add(this.userControlSetting);
         }
 
         #endregion
