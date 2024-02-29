@@ -70,10 +70,29 @@ namespace AttendanceManagementSystem
             WindowState=FormWindowState.Minimized;
         }
 
+        //date format 
+       
+        private void UserControl1_DateFormatChanged(object sender, string selectedDateFormat)
+        {
+            // Call the method in UserControl2 to update the date format
+            userControlAddCourse.UserControl1_DateFormatChanged(sender, selectedDateFormat);
+            DateTime now = DateTime.Now;
+
+            // Apply the selected date format to the current date and time
+            string formattedDateTime = now.ToString(selectedDateFormat);
+
+            // Update the label text with the formatted date and time
+            labelTime.Text = formattedDateTime; 
+        }
+
+
+
+
+        
+
         private void timerDtaeAndTime_Tick(object sender, EventArgs e)
         {
-            DateTime Now = DateTime.Now;
-            labelTime.Text=Now.ToString("f");
+           
         }
 
         private void buttonAttendance_Click(object sender, EventArgs e)
@@ -94,15 +113,12 @@ namespace AttendanceManagementSystem
             timerDtaeAndTime.Start();
             userControlSetting.ChangeFormColorEvent += settingControl_ChangeFormColorEvent;
             userControlSetting.DateFormatChanged += UserControl1_DateFormatChanged;
+            
+
         }
 
-        //date format 
-        private void UserControl1_DateFormatChanged(object sender, string selectedDateFormat)
-        {
-            // Call the method in UserControl2 to update the date format
-            userControlAddCourse.UserControl1_DateFormatChanged(sender, selectedDateFormat);
-        }
 
+        
 
         private void settingControl_ChangeFormColorEvent(object sender, Color newColor)
         {

@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\forms\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|d:\\iti\\xml\\project\\confilict aya\\attendance_project\\attendancemanagementsystem\\attendancemanagementsystem\\forms\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\forms\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,35 +11,43 @@
       "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\forms\\formadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\user_controls\\usercontroladdcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontroladdcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\user_controls\\usercontrolsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontrolsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\user_controls\\usercontroladdcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontroladdcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\user_controls\\usercontroladdcourse.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontroladdcourse.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\user_controls\\usercontrolsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontrolsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\user_controls\\usercontrolsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontrolsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|d:\\iti\\xml\\project\\confilict aya\\attendance_project\\attendancemanagementsystem\\attendancemanagementsystem\\user_controls\\usercontrolsettings.ar.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontrolsettings.ar.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|d:\\iti\\xml\\project\\confilict aya\\attendance_project\\attendancemanagementsystem\\attendancemanagementsystem\\user_controls\\usercontrolsettings.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontrolsettings.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\user_controls\\usercontroladdcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontroladdcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\user_controls\\usercontroladdcourse.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\user_controls\\usercontroladdcourse.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\forms\\formstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\forms\\formstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|d:\\iti\\xml\\project\\confilict aya\\attendance_project\\attendancemanagementsystem\\attendancemanagementsystem\\forms\\formstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\forms\\formstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\forms\\formstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|d:\\iti\\xml\\project\\confilict aya\\attendance_project\\attendancemanagementsystem\\attendancemanagementsystem\\forms\\formteacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\attendancemanagementsystem\\forms\\formteacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9472E945-F834-4456-8596-5D29858DD913}|AttendanceManagementSystem\\AttendanceManagementSystem.csproj|solutionrelative:attendancemanagementsystem\\forms\\formteacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -114,20 +122,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserControlAddCourse.Designer.cs",
-              "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.Designer.cs",
-              "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.Designer.cs",
-              "ToolTip": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.Designer.cs",
-              "RelativeToolTip": "AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.Designer.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAowLECAABBAAAA",
+              "DocumentIndex": 1,
+              "Title": "FormAdmin.cs [Design]",
+              "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormAdmin.cs",
+              "RelativeDocumentMoniker": "AttendanceManagementSystem\\Forms\\FormAdmin.cs",
+              "ToolTip": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormAdmin.cs [Design]",
+              "RelativeToolTip": "AttendanceManagementSystem\\Forms\\FormAdmin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-29T12:56:26.345Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-28T21:05:34.908Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserControlSettings.cs [Design]",
+              "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs",
+              "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs",
+              "ToolTip": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs [Design]",
+              "RelativeToolTip": "AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T22:59:28.727Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -143,7 +162,57 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "FormAdmin.cs",
+              "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormAdmin.cs",
+              "RelativeDocumentMoniker": "AttendanceManagementSystem\\Forms\\FormAdmin.cs",
+              "ToolTip": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormAdmin.cs",
+              "RelativeToolTip": "AttendanceManagementSystem\\Forms\\FormAdmin.cs",
+              "ViewState": "AQIAAFEAAACu+////x8wwF4AAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T21:05:43.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserControlSettings.cs",
+              "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs",
+              "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs",
+              "ToolTip": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs",
+              "RelativeToolTip": "AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs",
+              "ViewState": "AQIAABMAAACALzMzMzMTwBkAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-28T23:58:20.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserControlSettings.resx",
+              "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlSettings.resx",
+              "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlSettings.resx",
+              "ToolTip": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlSettings.resx",
+              "RelativeToolTip": "AttendanceManagementSystem\\User_Controls\\UserControlSettings.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-02-29T15:44:10.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserControlSettings.ar.resx",
+              "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlSettings.ar.resx",
+              "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlSettings.ar.resx",
+              "ToolTip": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlSettings.ar.resx",
+              "RelativeToolTip": "AttendanceManagementSystem\\User_Controls\\UserControlSettings.ar.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-02-29T15:44:18.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "UserControlAddCourse.cs",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.cs",
@@ -156,81 +225,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormAdmin.cs [Design]",
-              "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormAdmin.cs",
-              "RelativeDocumentMoniker": "AttendanceManagementSystem\\Forms\\FormAdmin.cs",
-              "ToolTip": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormAdmin.cs [Design]",
-              "RelativeToolTip": "AttendanceManagementSystem\\Forms\\FormAdmin.cs [Design]",
+              "DocumentIndex": 8,
+              "Title": "UserControlAddCourse.Designer.cs",
+              "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.Designer.cs",
+              "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.Designer.cs",
+              "ToolTip": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.Designer.cs",
+              "RelativeToolTip": "AttendanceManagementSystem\\User_Controls\\UserControlAddCourse.Designer.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAowLECAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T21:05:34.908Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormAdmin.cs",
-              "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormAdmin.cs",
-              "RelativeDocumentMoniker": "AttendanceManagementSystem\\Forms\\FormAdmin.cs",
-              "ToolTip": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormAdmin.cs",
-              "RelativeToolTip": "AttendanceManagementSystem\\Forms\\FormAdmin.cs",
-              "ViewState": "AQIAAFwAAACAZmZmZiYpwGkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T21:05:43.285Z",
+              "WhenOpened": "2024-02-29T12:56:26.345Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserControlSettings.cs",
-              "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs",
-              "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs",
-              "ToolTip": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs",
-              "RelativeToolTip": "AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs",
-              "ViewState": "AQIAADcAAABIy8zMzAw5wDsAAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T23:58:20.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserControlSettings.cs [Design]",
-              "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs",
-              "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs",
-              "ToolTip": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs [Design]",
-              "RelativeToolTip": "AttendanceManagementSystem\\User_Controls\\UserControlSettings.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T22:59:28.727Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "FormStudent.cs [Design]",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormStudent.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\Forms\\FormStudent.cs",
               "ToolTip": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormStudent.cs [Design]",
               "RelativeToolTip": "AttendanceManagementSystem\\Forms\\FormStudent.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-29T14:03:16.12Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-02-29T14:03:16.12Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "FormTeacher.cs [Design]",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormTeacher.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\Forms\\FormTeacher.cs",
               "ToolTip": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormTeacher.cs [Design]",
               "RelativeToolTip": "AttendanceManagementSystem\\Forms\\FormTeacher.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-29T14:08:53.817Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-02-29T14:08:53.817Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "FormStudent.cs",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormStudent.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\Forms\\FormStudent.cs",
@@ -238,12 +268,11 @@
               "RelativeToolTip": "AttendanceManagementSystem\\Forms\\FormStudent.cs",
               "ViewState": "AQIAAGMAAABIZmZmZiYnwGkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-29T14:41:58.891Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-29T14:41:58.891Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "FormTeacher.cs",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormTeacher.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\Forms\\FormTeacher.cs",
@@ -251,12 +280,11 @@
               "RelativeToolTip": "AttendanceManagementSystem\\Forms\\FormTeacher.cs",
               "ViewState": "AQIAAEAAAAAAoJmZmRkQwEkAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-29T14:07:26.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-29T14:07:26.183Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "FormAdmin.Designer.cs",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormAdmin.Designer.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\Forms\\FormAdmin.Designer.cs",
@@ -264,12 +292,11 @@
               "RelativeToolTip": "AttendanceManagementSystem\\Forms\\FormAdmin.Designer.cs",
               "ViewState": "AQIAAB8CAAAAAAAAAAAiwCcCAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-29T12:54:49.959Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-29T12:54:49.959Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "UserControlAddUser.Designer.cs",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddUser.Designer.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlAddUser.Designer.cs",
@@ -281,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "FormLogin.cs [Design]",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormLogin.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\Forms\\FormLogin.cs",
@@ -292,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "UserControlAddUser.cs",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddUser.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlAddUser.cs",
@@ -304,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "UserControlAddUser.cs [Design]",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAddUser.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlAddUser.cs",
@@ -315,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "UserControlAttendance.cs [Design]",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAttendance.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlAttendance.cs",
@@ -326,7 +353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "UserControlAttendance.cs",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlAttendance.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlAttendance.cs",
@@ -338,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "UserControlStudentReport.cs [Design]",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlStudentReport.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlStudentReport.cs",
@@ -349,7 +376,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "UserControlTeacherReport.cs [Design]",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlTeacherReport.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlTeacherReport.cs",
@@ -360,7 +387,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "UserControlDashboard1.cs [Design]",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlDashboard1.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlDashboard1.cs",
@@ -371,7 +398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Program.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\Program.cs",
@@ -383,7 +410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "SettingsManager.cs",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\SettingsManager.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\SettingsManager.cs",
@@ -395,7 +422,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "UserControlStudentReport.cs",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User_Controls\\UserControlStudentReport.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\User_Controls\\UserControlStudentReport.cs",
@@ -407,7 +434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "FormLogin.cs",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\Forms\\FormLogin.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\Forms\\FormLogin.cs",
@@ -419,7 +446,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\ITI\\xml\\project\\confilict Aya\\Attendance_Project\\AttendanceManagementSystem\\AttendanceManagementSystem\\User.cs",
               "RelativeDocumentMoniker": "AttendanceManagementSystem\\User.cs",

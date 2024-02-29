@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AttendanceManagementSystem.User_Controls
 {
@@ -19,7 +22,8 @@ namespace AttendanceManagementSystem.User_Controls
         public UserControlSettings()
         {
             InitializeComponent();
-            
+            comboBoxlan.SelectedItem = "English";
+            comboBoxDate.SelectedItem = comboBoxDate.Text;
         }
 
         private void UpdateUIForDarkMode()
@@ -70,6 +74,23 @@ namespace AttendanceManagementSystem.User_Controls
                 }
             }
 
+        }
+
+        private void comboBoxlan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxlan.SelectedItem.ToString() == "Arabic")
+            {
+                Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("ar");
+                Controls.Clear();
+                InitializeComponent();
+            }
+            else if (comboBoxlan.SelectedItem.ToString() == "English")
+            {
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+                Controls.Clear();
+                InitializeComponent();
+                this.RightToLeft = RightToLeft.No;
+            }
         }
     }
 }
