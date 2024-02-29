@@ -87,6 +87,8 @@
             this.txtName2 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.comboBoxusers = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.tabControlAddUser.SuspendLayout();
             this.tabPageAdduser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
@@ -393,6 +395,8 @@
             // 
             // tabPageSearch2
             // 
+            this.tabPageSearch2.Controls.Add(this.comboBoxusers);
+            this.tabPageSearch2.Controls.Add(this.label10);
             this.tabPageSearch2.Controls.Add(this.label19);
             this.tabPageSearch2.Controls.Add(this.txtTotalUser);
             this.tabPageSearch2.Controls.Add(this.lblusers);
@@ -455,12 +459,12 @@
             this.dataGridViewUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewUser.ColumnHeadersHeight = 30;
             this.dataGridViewUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridViewUser.Location = new System.Drawing.Point(31, 108);
+            this.dataGridViewUser.Location = new System.Drawing.Point(32, 122);
             this.dataGridViewUser.Name = "dataGridViewUser";
             this.dataGridViewUser.ReadOnly = true;
             this.dataGridViewUser.RowHeadersWidth = 51;
             this.dataGridViewUser.ShowRowErrors = false;
-            this.dataGridViewUser.Size = new System.Drawing.Size(872, 318);
+            this.dataGridViewUser.Size = new System.Drawing.Size(872, 296);
             this.dataGridViewUser.TabIndex = 14;
             this.dataGridViewUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUser_CellClick);
             this.dataGridViewUser.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUser_CellDoubleClick);
@@ -756,6 +760,36 @@
             this.label15.TabIndex = 12;
             this.label15.Text = "Name:";
             // 
+            // comboBoxusers
+            // 
+            this.comboBoxusers.BackColor = System.Drawing.Color.White;
+            this.comboBoxusers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxusers.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxusers.FormattingEnabled = true;
+            this.comboBoxusers.Items.AddRange(new object[] {
+            "user",
+            "Teacher",
+            "Student"});
+            this.comboBoxusers.Location = new System.Drawing.Point(546, 56);
+            this.comboBoxusers.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxusers.Name = "comboBoxusers";
+            this.comboBoxusers.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.comboBoxusers.Size = new System.Drawing.Size(204, 26);
+            this.comboBoxusers.TabIndex = 19;
+            this.comboBoxusers.Text = "          Users";
+            this.comboBoxusers.SelectedIndexChanged += new System.EventHandler(this.comboBoxusers_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(511, 25);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 17);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Role:";
+            // 
             // UserControlAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -843,5 +877,7 @@
         private System.Windows.Forms.Label lblUsersearch;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DataGridView dataGridViewUser;
+        private System.Windows.Forms.ComboBox comboBoxusers;
+        private System.Windows.Forms.Label label10;
     }
 }

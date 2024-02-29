@@ -21,12 +21,12 @@ namespace AttendanceManagementSystem.User_Controls
         XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
 
         List<User> usersList = new List<User>();
-        List<Teacher> teachersList = new List<Teacher>();
-        List<Student> studentsList = new List<Student>();
+        
 
         List<XElement> teachers;
         // DataTable dt;
         string teacherName;
+        List<User> filtere;
 
 
         public UserControlAddUser()
@@ -216,25 +216,33 @@ namespace AttendanceManagementSystem.User_Controls
         {
             string searchText = txtSearch2.Text.Trim().ToLower();
 
-
-            var filteredUsers = usersList.Where(user => user.Name.ToLower().Contains(searchText)).ToList();
-
-
-            dataGridViewUser.DataSource = filteredUsers;
-            txtTotalUser.Text = dataGridViewUser.Rows.Count.ToString();
-
+            // Check if filtere list is not null
+            if (filtere != null && filtere.Any())
+            {
+                var filteredUsers = filtere.Where(user => user.Name.ToLower().Contains(searchText)).ToList();
+                dataGridViewUser.DataSource = filteredUsers;
+                txtTotalUser.Text = filteredUsers.Count.ToString();
+            }
+            else
+            {
+                var filteredUsers = usersList.Where(user => user.Name.ToLower().Contains(searchText)).ToList();
+                dataGridViewUser.DataSource = filteredUsers;
+                txtTotalUser.Text = filteredUsers.Count.ToString();
+            }
         }
+
 
         private void tabPageSearch2_Leave(object sender, EventArgs e)
         {
             txtSearch2.Clear();
         }
-
+        string IdUser;
         private void dataGridViewUser_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
                 DataGridViewRow row = dataGridViewUser.Rows[e.RowIndex];
+                IdUser = row.Cells[7].Value.ToString();
                 txtId2.Text = row.Cells[7].Value.ToString();
                 txtName2.Text = row.Cells[8].Value.ToString();
                 txtEmail.Text = row.Cells[9].Value.ToString();
@@ -264,19 +272,19 @@ namespace AttendanceManagementSystem.User_Controls
         {
             int numericValue;
 
-            XElement userElement = xml.Descendants("user").FirstOrDefault(p => p.Element("id").Value == txtId2.Text);
+            XElement userElement = xml.Descendants("user").FirstOrDefault(p => p.Element("id").Value == IdUser);
             if (userElement != null)
             {
+                string EmailRegx = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+                string PassRegex = @"^[A-Za-z0-9]{8,}$";
+
                 if (txtId2.Text.Trim() == "" || txtId2.Text != userElement.Element("id").Value)
                 {
                     MessageBox.Show("Can not be change id", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
 
-                
-                string EmailRegx = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-                string PassRegex = @"^[A-Za-z0-9]{8,}$";
-                if (txtName2.Text.Trim() == string.Empty || int.TryParse(txtName2.Text, out numericValue))
+                else if (txtName2.Text.Trim() == string.Empty || int.TryParse(txtName2.Text, out numericValue))
                 {
                     MessageBox.Show("Enter a valid Name and must not be a number", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -375,6 +383,34 @@ namespace AttendanceManagementSystem.User_Controls
         private void dataGridViewUser_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             tabControlAddUser.SelectedTab = tabPageUpdateandDelete2;
+        }
+           
+
+        private void comboBoxusers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if (comboBoxusers.SelectedIndex ==1)
+            {
+                 filtere = usersList.Where(user => user.Role.ToLower().Contains("teacher")).ToList();
+
+
+                dataGridViewUser.DataSource = filtere;
+                txtTotalUser.Text = dataGridViewUser.Rows.Count.ToString();
+            }
+            else if (comboBoxusers.SelectedIndex == 2)
+            {
+                 filtere = usersList.Where(user => user.Role.ToLower().Contains("student")).ToList();
+
+
+                dataGridViewUser.DataSource = filtere;
+                txtTotalUser.Text = dataGridViewUser.Rows.Count.ToString();
+            }
+            else
+            {
+                //call loadUsers to load data from xml file and save it in courses object
+                loadUsers();
+                txtTotalUser.Text = dataGridViewUser.Rows.Count.ToString();
+            }
         }
     }
 

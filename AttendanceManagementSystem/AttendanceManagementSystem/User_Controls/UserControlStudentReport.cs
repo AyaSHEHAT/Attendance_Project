@@ -23,7 +23,7 @@ namespace AttendanceManagementSystem.User_Controls
 
 
         int userId = 800151254;
-        XDocument doc = XDocument.Load(@"E:\ITI-PD&BI\XML\XML-Project\Attendance_Project\Attendance_Project\XML files\Data.xml");
+        XDocument doc = XDocument.Load(@"../../../../XML files/Data.xml");
         public UserControlStudentReport()
         {
             InitializeComponent();
