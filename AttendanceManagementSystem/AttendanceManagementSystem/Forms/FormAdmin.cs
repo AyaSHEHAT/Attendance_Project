@@ -71,28 +71,27 @@ namespace AttendanceManagementSystem
         }
 
         //date format 
-       
-        private void UserControl1_DateFormatChanged(object sender, string selectedDateFormat)
+        private string selectedDateFormat = "f";
+        private void timerDtaeAndTime_Tick(object sender, EventArgs e)
         {
-            // Call the method in UserControl2 to update the date format
-            userControlAddCourse.UserControl1_DateFormatChanged(sender, selectedDateFormat);
+            // Get the current date and time
             DateTime now = DateTime.Now;
 
             // Apply the selected date format to the current date and time
             string formattedDateTime = now.ToString(selectedDateFormat);
 
             // Update the label text with the formatted date and time
-            labelTime.Text = formattedDateTime; 
+            labelTime.Text = formattedDateTime;
         }
 
-
-
-
-        
-
-        private void timerDtaeAndTime_Tick(object sender, EventArgs e)
+        // Event handler for the DateFormatChanged event of UserControl1
+        private void UserControl1_DateFormatChanged(object sender, string selectedDateFormat)
         {
-           
+            // Update the selected date format
+            this.selectedDateFormat = selectedDateFormat;
+
+            // Trigger the timer tick event manually to update the label immediately
+            timerDtaeAndTime_Tick(sender, EventArgs.Empty);
         }
 
         private void buttonAttendance_Click(object sender, EventArgs e)
