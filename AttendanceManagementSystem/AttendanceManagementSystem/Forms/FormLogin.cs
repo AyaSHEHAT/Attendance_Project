@@ -177,11 +177,14 @@ namespace AttendanceManagementSystem.Forms
             {
                 string Id = userNode.SelectSingleNode("id").InnerText.ToString();
                 string password = userNode.SelectSingleNode("userPass").InnerText;
+                string name = userNode.SelectSingleNode("name").InnerText;
+
                 if (( _pass == password) && (_id == Id))
                     {
                         _role = userNode.SelectSingleNode("role").InnerText;
                         User.currentUser = Id;
                         User.currentRole = _role;
+                        User.currentUserName = name;
                     return true;
                     }
             }

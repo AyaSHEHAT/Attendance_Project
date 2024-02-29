@@ -101,7 +101,7 @@ namespace AttendanceManagementSystem.User_Controls
         private void applyXsltTransformation(string courseName, string selectedDate)
         {
             XslCompiledTransform xslt = new XslCompiledTransform();
-            xslt.Load(@"../../../../XML files/courseAndStudent.xslt");
+            xslt.Load(@"../../../../XML files\courseAndStudent.xslt");
 
             using (XmlWriter writer = XmlWriter.Create(@"C:\Reports\TransformedAttendance.html"))
             {

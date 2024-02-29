@@ -23,7 +23,7 @@ namespace AttendanceManagementSystem.User_Controls
         List<User> usersList = new List<User>();
         
 
-        List<XElement> teachers;
+        List<XElement> courses;
         // DataTable dt;
         string teacherName;
         List<User> filtere;
@@ -34,8 +34,27 @@ namespace AttendanceManagementSystem.User_Controls
             InitializeComponent();
 
             //call loadUsers to load data from xml file and save it in courses object
-            loadUsers();
+            courses = doc.Root
+                             .Element("Courses")
+                             .Elements("course")
+                             .ToList();
 
+            if (courses.Any())
+            {
+                foreach (var course in courses)
+                {
+                    string courseName = course.Element("cName")?.Value; // Get the course name
+
+                    if (!string.IsNullOrEmpty(courseName))
+                    {
+                        // Add the course name to the checkedListBoxCourses
+                        checkedListBoxCourses.Items.Add(courseName);
+                    }
+                }
+
+
+            }
+                loadUsers();
         }
 
         public void ClearTextBox()
@@ -47,6 +66,7 @@ namespace AttendanceManagementSystem.User_Controls
             textBoxUserAddress.Clear();
             radioBtnStudent.Checked = false;
             radioBtnTeacher.Checked = false;
+            checkedListBoxCourses.SelectedIndices.Clear();
         }
         public void ClearTextBox2()
         {
@@ -93,14 +113,33 @@ namespace AttendanceManagementSystem.User_Controls
             {
                 MessageBox.Show("You must choose the Role Of the user", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            }else if (checkedListBoxCourses.CheckedItems.Count==0)
+            {
+                MessageBox.Show("You must choose at least one course", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             else
             {
+                var existingUserIDs = xml.Descendants("user").Select(course => course.Element("id").Value);
+
+                // Check if the new course ID already exists
+                if (existingUserIDs.Contains(textBoxUserID.Text))
+                {
+                    MessageBox.Show("User ID already exists. Please enter a different ID.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
                 if (radioBtnStudent.Checked)
                 {
                     role = "student";
                 }
                 else { role = "teacher"; }
+                XElement listOfCourses = new XElement("listOfCourses");
+                foreach (var cname in checkedListBoxCourses.CheckedItems)
+                {
+                    XElement courseNameElement = new XElement("courseName", cname.ToString());
+                    listOfCourses.Add(courseNameElement);
+                }
                 XElement usersElement = doc.Root.Element("Users");
                 XElement newUserElement = new XElement("user",
                     new XElement("id", textBoxUserID.Text),
@@ -109,7 +148,8 @@ namespace AttendanceManagementSystem.User_Controls
                     new XElement("email", textBoxEmail.Text),
                     new XElement("address", textBoxUserAddress.Text),
                      new XElement("userPass", textBoxUserPass.Text),
-                    new XElement("role", role)
+                    new XElement("role", role),
+                   listOfCourses
                 );
                 usersElement.Add(newUserElement);
                 doc.Save(@"../../../../XML files\Data.xml");

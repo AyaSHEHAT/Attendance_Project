@@ -8,7 +8,7 @@ namespace AttendanceManagementSystem
 {
     internal class User
     {
-        public String Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
@@ -17,6 +17,7 @@ namespace AttendanceManagementSystem
         public string Role { get; set; }
         public static string currentUser { get; set; }
         public static string currentRole { get; set; }
+        public static string currentUserName { get; set; }
 
         public User(string id, string name, string email, string password, string age, string address, string role)
         {

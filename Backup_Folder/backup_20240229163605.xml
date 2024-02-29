@@ -110,19 +110,6 @@
         <courseName>xml</courseName>
       </listOfCourses>
     </user>
-    <user>
-      <id>800159566</id>
-      <name>nahed</name>
-      <age>22</age>
-      <email>nahed@yahoo.com</email>
-      <address>mans</address>
-      <userPass>asdf1234</userPass>
-      <role>student</role>
-      <listOfCourses>
-        <courseName>C#</courseName>
-        <courseName>javascript</courseName>
-      </listOfCourses>
-    </user>
   </Users>
   <Courses>
     <course>

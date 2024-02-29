@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E:\ITI-PD&amp;BI\XML\XML-Project\Old2-Attendance_Project\XML files\Data.xsd">
   <Users>
     <user>
@@ -88,40 +88,6 @@
       <address>sina</address>
       <userPass>Mmmm1232</userPass>
       <role>teacher</role>
-    </user>
-    <user>
-      <id>8001595567</id>
-      <name>aay</name>
-      <age>21</age>
-      <email>aya@yahoo.com</email>
-      <address>mans</address>
-      <userPass>1asdfg23</userPass>
-      <role>teacher</role>
-    </user>
-    <user>
-      <id>1234567123456</id>
-      <name>ateeff</name>
-      <age>22</age>
-      <email>aya@yahoo.com</email>
-      <address>dergf</address>
-      <userPass>1234sdfgh</userPass>
-      <role>teacher</role>
-      <listOfCourses>
-        <courseName>xml</courseName>
-      </listOfCourses>
-    </user>
-    <user>
-      <id>800159566</id>
-      <name>nahed</name>
-      <age>22</age>
-      <email>nahed@yahoo.com</email>
-      <address>mans</address>
-      <userPass>asdf1234</userPass>
-      <role>student</role>
-      <listOfCourses>
-        <courseName>C#</courseName>
-        <courseName>javascript</courseName>
-      </listOfCourses>
     </user>
   </Users>
   <Courses>

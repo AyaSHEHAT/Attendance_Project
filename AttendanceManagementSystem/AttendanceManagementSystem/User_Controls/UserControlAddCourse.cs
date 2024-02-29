@@ -26,9 +26,6 @@ namespace AttendanceManagementSystem.User_Controls
         {
             InitializeComponent();
 
-            
-
-
             //call loadcourse to load data from xml file and save it in courses object
             loadCourses();
 
@@ -335,15 +332,16 @@ namespace AttendanceManagementSystem.User_Controls
         private void buttonAdd_Click(object sender, EventArgs e)
         {
                 int numericValue;
-                /*if (textBoxCrsName.Text.Trim()==string.Empty && comboBoxTeacher.SelectedIndex == -1 && textBoxCrsId.Text.Trim()==string.Empty)
-                {
-                    MessageBox.Show("first fill all required", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ///<summary>
-                    ///here i check if course name entered string or no
-                    ///</summary>
+            /*if (textBoxCrsName.Text.Trim()==string.Empty && comboBoxTeacher.SelectedIndex == -1 && textBoxCrsId.Text.Trim()==string.Empty)
+            {
+                MessageBox.Show("first fill all required", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ///<summary>
+                ///here i check if course name entered string or no
+                ///</summary>
 
-                }*/
-                if (textBoxCrsName.Text.Trim()==string.Empty || int.TryParse(textBoxCrsName.Text, out numericValue))
+            }*/
+
+            if (textBoxCrsName.Text.Trim()==string.Empty || int.TryParse(textBoxCrsName.Text, out numericValue))
                 {
                     MessageBox.Show("Enter a valid Course name and must not be a number", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -360,7 +358,15 @@ namespace AttendanceManagementSystem.User_Controls
                 }
                 else 
             {
-     
+                var existingCourseIDs = xml.Descendants("course").Select(course => course.Element("cID").Value);
+
+                // Check if the new course ID already exists
+                if (existingCourseIDs.Contains(textBoxCrsId.Text))
+                {
+                    MessageBox.Show("Course ID already exists. Please enter a different ID.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
 
                 XElement coursesElement = doc.Root.Element("Courses");
 

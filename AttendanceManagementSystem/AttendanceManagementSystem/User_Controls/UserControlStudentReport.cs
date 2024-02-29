@@ -46,10 +46,7 @@ namespace AttendanceManagementSystem.User_Controls
                 comboBoxCourses.Items.AddRange(studentCourses.ToArray());
                 comboBoxCourses.SelectedIndex = -1;
             }
-            else
-            {
-                MessageBox.Show("No Courses found for the student.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void applyXsltTransformation(string courseName, int userId)

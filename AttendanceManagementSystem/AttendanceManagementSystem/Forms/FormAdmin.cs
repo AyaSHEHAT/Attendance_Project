@@ -21,13 +21,8 @@ namespace AttendanceManagementSystem
         private System.Threading.Timer backupTimer; // Keep a reference to the timer
 
 
-        //public string Username="Aya", Role="student";
-        //public string Username = "Asmaa", Role = "teacher";
-        public string Username = "Nada", Role = "admin";
-       
-        //formMain.Username=textBoxName.Text;
-        //formMain.Role=Check;
-
+        public string Username= User.currentUserName, Role=User.currentRole;
+     
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             
@@ -38,8 +33,8 @@ namespace AttendanceManagementSystem
                      timerDtaeAndTime.Stop();
                      Close(); 
                  }
-               
 
+               
             }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -47,6 +42,7 @@ namespace AttendanceManagementSystem
             ScheduleBackup();
             //panelExpand.Hide();
             //panelExpand.Visible = false;
+            
             labelUsername.Text = Username;
             //labelRole.Text = Role;
             if (Role =="student")
@@ -83,8 +79,10 @@ namespace AttendanceManagementSystem
             userControlAddCourse.Visible= false;
             userControlAddUser1.Visible= false;
             userControlSetting.Visible = true;
+            userControlAdminReport1.Visible= false;
 
-           
+
+
         }
 
         public int Flag = 0;
@@ -169,6 +167,8 @@ namespace AttendanceManagementSystem
             userControlAddCourse.Visible= false;
             userControlAddUser1.Visible= false; 
             userControlSetting.Visible = false;
+            userControlAdminReport1.Visible= false;
+
 
         }
 
@@ -179,6 +179,8 @@ namespace AttendanceManagementSystem
             userControlAddCourse.Visible= true;
             userControlAddUser1.Visible= false;
             userControlSetting.Visible = false;
+            userControlAdminReport1.Visible= false;
+
 
         }
 
@@ -191,6 +193,8 @@ namespace AttendanceManagementSystem
             userControlAddCourse.Visible= false;
             userControlAddUser1.Visible= true; 
             userControlSetting.Visible= false;
+            userControlAdminReport1.Visible= false;
+
         }
 
         private void buttonReport_Click(object sender, EventArgs e)
@@ -200,6 +204,7 @@ namespace AttendanceManagementSystem
             userControlAddCourse.Visible= false;
             userControlAddUser1.Visible= false;
             userControlSetting.Visible= false;
+            userControlAdminReport1.Visible= true;
         }
 
         private void MoveSidePanel(Control button)

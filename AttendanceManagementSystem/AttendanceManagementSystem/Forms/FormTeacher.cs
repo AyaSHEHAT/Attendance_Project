@@ -13,9 +13,8 @@ namespace AttendanceManagementSystem.Forms
 {
     public partial class FormTeacher : Form
     {
-        //public string Username="Aya", Role="student";
-        //public string Username = "Asmaa", Role = "teacher";
-        public string Username = "Nada", Role = "admin";
+       
+        public string Username=User.currentUserName;
         public FormTeacher()
         {
             InitializeComponent();

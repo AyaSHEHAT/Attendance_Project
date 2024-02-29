@@ -14,12 +14,12 @@ namespace AttendanceManagementSystem.Forms
     
     public partial class FormStudent : Form
     {
-        //public string Username="Aya", Role="student";
-    //public string Username = "Asmaa", Role = "teacher";
-    public string Username = "Nada", Role = "admin";
+        
+    public string Username=User.currentUserName;
         public FormStudent()
         {
             InitializeComponent();
+
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
@@ -51,7 +51,9 @@ namespace AttendanceManagementSystem.Forms
 
         private void FormStudent_Load(object sender, EventArgs e)
         {
+           
             labelUsername.Text = Username;
+
         }
     }
 }
