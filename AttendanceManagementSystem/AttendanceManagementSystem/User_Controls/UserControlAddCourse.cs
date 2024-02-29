@@ -185,7 +185,41 @@ namespace AttendanceManagementSystem.User_Controls
 
         private void tabPageSearch_Enter(object sender, EventArgs e)
         {
-           
+            SettingsManager settings = SettingsManager.Instance;
+            if (settings.DarkModeEnabled)
+            {
+
+                // Set dark mode for DataGridView
+                dataGridViewCourse.DefaultCellStyle.BackColor = Color.Black;
+                dataGridViewCourse.DefaultCellStyle.ForeColor = Color.White;
+                dataGridViewCourse.DefaultCellStyle.SelectionBackColor = Color.DarkGray;
+                dataGridViewCourse.DefaultCellStyle.SelectionForeColor = Color.White;
+                dataGridViewCourse.BackgroundColor = Color.Gray; // Set background color to gray
+                dataGridViewCourse.GridColor = Color.Gray;
+                dataGridViewCourse.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+                dataGridViewCourse.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dataGridViewCourse.RowHeadersDefaultCellStyle.BackColor = Color.Black;
+                dataGridViewCourse.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+
+
+
+            }
+            else
+            {
+
+                dataGridViewCourse.DefaultCellStyle.BackColor = SystemColors.Window;
+                dataGridViewCourse.DefaultCellStyle.ForeColor = SystemColors.ControlText;
+                dataGridViewCourse.DefaultCellStyle.SelectionBackColor = SystemColors.Highlight;
+                dataGridViewCourse.DefaultCellStyle.SelectionForeColor = SystemColors.HighlightText;
+                dataGridViewCourse.BackgroundColor = SystemColors.Control;
+                dataGridViewCourse.GridColor = SystemColors.ControlDarkDark;
+                dataGridViewCourse.ColumnHeadersDefaultCellStyle.BackColor = SystemColors.Control;
+                dataGridViewCourse.ColumnHeadersDefaultCellStyle.ForeColor = SystemColors.ControlText;
+                dataGridViewCourse.RowHeadersDefaultCellStyle.BackColor = SystemColors.Control;
+                dataGridViewCourse.RowHeadersDefaultCellStyle.ForeColor = SystemColors.ControlText;
+
+            }
+
 
             lblTotalCourse.Text =dataGridViewCourse.Rows.Count.ToString();
         }

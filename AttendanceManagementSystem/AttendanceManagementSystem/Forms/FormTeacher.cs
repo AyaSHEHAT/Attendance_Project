@@ -27,6 +27,8 @@ namespace AttendanceManagementSystem.Forms
 
         private void settingControl_ChangeFormColorEvent(object sender, Color newColor)
         {
+            TabPage tabPage = userControlAttendance1.tabPageMarkAttendance;
+
 
             SettingsManager settings = SettingsManager.Instance;
             if (settings.DarkModeEnabled)
@@ -46,9 +48,10 @@ namespace AttendanceManagementSystem.Forms
 
 
                 userControlAttendance1.ForeColor = Color.White;
+                //userControlTeacherReport1.BackColor = Color.Gray;
+                //userControlTeacherReport1.ForeColor = Color.White;
 
-              
-
+                tabPage.BackColor = Color.Gray;
                 /* user.BackColor = Color.Black;
                  userControlAddCourse.ForeColor = Color.White;*/
 
@@ -68,7 +71,9 @@ namespace AttendanceManagementSystem.Forms
                 // panelSlide.ForeColor = Color.White;
                 userControlAttendance1.BackColor = Color.White;
                 userControlAttendance1.ForeColor = SystemColors.ControlText;
-                
+                //userControlTeacherReport1.BackColor = Color.white;
+                //userControlTeacherReport1.ForeColor = SystemColors.ControlText;
+                tabPage.BackColor = Color.White;
 
             }
 

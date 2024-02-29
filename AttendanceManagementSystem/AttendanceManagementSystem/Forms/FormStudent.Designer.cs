@@ -306,7 +306,5 @@
         private User_Controls.UserControlSettings userControlSetting;
         private User_Controls.UserControlStudentReport userControlStudentReport1;
         private System.Windows.Forms.Button btnSt;
-       
-
     }
 }

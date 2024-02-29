@@ -20,7 +20,7 @@ namespace AttendanceManagementSystem.Forms
         public FormStudent()
         {
             InitializeComponent();
-            //userControlSetting.ChangeFormColorEvent += settingControl_ChangeFormColorEvent;
+           // userControlSetting.ChangeFormColorEvent += settingControl_ChangeFormColorEvent;
 
         }
 
@@ -68,7 +68,7 @@ namespace AttendanceManagementSystem.Forms
                 panelBack.ForeColor = Color.Black;
                 panelSlide.BackColor = System.Drawing.Color.White;
                 panel4.BackColor = System.Drawing.Color.Indigo;
-                // panelSlide.ForeColor = Color.White;
+                 panelSlide.ForeColor = Color.White;
                 //UserControlStudentReport1.BackColor = Color.White;
                // UserControlStudentReport1.ForeColor = SystemColors.ControlText;
 
@@ -105,11 +105,11 @@ namespace AttendanceManagementSystem.Forms
 
         private void btnStTch_Click(object sender, EventArgs e)
         {
-          //  MoveSidePanel(btnSt);
+          MoveSidePanel(btnSt);
             //userControlAttendance1.Visible = false;
             //userControlTeacherReport1.Visible= false;
             // userControlTeacherReport2.Visible = false;
-           // userControlSetting.Visible = true;
+           userControlSetting.Visible = true;
         }
 
         private void FormStudent_Load(object sender, EventArgs e)
@@ -117,6 +117,10 @@ namespace AttendanceManagementSystem.Forms
            
             labelUsername.Text = Username;
 
+        }
+        private void MoveSidePanel(Control button)
+        {
+            panelSlide.Location = new Point(button.Location.X - button.Location.X, button.Location.Y - 180);
         }
     }
 }

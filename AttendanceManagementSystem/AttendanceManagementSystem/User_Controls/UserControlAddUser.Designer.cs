@@ -844,9 +844,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControlAddUser;
-        private System.Windows.Forms.TabPage tabPageAdduser;
-        private System.Windows.Forms.TabPage tabPageSearch2;
+        public System.Windows.Forms.TabControl tabControlAddUser;
+        public System.Windows.Forms.TabPage tabPageAdduser;
+        public System.Windows.Forms.TabPage tabPageSearch2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Label label6;
@@ -901,7 +901,7 @@
         private System.Windows.Forms.TextBox txtSearch2;
         private System.Windows.Forms.Label lblUsersearch;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.DataGridView dataGridViewUser;
+        public System.Windows.Forms.DataGridView dataGridViewUser;
         private System.Windows.Forms.ComboBox comboBoxusers;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label17;

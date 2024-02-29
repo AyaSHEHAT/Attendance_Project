@@ -220,7 +220,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabPage tabPageMarkAttendance;
+        public System.Windows.Forms.TabPage tabPageMarkAttendance;
         private System.Windows.Forms.DataGridView dataGridViewAttendance;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseName;

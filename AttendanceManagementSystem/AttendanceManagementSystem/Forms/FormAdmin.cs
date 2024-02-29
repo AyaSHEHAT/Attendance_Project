@@ -119,8 +119,13 @@ namespace AttendanceManagementSystem
 
         private void settingControl_ChangeFormColorEvent(object sender, Color newColor)
         {
+            TabPage tabPage = userControlAddCourse.tabPageAddClass;
+            TabPage tabPage1 = userControlAddCourse.tabPageSearch;
+            TabPage tabPage2 = userControlAddCourse.tabPage1;
+            TabPage tabPage3 = userControlAddUser1.tabPageAdduser;
+            TabPage tabPage4 = userControlAddUser1.tabPageSearch2;
             
-                SettingsManager settings = SettingsManager.Instance;
+            SettingsManager settings = SettingsManager.Instance;
                 if (settings.DarkModeEnabled)
                 {
                
@@ -135,18 +140,27 @@ namespace AttendanceManagementSystem
                 panel4.BackColor = Color.DarkGray;
                 //panelSlide.ForeColor = Color.White;
                 userControlAddCourse.BackColor = Color.Gray;
-              
-               
                 userControlAddCourse.ForeColor = Color.White;
                 
                 userControlAddUser1.BackColor = Color.Gray;
                 userControlAddUser1.ForeColor = Color.White;
                 userControlDashboard1.BackColor = Color.Gray;
                 userControlDashboard1.ForeColor = Color.White;
-                
-               /* user.BackColor = Color.Black;
-                userControlAddCourse.ForeColor = Color.White;*/
+                userControlAdminReport1.BackColor = Color.Gray;
+                userControlAdminReport1.ForeColor = Color.White;
+                /* user.BackColor = Color.Black;
+                 userControlAddCourse.ForeColor = Color.White;*/
 
+
+               
+                
+
+                tabPage.BackColor = Color.Gray;
+                tabPage1.BackColor = Color.Gray;
+                tabPage2.BackColor = Color.Gray;
+                tabPage3.BackColor = Color.Gray;
+                tabPage4.BackColor = Color.Gray;
+               
 
             }
             else
@@ -167,7 +181,14 @@ namespace AttendanceManagementSystem
                 userControlAddUser1.ForeColor = SystemColors.ControlText;
                 userControlDashboard1.BackColor = Color.White;
                 userControlDashboard1.ForeColor = SystemColors.ControlText;
+                userControlAdminReport1.BackColor = Color.White;
+                userControlAdminReport1.ForeColor = SystemColors.ControlText;
 
+                tabPage.BackColor = Color.White;
+                tabPage1.BackColor = Color.White;
+                tabPage2.BackColor = Color.White;
+                tabPage3.BackColor = Color.White;   
+                tabPage4.BackColor = Color.White;
             }
             
         }
