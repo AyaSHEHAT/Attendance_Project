@@ -1,4 +1,6 @@
-﻿namespace AttendanceManagementSystem.User_Controls
+﻿using System.Collections.Generic;
+
+namespace AttendanceManagementSystem.User_Controls
 {
     partial class UserControlAddCourse
     {
@@ -681,6 +683,8 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownSession)).EndInit();
             this.ResumeLayout(false);
+            this.Controls.Add(this.userControlSetting);
+
 
         }
 
@@ -712,13 +716,16 @@
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridViewCourse;
+        public System.Windows.Forms.DataGridView dataGridViewCourse;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblTotalCourse;
         private System.Windows.Forms.Button btnUbdate;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dateStartDate;
+
+         List<Course> courses = new List<Course>();
+
         private System.Windows.Forms.NumericUpDown upDownSession;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ComboBox boxTeacher;
@@ -736,5 +743,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-    }
+       // public User_Controls.UserControlSettings userControlSetting;
+       
+
+
+        }
 }

@@ -19,6 +19,8 @@ namespace AttendanceManagementSystem.User_Controls
     {
         public event ChangeFormColorEventHandler ChangeFormColorEvent;
         public event EventHandler<string> DateFormatChanged;
+        public string selectedDateFormat;
+        SettingsManager settingsManager;
         public UserControlSettings()
         {
             InitializeComponent();
@@ -57,22 +59,16 @@ namespace AttendanceManagementSystem.User_Controls
             ChangeFormColorEvent?.Invoke(this, Color.Red);
         }
 
+
+        public int flag = 0;
         private void comboBoxDate_SelectedIndexChanged(object sender, EventArgs e)
         {
            
-            string selectedDateFormat = comboBoxDate.SelectedItem.ToString();
+             selectedDateFormat = comboBoxDate.SelectedItem.ToString();
+           
             DateFormatChanged?.Invoke(this, selectedDateFormat);
 
-            foreach (Control control in Controls)
-            {
-               
-                if (control is DateTimePicker dateTimePicker)
-                {
-                    
-                    dateTimePicker.CustomFormat = selectedDateFormat;
-                    dateTimePicker.Format = DateTimePickerFormat.Custom;
-                }
-            }
+            flag = 1;
 
         }
 

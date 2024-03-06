@@ -8,7 +8,9 @@ namespace AttendanceManagementSystem
 {
     public class SettingsManager
     {
+        public event EventHandler<string> DateFormatChanged;
         private static SettingsManager instance;
+        public int f = 0;
 
         public bool DarkModeEnabled { get; private set; }
 

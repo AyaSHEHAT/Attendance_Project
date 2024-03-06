@@ -66,8 +66,9 @@ namespace AttendanceManagementSystem
             WindowState=FormWindowState.Minimized;
         }
 
-        //date format 
-        private string selectedDateFormat = "f";
+        //------------------date format------------------------- 
+
+        public string selectedDateFormat = "dd/mm/yy";
         private void timerDtaeAndTime_Tick(object sender, EventArgs e)
         {
             // Get the current date and time
@@ -80,14 +81,48 @@ namespace AttendanceManagementSystem
             labelTime.Text = formattedDateTime;
         }
 
+        
         // Event handler for the DateFormatChanged event of UserControl1
         private void UserControl1_DateFormatChanged(object sender, string selectedDateFormat)
         {
+           
+          
             // Update the selected date format
             this.selectedDateFormat = selectedDateFormat;
 
             // Trigger the timer tick event manually to update the label immediately
             timerDtaeAndTime_Tick(sender, EventArgs.Empty);
+
+
+           //  string formattedDate = date.ToString(selectedDateFormat);
+
+            
+            foreach (Control control in userControlAddCourse.tabPageAddClass.Controls )
+            {
+
+                if (control is DateTimePicker dateTimePicker)
+                {
+
+                    dateTimePicker.CustomFormat = selectedDateFormat;
+                    dateTimePicker.Format = DateTimePickerFormat.Custom;
+                }
+            }
+
+            foreach (Control control in userControlAddCourse.tabPage1.Controls)
+            {
+
+                if (control is DateTimePicker dateTimePicker)
+                {
+
+                    dateTimePicker.CustomFormat = selectedDateFormat;
+                    dateTimePicker.Format = DateTimePickerFormat.Custom;
+                }
+            }
+
+
+           
+
+
         }
 
         private void buttonAttendance_Click(object sender, EventArgs e)
@@ -113,6 +148,9 @@ namespace AttendanceManagementSystem
             
 
         }
+
+
+
 
 
         

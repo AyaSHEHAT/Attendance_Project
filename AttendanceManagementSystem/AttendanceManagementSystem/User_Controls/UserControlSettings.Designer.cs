@@ -86,7 +86,8 @@
             this.comboBoxDate.Items.AddRange(new object[] {
             resources.GetString("comboBoxDate.Items"),
             resources.GetString("comboBoxDate.Items1"),
-            resources.GetString("comboBoxDate.Items2")});
+            resources.GetString("comboBoxDate.Items2"),
+            resources.GetString("comboBoxDate.Items3")});
             this.comboBoxDate.Name = "comboBoxDate";
             this.comboBoxDate.SelectedIndexChanged += new System.EventHandler(this.comboBoxDate_SelectedIndexChanged);
             // 

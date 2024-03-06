@@ -53,7 +53,7 @@ namespace AttendanceManagementSystem.User_Controls
         {
             XslCompiledTransform xslt = new XslCompiledTransform();
             xslt.Load(@"../../../../XML files\StudentReport.xslt");
-            using (XmlWriter writer = XmlWriter.Create(@"C:\Reports\StudentReport.html", new XmlWriterSettings { ConformanceLevel = ConformanceLevel.Auto }))
+            using (XmlWriter writer = XmlWriter.Create(@"../../../../Reports\StudentReport.html", new XmlWriterSettings { ConformanceLevel = ConformanceLevel.Auto }))
             {
                 XsltArgumentList arguments = new XsltArgumentList();
                 arguments.AddParam("selectedCourseName", "", courseName);

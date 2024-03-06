@@ -18,19 +18,21 @@ namespace AttendanceManagementSystem.User_Controls
          XDocument xml;
         XDocument doc = XDocument.Load(@"../../../../XML files\Data.xml");
         private string URL_XML_FILE = @"../../../../XML files\Data.xml";
-        List<Course> courses = new List<Course>();
+       // List<Course> courses = new List<Course>();
         List<XElement> teachers;
-        // DataTable dt;
+        SettingsManager settingsManager;
+      
         string teacherName;
 
+        public User_Controls.UserControlSettings userControlSetting;
         public UserControlAddCourse()
         {
             InitializeComponent();
-            tabPageAddClass.ParentChanged += TabPage_Load;
-
-
-
-
+         
+           userControlSetting = new User_Controls.UserControlSettings();
+            // subscribe on event change date format
+          
+            userControlSetting.DateFormatChanged += UserControl1_DateFormatChanged;
 
             //call loadcourse to load data from xml file and save it in courses object
             loadCourses();
@@ -64,28 +66,9 @@ namespace AttendanceManagementSystem.User_Controls
             }
         }
 
-        SettingsManager settings = SettingsManager.Instance;
-        private void TabPage_Load(object sender, EventArgs e)
-        {
-            // Check the state of dark mode and change the color of the tab page accordingly
-            
-            
-
-                if (settings.DarkModeEnabled)
-                {
-                    tabPageAddClass.BackColor = Color.Gray; // Set the color to black (for example)
-                }
-                else
-                {
-                    tabPageAddClass.BackColor = Color.White; // 
-                                                                // Set the color to default
-                }
-            
-        }
        
-           
-
-
+       
+       
         public void ClearTextBox()
         {
             textBoxCrsName.Clear();
@@ -96,7 +79,19 @@ namespace AttendanceManagementSystem.User_Controls
 
         }
 
-        public void xmlOperation(string file)
+        public string selectedDateFormat = "dd/mm/yy";
+
+        private void UserControl1_DateFormatChanged(object sender, string selectedDateFormat)
+        {
+            
+            SettingsManager settings = SettingsManager.Instance;
+           
+            // Update the selected date format
+            this.selectedDateFormat = selectedDateFormat;
+        }
+
+
+            public void xmlOperation(string file)
         {
             courses.Clear();
             try
@@ -108,14 +103,20 @@ namespace AttendanceManagementSystem.User_Controls
                 MessageBox.Show("Error loading information: " + ex.Message);
             }
 
-
+             
             foreach (XElement courseElement in xml.Descendants("course"))
             {
                 string courseId = courseElement.Element("cID").Value;
                 string courseName = courseElement.Element("cName").Value;
                 int sessions = int.Parse(courseElement.Element("totalsessionNum").Value);
                 string teacherId = courseElement.Element("teacher").Element("teachId").Value;
+
+               
+
+                //  string formattedDate = courseElement.Element("startDate").Value.ToString(selectedDateFormat);
                 DateTime date = DateTime.Parse(courseElement.Element("startDate").Value);
+               // DateTime date = DateTime.Parse(formattedDate);
+                string formattedDate = date.ToString(selectedDateFormat);
 
                 // Get the first session element
                 /*XElement firstSession = courseElement.Element("sessions").Elements("session").FirstOrDefault();
@@ -190,7 +191,7 @@ namespace AttendanceManagementSystem.User_Controls
             {
 
                 // Set dark mode for DataGridView
-                dataGridViewCourse.DefaultCellStyle.BackColor = Color.Black;
+                dataGridViewCourse.DefaultCellStyle.BackColor = Color.DarkGray;
                 dataGridViewCourse.DefaultCellStyle.ForeColor = Color.White;
                 dataGridViewCourse.DefaultCellStyle.SelectionBackColor = Color.DarkGray;
                 dataGridViewCourse.DefaultCellStyle.SelectionForeColor = Color.White;
@@ -507,19 +508,7 @@ namespace AttendanceManagementSystem.User_Controls
         }
 
 
-        // date formate 
-        public void UserControl1_DateFormatChanged(object sender, string selectedDateFormat)
-        {
-            // Update the date format of date controls in UserControl2
-            foreach (Control control in Controls)
-            {
-                if (control is DateTimePicker dateTimePicker)
-                {
-                    dateTimePicker.CustomFormat = selectedDateFormat;
-                    dateTimePicker.Format = DateTimePickerFormat.Custom;
-                }
-            }
-        }
+       
     }
 }
 

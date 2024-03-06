@@ -91,6 +91,8 @@
             this.txtName2 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label18 = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.tabControlAddUser.SuspendLayout();
             this.tabPageAdduser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
@@ -149,10 +151,9 @@
             this.tabPageAdduser.Location = new System.Drawing.Point(4, 4);
             this.tabPageAdduser.Name = "tabPageAdduser";
             this.tabPageAdduser.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdduser.Size = new System.Drawing.Size(934, 467);
+            this.tabPageAdduser.Size = new System.Drawing.Size(934, 469);
             this.tabPageAdduser.TabIndex = 0;
             this.tabPageAdduser.Text = "Add User";
-           
             this.tabPageAdduser.Enter += new System.EventHandler(this.tabPageAdduser_Enter);
             // 
             // label17
@@ -161,7 +162,7 @@
             this.label17.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(535, 394);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(80, 19);
+            this.label17.Size = new System.Drawing.Size(65, 17);
             this.label17.TabIndex = 0;
             this.label17.Text = "Courses:";
             // 
@@ -171,7 +172,7 @@
             this.checkedListBoxCourses.FormattingEnabled = true;
             this.checkedListBoxCourses.Location = new System.Drawing.Point(621, 352);
             this.checkedListBoxCourses.Name = "checkedListBoxCourses";
-            this.checkedListBoxCourses.Size = new System.Drawing.Size(190, 96);
+            this.checkedListBoxCourses.Size = new System.Drawing.Size(190, 80);
             this.checkedListBoxCourses.TabIndex = 8;
             // 
             // panel3
@@ -196,7 +197,7 @@
             0,
             0});
             this.numericUpDownAge.Name = "numericUpDownAge";
-            this.numericUpDownAge.Size = new System.Drawing.Size(267, 28);
+            this.numericUpDownAge.Size = new System.Drawing.Size(267, 24);
             this.numericUpDownAge.TabIndex = 7;
             this.numericUpDownAge.Value = new decimal(new int[] {
             19,
@@ -210,7 +211,7 @@
             this.label8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(109, 352);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 19);
+            this.label8.Size = new System.Drawing.Size(40, 17);
             this.label8.TabIndex = 0;
             this.label8.Text = "Age:";
             // 
@@ -230,7 +231,7 @@
             this.radioBtnStudent.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBtnStudent.Location = new System.Drawing.Point(22, 56);
             this.radioBtnStudent.Name = "radioBtnStudent";
-            this.radioBtnStudent.Size = new System.Drawing.Size(89, 23);
+            this.radioBtnStudent.Size = new System.Drawing.Size(75, 21);
             this.radioBtnStudent.TabIndex = 1;
             this.radioBtnStudent.TabStop = true;
             this.radioBtnStudent.Text = "Student";
@@ -242,7 +243,7 @@
             this.radioBtnTeacher.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBtnTeacher.Location = new System.Drawing.Point(22, 22);
             this.radioBtnTeacher.Name = "radioBtnTeacher";
-            this.radioBtnTeacher.Size = new System.Drawing.Size(96, 23);
+            this.radioBtnTeacher.Size = new System.Drawing.Size(80, 21);
             this.radioBtnTeacher.TabIndex = 0;
             this.radioBtnTeacher.TabStop = true;
             this.radioBtnTeacher.Text = "Teacher";
@@ -254,7 +255,7 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(535, 272);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 19);
+            this.label4.Size = new System.Drawing.Size(42, 17);
             this.label4.TabIndex = 0;
             this.label4.Text = "Role:";
             // 
@@ -264,7 +265,7 @@
             this.textBoxUserAddress.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserAddress.Location = new System.Drawing.Point(112, 296);
             this.textBoxUserAddress.Name = "textBoxUserAddress";
-            this.textBoxUserAddress.Size = new System.Drawing.Size(270, 21);
+            this.textBoxUserAddress.Size = new System.Drawing.Size(270, 17);
             this.textBoxUserAddress.TabIndex = 5;
             // 
             // panel6
@@ -289,7 +290,7 @@
             this.textBoxUserID.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserID.Location = new System.Drawing.Point(539, 117);
             this.textBoxUserID.Name = "textBoxUserID";
-            this.textBoxUserID.Size = new System.Drawing.Size(270, 21);
+            this.textBoxUserID.Size = new System.Drawing.Size(270, 17);
             this.textBoxUserID.TabIndex = 2;
             // 
             // label7
@@ -298,7 +299,7 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(535, 88);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 19);
+            this.label7.Size = new System.Drawing.Size(26, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "ID:";
             // 
@@ -308,7 +309,7 @@
             this.textBoxEmail.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail.Location = new System.Drawing.Point(112, 209);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(270, 21);
+            this.textBoxEmail.Size = new System.Drawing.Size(270, 17);
             this.textBoxEmail.TabIndex = 3;
             // 
             // panel4
@@ -339,7 +340,7 @@
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(108, 185);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 19);
+            this.label6.Size = new System.Drawing.Size(46, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "Email";
             // 
@@ -349,7 +350,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(109, 272);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 19);
+            this.label5.Size = new System.Drawing.Size(65, 17);
             this.label5.TabIndex = 0;
             this.label5.Text = "Address:";
             // 
@@ -367,7 +368,7 @@
             this.textBoxUserPass.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserPass.Location = new System.Drawing.Point(539, 209);
             this.textBoxUserPass.Name = "textBoxUserPass";
-            this.textBoxUserPass.Size = new System.Drawing.Size(270, 21);
+            this.textBoxUserPass.Size = new System.Drawing.Size(270, 17);
             this.textBoxUserPass.TabIndex = 4;
             // 
             // label3
@@ -376,7 +377,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(535, 180);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 19);
+            this.label3.Size = new System.Drawing.Size(74, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Password:";
             // 
@@ -394,7 +395,7 @@
             this.textBoxUserName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserName.Location = new System.Drawing.Point(112, 117);
             this.textBoxUserName.Name = "textBoxUserName";
-            this.textBoxUserName.Size = new System.Drawing.Size(270, 21);
+            this.textBoxUserName.Size = new System.Drawing.Size(270, 17);
             this.textBoxUserName.TabIndex = 1;
             // 
             // label1
@@ -403,7 +404,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(109, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 19);
+            this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
             // 
@@ -414,7 +415,7 @@
             this.label2.ForeColor = System.Drawing.Color.Indigo;
             this.label2.Location = new System.Drawing.Point(3, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 27);
+            this.label2.Size = new System.Drawing.Size(94, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Add User";
             // 
@@ -433,7 +434,7 @@
             this.tabPageSearch2.Location = new System.Drawing.Point(4, 4);
             this.tabPageSearch2.Name = "tabPageSearch2";
             this.tabPageSearch2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSearch2.Size = new System.Drawing.Size(934, 467);
+            this.tabPageSearch2.Size = new System.Drawing.Size(934, 469);
             this.tabPageSearch2.TabIndex = 1;
             this.tabPageSearch2.Text = "Search";
             this.tabPageSearch2.UseVisualStyleBackColor = true;
@@ -455,7 +456,7 @@
             this.comboBoxusers.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxusers.Name = "comboBoxusers";
             this.comboBoxusers.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.comboBoxusers.Size = new System.Drawing.Size(204, 31);
+            this.comboBoxusers.Size = new System.Drawing.Size(204, 26);
             this.comboBoxusers.TabIndex = 19;
             this.comboBoxusers.Text = "          Users";
             this.comboBoxusers.SelectedIndexChanged += new System.EventHandler(this.comboBoxusers_SelectedIndexChanged);
@@ -467,7 +468,7 @@
             this.label10.Location = new System.Drawing.Point(511, 25);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 19);
+            this.label10.Size = new System.Drawing.Size(42, 17);
             this.label10.TabIndex = 18;
             this.label10.Text = "Role:";
             // 
@@ -478,7 +479,7 @@
             this.label19.ForeColor = System.Drawing.Color.Indigo;
             this.label19.Location = new System.Drawing.Point(6, 3);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(102, 27);
+            this.label19.Size = new System.Drawing.Size(84, 23);
             this.label19.TabIndex = 17;
             this.label19.Text = "Search :";
             // 
@@ -488,7 +489,7 @@
             this.txtTotalUser.Font = new System.Drawing.Font("Century Gothic", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalUser.Location = new System.Drawing.Point(844, 424);
             this.txtTotalUser.Name = "txtTotalUser";
-            this.txtTotalUser.Size = new System.Drawing.Size(35, 23);
+            this.txtTotalUser.Size = new System.Drawing.Size(28, 18);
             this.txtTotalUser.TabIndex = 16;
             this.txtTotalUser.Text = "(?)";
             this.txtTotalUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -499,7 +500,7 @@
             this.lblusers.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusers.Location = new System.Drawing.Point(737, 426);
             this.lblusers.Name = "lblusers";
-            this.lblusers.Size = new System.Drawing.Size(98, 19);
+            this.lblusers.Size = new System.Drawing.Size(81, 17);
             this.lblusers.TabIndex = 15;
             this.lblusers.Text = "Total users:";
             // 
@@ -550,7 +551,7 @@
             this.txtSearch2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch2.Location = new System.Drawing.Point(153, 54);
             this.txtSearch2.Name = "txtSearch2";
-            this.txtSearch2.Size = new System.Drawing.Size(270, 21);
+            this.txtSearch2.Size = new System.Drawing.Size(270, 17);
             this.txtSearch2.TabIndex = 12;
             this.txtSearch2.TextChanged += new System.EventHandler(this.txtSearch2_TextChanged);
             // 
@@ -560,12 +561,14 @@
             this.lblUsersearch.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsersearch.Location = new System.Drawing.Point(150, 25);
             this.lblUsersearch.Name = "lblUsersearch";
-            this.lblUsersearch.Size = new System.Drawing.Size(104, 19);
+            this.lblUsersearch.Size = new System.Drawing.Size(86, 17);
             this.lblUsersearch.TabIndex = 11;
             this.lblUsersearch.Text = "User Name:";
             // 
             // tabPageUpdateandDelete2
             // 
+            this.tabPageUpdateandDelete2.Controls.Add(this.label18);
+            this.tabPageUpdateandDelete2.Controls.Add(this.checkedListBox1);
             this.tabPageUpdateandDelete2.Controls.Add(this.btnDelete);
             this.tabPageUpdateandDelete2.Controls.Add(this.btnUbdate);
             this.tabPageUpdateandDelete2.Controls.Add(this.label16);
@@ -591,7 +594,7 @@
             this.tabPageUpdateandDelete2.Location = new System.Drawing.Point(4, 4);
             this.tabPageUpdateandDelete2.Name = "tabPageUpdateandDelete2";
             this.tabPageUpdateandDelete2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageUpdateandDelete2.Size = new System.Drawing.Size(934, 467);
+            this.tabPageUpdateandDelete2.Size = new System.Drawing.Size(934, 469);
             this.tabPageUpdateandDelete2.TabIndex = 2;
             this.tabPageUpdateandDelete2.Text = "Update and delete";
             this.tabPageUpdateandDelete2.UseVisualStyleBackColor = true;
@@ -605,7 +608,7 @@
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(704, 347);
+            this.btnDelete.Location = new System.Drawing.Point(493, 414);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(114, 37);
             this.btnDelete.TabIndex = 35;
@@ -621,7 +624,7 @@
             this.btnUbdate.FlatAppearance.BorderSize = 0;
             this.btnUbdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUbdate.ForeColor = System.Drawing.Color.White;
-            this.btnUbdate.Location = new System.Drawing.Point(552, 347);
+            this.btnUbdate.Location = new System.Drawing.Point(341, 414);
             this.btnUbdate.Name = "btnUbdate";
             this.btnUbdate.Size = new System.Drawing.Size(114, 37);
             this.btnUbdate.TabIndex = 34;
@@ -636,7 +639,7 @@
             this.label16.ForeColor = System.Drawing.Color.Indigo;
             this.label16.Location = new System.Drawing.Point(6, 3);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(147, 27);
+            this.label16.Size = new System.Drawing.Size(124, 23);
             this.label16.TabIndex = 33;
             this.label16.Text = "Update User";
             // 
@@ -662,7 +665,7 @@
             0,
             0});
             this.upDownAge.Name = "upDownAge";
-            this.upDownAge.Size = new System.Drawing.Size(267, 28);
+            this.upDownAge.Size = new System.Drawing.Size(267, 24);
             this.upDownAge.TabIndex = 31;
             this.upDownAge.Value = new decimal(new int[] {
             19,
@@ -676,7 +679,7 @@
             this.label9.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(118, 335);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 19);
+            this.label9.Size = new System.Drawing.Size(40, 17);
             this.label9.TabIndex = 30;
             this.label9.Text = "Age:";
             // 
@@ -686,7 +689,7 @@
             this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.Location = new System.Drawing.Point(121, 279);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(270, 21);
+            this.txtAddress.Size = new System.Drawing.Size(270, 17);
             this.txtAddress.TabIndex = 27;
             // 
             // panel9
@@ -711,7 +714,7 @@
             this.txtId2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId2.Location = new System.Drawing.Point(548, 100);
             this.txtId2.Name = "txtId2";
-            this.txtId2.Size = new System.Drawing.Size(270, 21);
+            this.txtId2.Size = new System.Drawing.Size(270, 17);
             this.txtId2.TabIndex = 24;
             // 
             // label11
@@ -720,7 +723,7 @@
             this.label11.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(544, 71);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(31, 19);
+            this.label11.Size = new System.Drawing.Size(26, 17);
             this.label11.TabIndex = 20;
             this.label11.Text = "ID:";
             // 
@@ -730,7 +733,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(121, 192);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(270, 21);
+            this.txtEmail.Size = new System.Drawing.Size(270, 17);
             this.txtEmail.TabIndex = 25;
             // 
             // panel11
@@ -747,7 +750,7 @@
             this.label12.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(117, 168);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 19);
+            this.label12.Size = new System.Drawing.Size(46, 17);
             this.label12.TabIndex = 22;
             this.label12.Text = "Email";
             // 
@@ -757,7 +760,7 @@
             this.label13.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(118, 255);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(81, 19);
+            this.label13.Size = new System.Drawing.Size(65, 17);
             this.label13.TabIndex = 17;
             this.label13.Text = "Address:";
             // 
@@ -775,7 +778,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(548, 192);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(270, 21);
+            this.txtPassword.Size = new System.Drawing.Size(270, 17);
             this.txtPassword.TabIndex = 26;
             // 
             // label14
@@ -784,7 +787,7 @@
             this.label14.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(544, 163);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(92, 19);
+            this.label14.Size = new System.Drawing.Size(74, 17);
             this.label14.TabIndex = 14;
             this.label14.Text = "Password:";
             // 
@@ -802,7 +805,7 @@
             this.txtName2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName2.Location = new System.Drawing.Point(121, 100);
             this.txtName2.Name = "txtName2";
-            this.txtName2.Size = new System.Drawing.Size(270, 21);
+            this.txtName2.Size = new System.Drawing.Size(270, 17);
             this.txtName2.TabIndex = 23;
             // 
             // label15
@@ -811,13 +814,32 @@
             this.label15.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(118, 71);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(65, 19);
+            this.label15.Size = new System.Drawing.Size(54, 17);
             this.label15.TabIndex = 12;
             this.label15.Text = "Name:";
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(542, 297);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 17);
+            this.label18.TabIndex = 36;
+            this.label18.Text = "Courses:";
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(628, 255);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(190, 80);
+            this.checkedListBox1.TabIndex = 37;
+            // 
             // UserControlAddUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tabControlAddUser);
@@ -906,5 +928,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.CheckedListBox checkedListBoxCourses;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

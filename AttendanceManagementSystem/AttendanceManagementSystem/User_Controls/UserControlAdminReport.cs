@@ -105,7 +105,7 @@ namespace AttendanceManagementSystem.User_Controls
                 XslCompiledTransform xslt = new XslCompiledTransform();
                 xslt.Load(@"../../../../XML files/courseAndStudent.xslt");
 
-                using (XmlWriter writer = XmlWriter.Create(@"C:\Reports\TransformedAttendance.html"))
+                using (XmlWriter writer = XmlWriter.Create(@"../../../../Reports\TransformedAttendance.html"))
                 {
                     XsltArgumentList arguments = new XsltArgumentList();
                     arguments.AddParam("selectedCourseName", "", courseName);
@@ -114,8 +114,8 @@ namespace AttendanceManagementSystem.User_Controls
                     xslt.Transform(doc.CreateReader(), arguments, writer);
                 }
 
-                string transformedXml = File.ReadAllText(@"C:\Reports\TransformedAttendance.html");
-                XDocument transformedDoc = XDocument.Load(@"C:\Reports\TransformedAttendance.html");
+                string transformedXml = File.ReadAllText(@"../../../../Reports\TransformedAttendance.html");
+                XDocument transformedDoc = XDocument.Load(@"../../../../Reports\TransformedAttendance.html");
                 var students = transformedDoc.Root.Descendants("tr")
                                                  .Skip(1) // Skip the header row
                                                  .Select(tr => new Report_teacher
