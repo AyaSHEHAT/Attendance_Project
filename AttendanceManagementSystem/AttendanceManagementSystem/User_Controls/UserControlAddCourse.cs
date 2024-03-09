@@ -20,7 +20,7 @@ namespace AttendanceManagementSystem.User_Controls
         private string URL_XML_FILE = @"../../../../XML files\Data.xml";
        // List<Course> courses = new List<Course>();
         List<XElement> teachers;
-        SettingsManager settingsManager;
+
       
         string teacherName;
 
@@ -92,7 +92,7 @@ namespace AttendanceManagementSystem.User_Controls
 
 
             public void xmlOperation(string file)
-        {
+            {
             courses.Clear();
             try
             {
@@ -113,7 +113,7 @@ namespace AttendanceManagementSystem.User_Controls
 
                
 
-                //  string formattedDate = courseElement.Element("startDate").Value.ToString(selectedDateFormat);
+               
                 DateTime date = DateTime.Parse(courseElement.Element("startDate").Value);
                // DateTime date = DateTime.Parse(formattedDate);
                 string formattedDate = date.ToString(selectedDateFormat);

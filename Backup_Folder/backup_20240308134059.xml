@@ -10,10 +10,7 @@
       <userPass>dfxyd78798</userPass>
       <role>student</role>
       <listOfCourses>
-        <courseName>C#</courseName>
-        <courseName>javascript</courseName>
-        <courseName>xml</courseName>
-        <courseName>nn</courseName>
+        <courseName>XML</courseName>
       </listOfCourses>
     </user>
     <user>
@@ -26,7 +23,6 @@
       <role>student</role>
       <listOfCourses>
         <courseName>C#</courseName>
-        <courseName>javascript</courseName>
       </listOfCourses>
     </user>
     <user>
@@ -110,13 +106,12 @@
       <name>nahed</name>
       <age>22</age>
       <email>nahed@yahoo.com</email>
-      <address>mansoura</address>
+      <address>mans</address>
       <userPass>asdf1234</userPass>
       <role>student</role>
       <listOfCourses>
         <courseName>C#</courseName>
         <courseName>javascript</courseName>
-        <courseName>xml</courseName>
       </listOfCourses>
     </user>
   </Users>
@@ -243,15 +238,6 @@
       <cName>nn</cName>
       <totalsessionNum>1</totalsessionNum>
       <startDate>2024-02-28</startDate>
-      <teacher>
-        <teachId>8123</teachId>
-      </teacher>
-    </course>
-    <course>
-      <cID>1</cID>
-      <cName>embeded</cName>
-      <totalsessionNum>10</totalsessionNum>
-      <startDate>2024-03-08</startDate>
       <teacher>
         <teachId>8123</teachId>
       </teacher>

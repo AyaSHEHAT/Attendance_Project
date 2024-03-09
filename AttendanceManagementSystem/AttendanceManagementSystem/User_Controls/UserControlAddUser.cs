@@ -24,7 +24,9 @@ namespace AttendanceManagementSystem.User_Controls
         
 
         List<XElement> courses;
-        // DataTable dt;
+        List<XElement> listOfCourses;
+       // List<Course> coursesUpdate = new List<Course>();
+
         string teacherName;
         List<User> filtere;
 
@@ -33,7 +35,7 @@ namespace AttendanceManagementSystem.User_Controls
         {
             InitializeComponent();
 
-            //call loadUsers to load data from xml file and save it in courses object
+
             courses = doc.Root
                              .Element("Courses")
                              .Elements("course")
@@ -49,12 +51,17 @@ namespace AttendanceManagementSystem.User_Controls
                     {
                         // Add the course name to the checkedListBoxCourses
                         checkedListBoxCourses.Items.Add(courseName);
+                        checkedListBoxCoursesUbdate.Items.Add(courseName);
+
                     }
                 }
 
 
             }
-                loadUsers();
+            //call loadUsers to load data from xml file and save it in courses object
+            loadUsers();
+               
+
         }
 
         public void ClearTextBox()
@@ -75,7 +82,9 @@ namespace AttendanceManagementSystem.User_Controls
             txtPassword.Clear();
             txtEmail.Clear();
             txtAddress.Clear();
-           
+
+            checkedListBoxCoursesUbdate.Items.Clear();
+
         }
 
         private void buttonAdd_Click_1(object sender, EventArgs e)
@@ -180,7 +189,7 @@ namespace AttendanceManagementSystem.User_Controls
                 MessageBox.Show("Error loading information: " + ex.Message);
             }
 
-
+            //users
             foreach (XElement userElement in xml.Descendants("user"))
             {
                 string Id = userElement.Element("id").Value;
@@ -191,9 +200,8 @@ namespace AttendanceManagementSystem.User_Controls
                 string Address = userElement.Element("address").Value;
                 string Role = userElement.Element("role").Value;
 
-
-
-
+               
+                
                 usersList.Add(new User(
                     Id, Name, Email, Pass, Age, Address, Role
                     ));
@@ -202,38 +210,38 @@ namespace AttendanceManagementSystem.User_Controls
 
         }
 
-        public void loadUsers()
-        {
+                public void loadUsers()
+                {
 
-            xmlOperation(URL_XML_FILE);
-           // dataGridViewUser.AutoGenerateColumns = false;
-
-
-            dataGridViewUser.DataError += dataGridViewUser_DataError;
-            dataGridViewUser.DataSource = null;
-            dataGridViewUser.Rows.Clear();
-            dataGridViewUser.Columns.Clear();
-
-            dataGridViewUser.Columns.Add("Id", "ID");
-            dataGridViewUser.Columns.Add("Name", "Name");
-            dataGridViewUser.Columns.Add("Email", "Email");
-            dataGridViewUser.Columns.Add("Password", "Password");
-            dataGridViewUser.Columns.Add("Age", "Age");
-            dataGridViewUser.Columns.Add("Address", "Address");
-            dataGridViewUser.Columns.Add("Role", "Role");
-            dataGridViewUser.Columns[0].Visible = false;
-            dataGridViewUser.Columns[1].Visible = false;
-            dataGridViewUser.Columns[2].Visible = false;
-            dataGridViewUser.Columns[3].Visible = false;
-            dataGridViewUser.Columns[4].Visible = false;
-            dataGridViewUser.Columns[5].Visible = false;
-            dataGridViewUser.Columns[6].Visible = false;
+                    xmlOperation(URL_XML_FILE);
+                   // dataGridViewUser.AutoGenerateColumns = false;
 
 
+                    dataGridViewUser.DataError += dataGridViewUser_DataError;
+                    dataGridViewUser.DataSource = null;
+                    dataGridViewUser.Rows.Clear();
+                    dataGridViewUser.Columns.Clear();
 
-            dataGridViewUser.DataSource = usersList;
+                    dataGridViewUser.Columns.Add("Id", "ID");
+                    dataGridViewUser.Columns.Add("Name", "Name");
+                    dataGridViewUser.Columns.Add("Email", "Email");
+                    dataGridViewUser.Columns.Add("Password", "Password");
+                    dataGridViewUser.Columns.Add("Age", "Age");
+                    dataGridViewUser.Columns.Add("Address", "Address");
+                    dataGridViewUser.Columns.Add("Role", "Role");
+                    dataGridViewUser.Columns[0].Visible = false;
+                    dataGridViewUser.Columns[1].Visible = false;
+                    dataGridViewUser.Columns[2].Visible = false;
+                    dataGridViewUser.Columns[3].Visible = false;
+                    dataGridViewUser.Columns[4].Visible = false;
+                    dataGridViewUser.Columns[5].Visible = false;
+                    dataGridViewUser.Columns[6].Visible = false;
 
-        }
+
+
+                    dataGridViewUser.DataSource = usersList;
+
+                }
 
         private void dataGridViewUser_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
@@ -291,23 +299,61 @@ namespace AttendanceManagementSystem.User_Controls
                 txtAddress.Text = row.Cells[12].Value.ToString();
 
 
-              /* string role= row.Cells[13].Value.ToString();
+                checkedListBoxCoursesUbdate.Items.Clear();
 
-                if (role== "student")
+                // Get the user's courses
+                courses = doc.Root
+                            .Element("Courses")
+                            .Elements("course")
+                            .ToList();
+
+                if (courses.Any())
                 {
-                    rdoStudent.Checked = true;
+                    foreach (var course in courses)
+                    {
+                        string courseName = course.Element("cName")?.Value; // Get the course name
+
+                        if (!string.IsNullOrEmpty(courseName))
+                        {
+                            // Add the course name to the checkedListBoxCourses
+                           
+                            checkedListBoxCoursesUbdate.Items.Add(courseName);
+
+                        }
+                    }
+
+
                 }
-                else if (role== "teacher")
+                XElement userElement =xml.Root.Element("Users");
+               XElement user = userElement.Elements("user").FirstOrDefault(u => u.Element("id").Value == IdUser);
+      
+                if (user != null)
                 {
-                    rdoStudent.Checked = true;
+                    if (user.Element("listOfCourses").Elements("courseName") != null)
+                    {
+                        var listOfCourses = user.Element("listOfCourses").Elements("courseName").ToList();
+                        foreach (var course in listOfCourses)
+                        {
+                           /// Console.WriteLine("Course: " + course.Value);
+                            int index = checkedListBoxCoursesUbdate.Items.IndexOf(course.Value);
 
+                           // Console.WriteLine("Index: " + index);
+                            if (index != -1)
+                            {
+                                checkedListBoxCoursesUbdate.SetItemChecked(index, true);
 
-                }*/
-                
-                // admin
+                            }
+                        }
 
+                    }
+                    
+                }
+
+      
             }
         }
+
+
         private void btnUbdate_Click(object sender, EventArgs e)
         {
             int numericValue;
@@ -320,32 +366,24 @@ namespace AttendanceManagementSystem.User_Controls
 
                 if (txtId2.Text.Trim() == "" || txtId2.Text != userElement.Element("id").Value)
                 {
-                    MessageBox.Show("Can not be change id", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    MessageBox.Show("Can not change id", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
                 else if (txtName2.Text.Trim() == string.Empty || int.TryParse(txtName2.Text, out numericValue))
                 {
                     MessageBox.Show("Enter a valid Name and must not be a number", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
-                
                 else if (txtEmail.Text.Trim() == string.Empty || Regex.IsMatch(txtEmail.Text.Trim(), EmailRegx) == false)
                 {
-                    MessageBox.Show("Enter a vailid email. ex: example@example.com", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    MessageBox.Show("Enter a valid email. ex: example@example.com", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (txtPassword.Text.Trim() == string.Empty || Regex.IsMatch(txtPassword.Text.Trim(), PassRegex) == false)
                 {
-                    MessageBox.Show("Enter a vailid password that must be 8 characters or more and has small and capital letters and digits", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    MessageBox.Show("Enter a valid password that must be 8 characters or more and has small and capital letters and digits", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (txtAddress.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("you must add Address", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    MessageBox.Show("You must add Address", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-               
                 else
                 {
                     userElement.Element("name").Value = txtName2.Text;
@@ -354,27 +392,27 @@ namespace AttendanceManagementSystem.User_Controls
                     userElement.Element("address").Value = txtAddress.Text;
                     userElement.Element("userPass").Value = txtPassword.Text;
 
-                    
+                    // Clear existing courses
+                    userElement.Element("listOfCourses").Elements("courseName").Remove();
+
+                    // Add newly checked courses
+                    foreach (string courseName in checkedListBoxCoursesUbdate.CheckedItems)
+                    {
+                        userElement.Element("listOfCourses").Add(new XElement("courseName", courseName));
+                    }
+
                     xml.Save(URL_XML_FILE);
-                   
-                    MessageBox.Show("User Upate Successfully", "Update User", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+
+                    MessageBox.Show("User Updated Successfully", "Update User", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     loadUsers();
                     tabControlAddUser.SelectedTab = tabPageSearch2;
-
                 }
-
-
-
-                //courseElement.Element("teacher").Element("teachId").Value = boxTeacher.Text;
-
-
             }
             else
             {
                 MessageBox.Show("First select row from table", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tabControlAddUser.SelectedTab = tabPageSearch2;
-
             }
         }
 
@@ -418,6 +456,7 @@ namespace AttendanceManagementSystem.User_Controls
         private void tabPageUpdateandDelete2_Leave(object sender, EventArgs e)
         {
             ClearTextBox2();
+
         }
 
         private void dataGridViewUser_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

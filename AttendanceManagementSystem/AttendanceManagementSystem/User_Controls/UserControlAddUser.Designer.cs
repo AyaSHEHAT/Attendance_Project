@@ -69,6 +69,8 @@
             this.txtSearch2 = new System.Windows.Forms.TextBox();
             this.lblUsersearch = new System.Windows.Forms.Label();
             this.tabPageUpdateandDelete2 = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
+            this.checkedListBoxCoursesUbdate = new System.Windows.Forms.CheckedListBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUbdate = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
@@ -91,8 +93,6 @@
             this.txtName2 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label18 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.tabControlAddUser.SuspendLayout();
             this.tabPageAdduser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
@@ -568,7 +568,7 @@
             // tabPageUpdateandDelete2
             // 
             this.tabPageUpdateandDelete2.Controls.Add(this.label18);
-            this.tabPageUpdateandDelete2.Controls.Add(this.checkedListBox1);
+            this.tabPageUpdateandDelete2.Controls.Add(this.checkedListBoxCoursesUbdate);
             this.tabPageUpdateandDelete2.Controls.Add(this.btnDelete);
             this.tabPageUpdateandDelete2.Controls.Add(this.btnUbdate);
             this.tabPageUpdateandDelete2.Controls.Add(this.label16);
@@ -599,6 +599,25 @@
             this.tabPageUpdateandDelete2.Text = "Update and delete";
             this.tabPageUpdateandDelete2.UseVisualStyleBackColor = true;
             this.tabPageUpdateandDelete2.Leave += new System.EventHandler(this.tabPageUpdateandDelete2_Leave);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(542, 297);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 17);
+            this.label18.TabIndex = 36;
+            this.label18.Text = "Courses:";
+            // 
+            // checkedListBoxCoursesUbdate
+            // 
+            this.checkedListBoxCoursesUbdate.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBoxCoursesUbdate.FormattingEnabled = true;
+            this.checkedListBoxCoursesUbdate.Location = new System.Drawing.Point(628, 255);
+            this.checkedListBoxCoursesUbdate.Name = "checkedListBoxCoursesUbdate";
+            this.checkedListBoxCoursesUbdate.Size = new System.Drawing.Size(190, 80);
+            this.checkedListBoxCoursesUbdate.TabIndex = 37;
             // 
             // btnDelete
             // 
@@ -818,25 +837,6 @@
             this.label15.TabIndex = 12;
             this.label15.Text = "Name:";
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(542, 297);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(65, 17);
-            this.label18.TabIndex = 36;
-            this.label18.Text = "Courses:";
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(628, 255);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(190, 80);
-            this.checkedListBox1.TabIndex = 37;
-            // 
             // UserControlAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -929,6 +929,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.CheckedListBox checkedListBoxCourses;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBoxCoursesUbdate;
     }
 }
